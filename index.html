@@ -851,9 +851,8 @@
     background: var(--surface2);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 16px 20px;
-    margin: 0 0 28px;
-    width: 100%;
+    padding: 20px 24px;
+    margin: 0 0 24px;
   }
   .sources-block-title {
     font-size: 11px;
@@ -861,14 +860,15 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--muted);
-    margin-bottom: 12px;
+    margin-bottom: 16px;
   }
-  .sources-table { width: 100%; border-collapse: collapse; }
+  .sources-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
   .sources-table td {
-    padding: 6px 16px 6px 0;
+    padding: 8px 12px 8px 0;
     vertical-align: top;
     border-bottom: 1px solid var(--border);
     width: 33.33%;
+    word-break: break-word;
   }
   .sources-table tr:last-child td { border-bottom: none; }
   .source-label {
@@ -878,7 +878,7 @@
     letter-spacing: 0.08em;
     color: var(--muted);
     display: block;
-    margin-bottom: 2px;
+    margin-bottom: 3px;
   }
   .source-value {
     font-size: 13px;
@@ -1951,7 +1951,14 @@
           <div class="module-tag">Module 2 : ChatGPT</div>
           <h1 class="module-title">ChatGPT, <em>GPT-5</em></h1>
           <p class="module-desc">L'outil le plus polyvalent du marché. Exceptionnel pour la génération de texte, la créativité et le code. Moins fiable sur les données chiffrées sans outil dédié.</p>
+        
+        <div class="divider"></div>
+        <h2>Sources &amp; données</h2>
+        <div class="sources-block">
+          <div class="sources-block-title">Entraînement · Accès · Confidentialité</div>
+          <table class="sources-table"><tbody><tr><td><span class="source-label">Sources</span><span class="source-value ">Web public, livres, GitHub, Wikipedia, Reddit. Coupure : début 2025.</span></td><td><span class="source-label">Connexion web</span><span class="source-value ok">Oui : recherche activable (mode o3)</span></td><td><span class="source-label">Contexte</span><span class="source-value ">128 000 tokens (~96 000 mots)</span></td></tr><tr><td><span class="source-label">Modèle</span><span class="source-value ">GPT-5 (Plus/Pro), GPT-4o mini (gratuit)</span></td><td><span class="source-label">Hébergement</span><span class="source-value warn">Serveurs US (Microsoft Azure)</span></td><td><span class="source-label">RGPD</span><span class="source-value warn">Plan Team/Enterprise : données non utilisées pour l'entraînement</span></td></tr></tbody></table>
         </div>
+</div>
         <div class="do-dont">
           <div class="do-block">
             <h3>Où il excelle</h3>
@@ -1998,15 +2005,7 @@
           <div class="source-label">RGPD / confidentialité</div>
           <div class="source-value warn">Plan Team/Enterprise : données non utilisées pour l'entraînement</div>
         </div>
-        </div>
-
-        <div class="divider"></div>
-        <h2>Sources &amp; données</h2>
-        <div class="sources-block">
-          <table class="sources-table"><tbody><tr><td><span class="source-label">Sources d'entraînement</span><span class="source-value ">Web public, livres, GitHub, Wikipedia, Reddit. Coupure : début 2025.</span></td><td><span class="source-label">Connexion web</span><span class="source-value ok">Oui : recherche activable (mode o3)</span></td><td><span class="source-label">Fenêtre de contexte</span><span class="source-value ">128 000 tokens (~96 000 mots)</span></td></tr><tr><td><span class="source-label">Modèle actuel</span><span class="source-value ">GPT-5 (Plus/Pro) · GPT-4o mini (gratuit)</span></td><td><span class="source-label">Hébergement</span><span class="source-value warn">Serveurs US (Microsoft Azure)</span></td><td><span class="source-label">RGPD</span><span class="source-value warn">Plan Team/Enterprise : données non utilisées pour l'entraînement</span></td></tr></tbody></table>
-        </div>
-
-      </div>
+        </div>      </div>
 
       <!-- ══════════════════════════════════════════
            PAGE : CLAUDE
@@ -2016,7 +2015,14 @@
           <div class="module-tag">Module 3 : Claude</div>
           <h1 class="module-title">Claude, <em>Opus 4.6</em></h1>
           <p class="module-desc">Le plus rigoureux sur l'analyse longue. Signale ses incertitudes, résiste aux instructions contradictoires. Fenêtre de 200 000 tokens, l'équivalent de 2 romans denses en une session.</p>
+        
+        <div class="divider"></div>
+        <h2>Sources &amp; données</h2>
+        <div class="sources-block">
+          <div class="sources-block-title">Entraînement · Accès · Confidentialité</div>
+          <table class="sources-table"><tbody><tr><td><span class="source-label">Sources</span><span class="source-value ">Web public, livres, code, données publiques. Coupure : début 2025.</span></td><td><span class="source-label">Connexion web</span><span class="source-value warn">Non : pas de connexion web native</span></td><td><span class="source-label">Contexte</span><span class="source-value ok">200 000 tokens (~150 000 mots), point fort distinctif</span></td></tr><tr><td><span class="source-label">Modèle</span><span class="source-value ">Claude Sonnet 4.6 (Pro), Claude Opus 4.6 (Max)</span></td><td><span class="source-label">Hébergement</span><span class="source-value warn">Serveurs US (AWS)</span></td><td><span class="source-label">RGPD</span><span class="source-value warn">Plan Pro/Team/Enterprise : données non utilisées pour l'entraînement</span></td></tr></tbody></table>
         </div>
+</div>
         <div class="do-dont">
           <div class="do-block">
             <h3>Où il excelle</h3>
@@ -2060,15 +2066,7 @@
           <div class="source-label">RGPD / confidentialité</div>
           <div class="source-value warn">Plan Pro/Team/Enterprise : données non utilisées</div>
         </div>
-        </div>
-
-        <div class="divider"></div>
-        <h2>Sources &amp; données</h2>
-        <div class="sources-block">
-          <table class="sources-table"><tbody><tr><td><span class="source-label">Sources d'entraînement</span><span class="source-value ">Web public, livres, code, données publiques. Coupure : début 2025.</span></td><td><span class="source-label">Connexion web</span><span class="source-value warn">Non : pas de connexion web native</span></td><td><span class="source-label">Fenêtre de contexte</span><span class="source-value ok">200 000 tokens (~150 000 mots) : point fort distinctif</span></td></tr><tr><td><span class="source-label">Modèle actuel</span><span class="source-value ">Claude Sonnet 4.6 (Pro) · Claude Opus 4.6 (Max)</span></td><td><span class="source-label">Hébergement</span><span class="source-value warn">Serveurs US (AWS)</span></td><td><span class="source-label">RGPD</span><span class="source-value warn">Plan Pro/Team/Enterprise : données non utilisées pour l'entraînement</span></td></tr></tbody></table>
-        </div>
-
-      </div>
+        </div>      </div>
 
       <!-- ══════════════════════════════════════════
            PAGE : GEMINI
@@ -2078,7 +2076,14 @@
           <div class="module-tag">Module 4 : Gemini</div>
           <h1 class="module-title">Gemini, <em>2.5 Pro</em></h1>
           <p class="module-desc">L'outil de référence dans Google Workspace. Lit vos fichiers Drive, Gmail, Docs directement, sans copier-coller. Son avantage est dans l'intégration native, pas dans l'usage hors écosystème.</p>
+        
+        <div class="divider"></div>
+        <h2>Sources &amp; données</h2>
+        <div class="sources-block">
+          <div class="sources-block-title">Entraînement · Accès · Confidentialité</div>
+          <table class="sources-table"><tbody><tr><td><span class="source-label">Sources</span><span class="source-value ">Web public + données Google exclusives : Search, YouTube, Maps, Gmail anonymisé.</span></td><td><span class="source-label">Connexion web</span><span class="source-value ok">Oui : connexion web permanente par défaut</span></td><td><span class="source-label">Contexte</span><span class="source-value ok">1 million de tokens (Gemini 2.5 Pro)</span></td></tr><tr><td><span class="source-label">Modèle</span><span class="source-value ">Gemini 2.5 Pro (AI Pro), Flash 2.0 (gratuit)</span></td><td><span class="source-label">Hébergement</span><span class="source-value warn">Serveurs US (Google Cloud)</span></td><td><span class="source-label">RGPD</span><span class="source-value warn">Workspace Business/Enterprise : données protégées</span></td></tr></tbody></table>
         </div>
+</div>
         <div class="do-dont">
           <div class="do-block">
             <h3>Où il excelle</h3>
@@ -2123,15 +2128,7 @@
           <div class="source-label">RGPD / confidentialité</div>
           <div class="source-value warn">Workspace Business/Enterprise : données protégées</div>
         </div>
-        </div>
-
-        <div class="divider"></div>
-        <h2>Sources &amp; données</h2>
-        <div class="sources-block">
-          <table class="sources-table"><tbody><tr><td><span class="source-label">Sources d'entraînement</span><span class="source-value ">Web public + données Google exclusives : Search, YouTube, Maps, Gmail anonymisé.</span></td><td><span class="source-label">Connexion web</span><span class="source-value ok">Oui : connexion web permanente par défaut</span></td><td><span class="source-label">Fenêtre de contexte</span><span class="source-value ok">1 million de tokens (Gemini 2.5 Pro)</span></td></tr><tr><td><span class="source-label">Modèle actuel</span><span class="source-value ">Gemini 2.5 Pro (AI Pro) · Flash 2.0 (gratuit)</span></td><td><span class="source-label">Hébergement</span><span class="source-value warn">Serveurs US (Google Cloud)</span></td><td><span class="source-label">RGPD</span><span class="source-value warn">Workspace Business/Enterprise : données protégées</span></td></tr></tbody></table>
-        </div>
-
-      </div>
+        </div>      </div>
 
       <!-- ══════════════════════════════════════════
            PAGE : COPILOT
@@ -2141,7 +2138,14 @@
           <div class="module-tag">Module 5 : Microsoft Copilot</div>
           <h1 class="module-title">Microsoft <em>Copilot</em></h1>
           <p class="module-desc">L'outil qui transforme vos données Microsoft 365 en actions : emails, fichiers, réunions, données internes. Sa valeur est conditionnée au plan M365 payant.</p>
+        
+        <div class="divider"></div>
+        <h2>Sources &amp; données</h2>
+        <div class="sources-block">
+          <div class="sources-block-title">Entraînement · Accès · Confidentialité</div>
+          <table class="sources-table"><tbody><tr><td><span class="source-label">Sources</span><span class="source-value ">Base GPT-5 + index Bing temps réel + (M365 payant) vos données internes.</span></td><td><span class="source-label">Connexion web</span><span class="source-value ok">Oui : Bing intégré par défaut</span></td><td><span class="source-label">Contexte</span><span class="source-value warn">Limité sur données internes selon la config M365</span></td></tr><tr><td><span class="source-label">Modèle</span><span class="source-value ">GPT-5 (M365 Copilot payant), Copilot Chat (gratuit)</span></td><td><span class="source-label">Hébergement</span><span class="source-value warn">Serveurs US/EU selon config Enterprise</span></td><td><span class="source-label">RGPD</span><span class="source-value warn">Enterprise : données non utilisées. Config DSI requise.</span></td></tr></tbody></table>
         </div>
+</div>
         <div class="do-dont">
           <div class="do-block">
             <h3>Où il excelle</h3>
@@ -2186,15 +2190,7 @@
           <div class="source-label">RGPD / confidentialité</div>
           <div class="source-value ok">Enterprise : données non utilisées pour l'entraînement. Config DSI requise.</div>
         </div>
-        </div>
-
-        <div class="divider"></div>
-        <h2>Sources &amp; données</h2>
-        <div class="sources-block">
-          <table class="sources-table"><tbody><tr><td><span class="source-label">Sources d'entraînement</span><span class="source-value ">Base GPT-5 + index Bing temps réel + (M365 payant) vos données internes.</span></td><td><span class="source-label">Connexion web</span><span class="source-value ok">Oui : Bing intégré par défaut</span></td><td><span class="source-label">Fenêtre de contexte</span><span class="source-value warn">Limité sur données internes selon la config M365</span></td></tr><tr><td><span class="source-label">Modèle actuel</span><span class="source-value ">GPT-5 (M365 Copilot payant) · Copilot Chat (gratuit)</span></td><td><span class="source-label">Hébergement</span><span class="source-value warn">Serveurs US/EU selon config Enterprise</span></td><td><span class="source-label">RGPD</span><span class="source-value warn">Enterprise : données non utilisées. Config DSI requise.</span></td></tr></tbody></table>
-        </div>
-
-      </div>
+        </div>      </div>
 
       <!-- ══════════════════════════════════════════
            PAGE : PERPLEXITY
@@ -2204,7 +2200,14 @@
           <div class="module-tag">Module 6 : Perplexity</div>
           <h1 class="module-title">Perplexity, <em>moteur IA sourcé</em></h1>
           <p class="module-desc">Chaque affirmation est sourcée, chaque source est vérifiable en un clic. Incomparable pour la veille factuelle. Pas conçu pour rédiger ou créer du contenu.</p>
+        
+        <div class="divider"></div>
+        <h2>Sources &amp; données</h2>
+        <div class="sources-block">
+          <div class="sources-block-title">Entraînement · Accès · Confidentialité</div>
+          <table class="sources-table"><tbody><tr><td><span class="source-label">Sources</span><span class="source-value ">100 % temps réel : recherche web systématique sur chaque requête.</span></td><td><span class="source-label">Connexion web</span><span class="source-value ok">Oui : 100 % web, principe fondamental</span></td><td><span class="source-label">Contexte</span><span class="source-value ">Standard : adapté à la recherche factuelle</span></td></tr><tr><td><span class="source-label">Modèle</span><span class="source-value ">Surcouche sur GPT-5, Claude ou Gemini selon la requête</span></td><td><span class="source-label">Hébergement</span><span class="source-value warn">Serveurs US</span></td><td><span class="source-label">RGPD</span><span class="source-value bad">Pas de contrat DPA public. Ne pas y mettre de données confidentielles.</span></td></tr></tbody></table>
         </div>
+</div>
         <div class="do-dont">
           <div class="do-block">
             <h3>Où il excelle</h3>
@@ -2249,15 +2252,7 @@
           <div class="source-label">RGPD / confidentialité</div>
           <div class="source-value warn">Pas de contrat DPA public. Ne pas y mettre de données confidentielles.</div>
         </div>
-        </div>
-
-        <div class="divider"></div>
-        <h2>Sources &amp; données</h2>
-        <div class="sources-block">
-          <table class="sources-table"><tbody><tr><td><span class="source-label">Sources d'entraînement</span><span class="source-value ">100 % temps réel : recherche web systématique sur chaque requête.</span></td><td><span class="source-label">Connexion web</span><span class="source-value ok">Oui : 100 % web, principe fondamental</span></td><td><span class="source-label">Fenêtre de contexte</span><span class="source-value ">Standard : adapté à la recherche factuelle, pas aux longs documents</span></td></tr><tr><td><span class="source-label">Modèle actuel</span><span class="source-value ">Surcouche sur GPT-5, Claude ou Gemini selon la requête</span></td><td><span class="source-label">Hébergement</span><span class="source-value warn">Serveurs US</span></td><td><span class="source-label">RGPD</span><span class="source-value bad">Pas de contrat DPA public. Ne pas y mettre de données confidentielles.</span></td></tr></tbody></table>
-        </div>
-
-      </div>
+        </div>      </div>
 
       <!-- ══════════════════════════════════════════
            PAGE : LE CHAT
@@ -2267,7 +2262,14 @@
           <div class="module-tag">Module 7 : Le Chat · Mistral AI 🇫🇷</div>
           <h1 class="module-title">Le Chat, <em>souverain européen</em></h1>
           <p class="module-desc">Seul outil souverain de ce comparatif. Données hébergées en Europe, RGPD natif, mémoire persistante, génération à ~1 000 mots/seconde.</p>
+        
+        <div class="divider"></div>
+        <h2>Sources &amp; données</h2>
+        <div class="sources-block">
+          <div class="sources-block-title">Entraînement · Accès · Confidentialité</div>
+          <table class="sources-table"><tbody><tr><td><span class="source-label">Sources</span><span class="source-value ">Web public (priorité français), livres, code. Modèles open source Mistral.</span></td><td><span class="source-label">Connexion web</span><span class="source-value ok">Oui : Pro = partenariat AFP pour actualités vérifiées</span></td><td><span class="source-label">Contexte</span><span class="source-value ">32 000 tokens (Mistral Large)</span></td></tr><tr><td><span class="source-label">Modèle</span><span class="source-value ">Mistral Large 2 (Pro), Mistral 7B (gratuit)</span></td><td><span class="source-label">Hébergement</span><span class="source-value ok">Serveurs EU uniquement (Paris). Aucune loi américaine applicable.</span></td><td><span class="source-label">RGPD</span><span class="source-value ok">RGPD natif sans configuration. Désactiver le partage en version gratuite.</span></td></tr></tbody></table>
         </div>
+</div>
         <div class="do-dont">
           <div class="do-block">
             <h3>Où il excelle</h3>
@@ -2313,15 +2315,7 @@
           <div class="source-label">RGPD / confidentialité</div>
           <div class="source-value ok">RGPD natif sans configuration. Désactiver le partage en version gratuite.</div>
         </div>
-        </div>
-
-        <div class="divider"></div>
-        <h2>Sources &amp; données</h2>
-        <div class="sources-block">
-          <table class="sources-table"><tbody><tr><td><span class="source-label">Sources d'entraînement</span><span class="source-value ">Web public (priorité français), livres, code. Modèles open source Mistral.</span></td><td><span class="source-label">Connexion web</span><span class="source-value ok">Oui : Pro : partenariat AFP pour actualités vérifiées</span></td><td><span class="source-label">Fenêtre de contexte</span><span class="source-value ">32 000 tokens (Mistral Large)</span></td></tr><tr><td><span class="source-label">Modèle actuel</span><span class="source-value ">Mistral Large 2 (Pro) · Mistral 7B (gratuit)</span></td><td><span class="source-label">Hébergement</span><span class="source-value ok">Serveurs EU uniquement (Paris). Aucune loi américaine applicable.</span></td><td><span class="source-label">RGPD</span><span class="source-value ok">RGPD natif sans configuration. Désactiver le partage en version gratuite.</span></td></tr></tbody></table>
-        </div>
-
-      </div>
+        </div>      </div>
 
       <!-- ══════════════════════════════════════════
            PAGE : POE
@@ -2331,7 +2325,14 @@
           <div class="module-tag">Module 8 : Poe (Quora)</div>
           <h1 class="module-title">Poe, <em>100+ modèles</em></h1>
           <p class="module-desc">L'interface unique qui donne accès à ChatGPT, Claude, Gemini, Llama et plus de 100 modèles dans une seule app, avec un abonnement unique.</p>
+        
+        <div class="divider"></div>
+        <h2>Sources &amp; données</h2>
+        <div class="sources-block">
+          <div class="sources-block-title">Entraînement · Accès · Confidentialité</div>
+          <table class="sources-table"><tbody><tr><td><span class="source-label">Sources</span><span class="source-value ">Accès à 100+ modèles : GPT-5, Claude, Gemini, Llama, Mistral et plus.</span></td><td><span class="source-label">Connexion web</span><span class="source-value ">Selon le modèle choisi</span></td><td><span class="source-label">Contexte</span><span class="source-value ">Selon le modèle choisi</span></td></tr><tr><td><span class="source-label">Modèle</span><span class="source-value ">Choix parmi 100+ modèles (abonnement unique)</span></td><td><span class="source-label">Hébergement</span><span class="source-value bad">Serveurs US Poe + serveurs du modèle : double exposition.</span></td><td><span class="source-label">RGPD</span><span class="source-value bad">Données transitent par Poe avant le modèle. Éviter toute donnée sensible.</span></td></tr></tbody></table>
         </div>
+</div>
         <div class="do-dont">
           <div class="do-block">
             <h3>Où il excelle</h3>
@@ -2375,15 +2376,7 @@
           <div class="source-label">RGPD / confidentialité</div>
           <div class="source-value bad">Données transitent par Poe avant le modèle. Éviter toute donnée sensible.</div>
         </div>
-        </div>
-
-        <div class="divider"></div>
-        <h2>Sources &amp; données</h2>
-        <div class="sources-block">
-          <table class="sources-table"><tbody><tr><td><span class="source-label">Sources d'entraînement</span><span class="source-value ">Accès à 100+ modèles : GPT-5, Claude, Gemini, Llama, Mistral et plus.</span></td><td><span class="source-label">Connexion web</span><span class="source-value ">Selon le modèle choisi</span></td><td><span class="source-label">Fenêtre de contexte</span><span class="source-value ">Selon le modèle choisi</span></td></tr><tr><td><span class="source-label">Modèle actuel</span><span class="source-value ">Choix parmi 100+ modèles (abonnement unique)</span></td><td><span class="source-label">Hébergement</span><span class="source-value bad">Serveurs US Poe + serveurs du modèle : double exposition.</span></td><td><span class="source-label">RGPD</span><span class="source-value bad">Données transitent par Poe avant le modèle. Éviter toute donnée sensible.</span></td></tr></tbody></table>
-        </div>
-
-      </div>
+        </div>      </div>
 
       <!-- ══════════════════════════════════════════
            PAGE : SCÉNARIOS
