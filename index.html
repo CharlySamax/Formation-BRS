@@ -36,76 +36,35 @@
   }
 
 
-  /* ── PASSWORD GATE ──────────────────────────── */
+  /* PASSWORD GATE */
   #gate {
     position: fixed; inset: 0;
     background: var(--navy);
     display: flex; align-items: center; justify-content: center;
     z-index: 9999;
-    flex-direction: column;
-    gap: 0;
   }
-  .gate-inner {
-    text-align: center;
-    max-width: 380px;
-    width: 100%;
-    padding: 0 24px;
-  }
-  .gate-logo {
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    color: var(--orange);
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    font-weight: 700;
-  }
-  .gate-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 32px;
-    font-weight: 800;
-    color: #fff;
-    margin-bottom: 32px;
-    line-height: 1.1;
-    letter-spacing: -0.01em;
-  }
-  .gate-input {
-    width: 100%;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 8px;
-    padding: 14px 18px;
-    color: #fff;
-    font-family: 'Barlow', sans-serif;
-    font-size: 15px;
-    letter-spacing: 0.1em;
-    outline: none;
-    margin-bottom: 10px;
-    transition: border-color 0.2s;
-  }
+  .gate-inner { text-align: center; max-width: 380px; width: 100%; padding: 0 24px; }
+  .gate-logo { font-size: 11px; letter-spacing: 0.2em; color: var(--orange); text-transform: uppercase; margin-bottom: 10px; font-weight: 700; }
+  .gate-title { font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 800; color: #fff; margin-bottom: 32px; line-height: 1.1; }
+  .gate-input { width: 100%; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 14px 18px; color: #fff; font-family: 'Barlow', sans-serif; font-size: 15px; letter-spacing: 0.1em; outline: none; margin-bottom: 10px; transition: border-color 0.2s; }
   .gate-input:focus { border-color: var(--orange); }
-  .gate-input.error { border-color: #C0392B; }
   .gate-input::placeholder { color: rgba(255,255,255,0.4); letter-spacing: 0.05em; }
-  .gate-btn {
-    width: 100%;
-    background: var(--orange);
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 14px;
-    font-family: 'Barlow', sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    letter-spacing: 0.04em;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
+  .gate-btn { width: 100%; background: var(--orange); color: #fff; border: none; border-radius: 8px; padding: 14px; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 15px; cursor: pointer; transition: background 0.2s; }
   .gate-btn:hover { background: #c05316; }
-  .gate-error {
-    color: #f87171;
-    font-size: 13px;
-    margin-top: 8px;
-    display: none;
-  }
+  .gate-error { color: #f87171; font-size: 13px; margin-top: 8px; display: none; }
+  /* BRS TOP NAV */
+  .brs-topnav { display: flex; flex-wrap: wrap; gap: 6px; padding: 12px 16px; background: var(--orange); border-radius: var(--radius); margin-bottom: 32px; align-items: center; }
+  .brs-topnav-label { font-size: 10px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-right: 6px; white-space: nowrap; }
+  .brs-topnav-btn { padding: 6px 14px; border-radius: 5px; background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.3); font-family: inherit; font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.15s; white-space: nowrap; }
+  .brs-topnav-btn:hover, .brs-topnav-btn.current { background: #fff; color: var(--orange); }
+  /* MODULE BRS sidebar button */
+  .nav-item-brs-header { background: var(--orange) !important; color: #fff !important; font-weight: 800 !important; font-size: 14px !important; border-radius: 7px; margin: 4px 0; justify-content: center; text-align: center; }
+  .nav-item-brs-header:hover { background: #c05316 !important; }
+  /* HOME BRS BLOCK */
+  .hero-brs-block { margin: 0 0 28px; padding: 20px 24px; background: var(--orange); border-radius: var(--radius); }
+  .hero-brs-label { font-size: 12px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: #fff; margin-bottom: 14px; }
+  .hero-situation-chip.brs { background: rgba(255,255,255,0.2); color: #fff; border-color: rgba(255,255,255,0.4); }
+  .hero-situation-chip.brs:hover { background: #fff; color: var(--orange); border-color: #fff; }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -301,13 +260,7 @@
   }
   .btn-ghost:hover { color: var(--navy); border-color: var(--navy); }
 
-  .btn-home {
-    background: var(--navy);
-    color: #fff;
-    font-weight: 700;
-    border: none;
-    font-size: 13px;
-  }
+  .btn-home { background: var(--navy); color: #fff; font-weight: 700; border: none; font-size: 13px; }
   .btn-home:hover { background: var(--orange); }
 
   .btn-accent {
@@ -796,115 +749,12 @@
     font-weight: 500;
   }
 
-  
-  .dont-block .checklist li::before { color: var(--danger); }
-  .do-block .checklist li::before   { color: var(--success); }
-
   .checklist li::before {
     content: '→';
     color: var(--orange);
     flex-shrink: 0;
     margin-top: 1px;
     font-weight: 700;
-  }
-
-
-  /* BRS page top nav */
-  .brs-topnav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    padding: 14px 16px;
-    background: var(--orange);
-    border-radius: var(--radius);
-    margin-bottom: 36px;
-    align-items: center;
-  }
-  .brs-topnav-label {
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.7);
-    margin-right: 6px;
-    white-space: nowrap;
-  }
-  .brs-topnav-btn {
-    padding: 6px 14px;
-    border-radius: 5px;
-    background: rgba(255,255,255,0.15);
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.3);
-    font-family: inherit;
-    font-size: 13px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.15s;
-    white-space: nowrap;
-  }
-  .brs-topnav-btn:hover { background: #fff; color: var(--orange); }
-  .brs-topnav-btn.current { background: #fff; color: var(--orange); }
-
-
-  /* Sources block */
-  .sources-block {
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 20px 24px;
-    margin: 0 0 24px;
-  }
-  .sources-block-title {
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 16px;
-  }
-  .sources-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
-  .sources-table td {
-    padding: 8px 12px 8px 0;
-    vertical-align: top;
-    border-bottom: 1px solid var(--border);
-    width: 33.33%;
-    word-break: break-word;
-  }
-  .sources-table tr:last-child td { border-bottom: none; }
-  .source-label {
-    font-size: 10px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--muted);
-    display: block;
-    margin-bottom: 3px;
-  }
-  .source-value {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--navy);
-    line-height: 1.4;
-    display: block;
-  }
-  .source-value.ok   { color: #1A6B3C; }
-  .source-value.warn { color: #B7791F; }
-  .source-value.bad  { color: #C0392B; }
-
-
-  .nav-item-brs-header {
-    background: var(--orange) !important;
-    color: #fff !important;
-    font-weight: 800 !important;
-    font-size: 14px !important;
-    letter-spacing: 0.04em;
-    border-radius: 7px;
-    margin: 4px 0;
-    justify-content: center;
-    text-align: center;
-  }
-  .nav-item-brs-header:hover {
-    background: #c05316 !important;
   }
 
   /* ── MOBILE TOGGLE ──────────────────────── */
@@ -1311,22 +1161,6 @@
     height: 1px;
     background: var(--border);
   }
-
-  .hero-brs-block {
-    margin: 0 0 28px;
-    padding: 20px 24px;
-    background: var(--orange);
-    border-radius: var(--radius);
-  }
-  .hero-brs-label {
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: #fff;
-    margin-bottom: 14px;
-  }
-
   .hero-situation-chips {
     display: flex;
     flex-wrap: wrap;
@@ -1349,14 +1183,14 @@
     border-color: var(--blue);
   }
   .hero-situation-chip.brs {
-    background: rgba(255,255,255,0.2);
-    color: #fff;
-    border-color: rgba(255,255,255,0.4);
+    background: rgba(217,95,24,0.08);
+    color: var(--orange);
+    border-color: rgba(217,95,24,0.2);
   }
   .hero-situation-chip.brs:hover {
-    background: #fff;
-    color: var(--orange);
-    border-color: #fff;
+    background: var(--orange);
+    color: #fff;
+    border-color: var(--orange);
   }
 
   /* ── SITUATION TABLE ────────────────────── */
@@ -1573,102 +1407,52 @@
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
       <div class="sidebar-logo">Bien utiliser<br>chaque outil IA</div>
-      <div class="sidebar-sub">BRS · Mars 2026</div>
+      <div class="sidebar-sub">Formation · Mars 2026</div>
     </div>
 
     <nav class="sidebar-nav">
       <div class="nav-section">
         <div class="nav-section-title nav-section-big">Introduction</div>
-        <button class="nav-item active" onclick="showPage('intro', this)">
-          <span class="nav-dot"></span>Vue d'ensemble
-        </button>
+        <button class="nav-item active" onclick="showPage('intro', this)"><span class="nav-dot"></span>Vue d'ensemble</button>
       </div>
-
       <div class="nav-section">
         <div class="nav-section-title nav-section-big">Comprendre les LLM</div>
-        <button class="nav-item" onclick="showPage('llm-fonctionnement', this)">
-          <span class="nav-dot"></span>Fonctionnement réel
-        </button>
-        <button class="nav-item" onclick="showPage('llm-limites', this)">
-          <span class="nav-dot"></span>Limites structurelles
-        </button>
-
+        <button class="nav-item" onclick="showPage('llm-fonctionnement', this)"><span class="nav-dot"></span>Fonctionnement réel</button>
+        <button class="nav-item" onclick="showPage('llm-limites', this)"><span class="nav-dot"></span>Limites structurelles</button>
+        <button class="nav-item" onclick="showPage('llm-sources', this)"><span class="nav-dot"></span>Sources et données</button>
       </div>
-
       <div class="nav-section">
         <div class="nav-section-title nav-section-big">Outils</div>
-        <button class="nav-item" onclick="showPage('chatgpt', this)">
-          <span class="nav-dot"></span>ChatGPT
-        </button>
-        <button class="nav-item" onclick="showPage('claude', this)">
-          <span class="nav-dot"></span>Claude
-        </button>
-        <button class="nav-item" onclick="showPage('gemini', this)">
-          <span class="nav-dot"></span>Gemini
-        </button>
-        <button class="nav-item" onclick="showPage('copilot', this)">
-          <span class="nav-dot"></span>Microsoft Copilot
-        </button>
-        <button class="nav-item" onclick="showPage('perplexity', this)">
-          <span class="nav-dot"></span>Perplexity
-        </button>
-        <button class="nav-item" onclick="showPage('lechat', this)">
-          <span class="nav-dot"></span>Le Chat (Mistral)
-        </button>
-        <button class="nav-item" onclick="showPage('poe', this)">
-          <span class="nav-dot"></span>Poe (Quora)
-        </button>
-        <button class="nav-item" onclick="showPage('besoin-ia', this)">
-          <span class="nav-dot"></span>Un besoin, une IA
-        </button>
-        <button class="nav-item" onclick="showPage('confidentialite', this)">
-          <span class="nav-dot"></span>Confidentialité & RGPD
-        </button>
-        <button class="nav-item" onclick="showPage('tarifs', this)">
-          <span class="nav-dot"></span>Tarifs · mars 2026
-        </button>
+        <button class="nav-item" onclick="showPage('chatgpt', this)"><span class="nav-dot"></span>ChatGPT</button>
+        <button class="nav-item" onclick="showPage('claude', this)"><span class="nav-dot"></span>Claude</button>
+        <button class="nav-item" onclick="showPage('gemini', this)"><span class="nav-dot"></span>Gemini</button>
+        <button class="nav-item" onclick="showPage('copilot', this)"><span class="nav-dot"></span>Copilot</button>
+        <button class="nav-item" onclick="showPage('perplexity', this)"><span class="nav-dot"></span>Perplexity</button>
+        <button class="nav-item" onclick="showPage('lechat', this)"><span class="nav-dot"></span>Le Chat 🇫🇷</button>
+        <button class="nav-item" onclick="showPage('poe', this)"><span class="nav-dot"></span>Poe</button>
+        <button class="nav-item" onclick="showPage('besoin-ia', this)"><span class="nav-dot"></span>Un besoin, une IA</button>
+        <button class="nav-item" onclick="showPage('confidentialite', this)"><span class="nav-dot"></span>Confidentialité &amp; RGPD</button>
+        <button class="nav-item" onclick="showPage('tarifs', this)"><span class="nav-dot"></span>Tarifs · mars 2026</button>
       </div>
-
       <div class="nav-section">
         <div class="nav-section-title nav-section-big">Utiliser</div>
-        <button class="nav-item" onclick="showPage('scenarios', this)">
-          <span class="nav-dot"></span>Situations générales
-        </button>
-        <button class="nav-item" onclick="showPage('workflows', this)">
-          <span class="nav-dot"></span>Enchaîner les outils
-        </button>
-        <button class="nav-item" onclick="showPage('delegation', this)">
-          <span class="nav-dot"></span>Ce qu'on délègue
-        </button>
+        <button class="nav-item" onclick="showPage('scenarios', this)"><span class="nav-dot"></span>Situations générales</button>
+        <button class="nav-item" onclick="showPage('workflows', this)"><span class="nav-dot"></span>Enchaîner les outils</button>
+        <button class="nav-item" onclick="showPage('delegation', this)"><span class="nav-dot"></span>Ce qu'on délègue</button>
       </div>
-
-
       <div class="nav-section">
         <div class="nav-section-title nav-section-big">Prompting</div>
-        <button class="nav-item" onclick="showPage('regles-prompt', this)">
-          <span class="nav-dot"></span>Règles universelles
-        </button>
-        <button class="nav-item" onclick="showPage('patterns', this)">
-          <span class="nav-dot"></span>Patterns à éviter
-        </button>
-        <button class="nav-item" onclick="showPage('techniques', this)">
-          <span class="nav-dot"></span>Techniques avancées
-        </button>
+        <button class="nav-item" onclick="showPage('regles-prompt', this)"><span class="nav-dot"></span>Règles universelles</button>
+        <button class="nav-item" onclick="showPage('patterns', this)"><span class="nav-dot"></span>Patterns à éviter</button>
+        <button class="nav-item" onclick="showPage('techniques', this)"><span class="nav-dot"></span>Techniques avancées</button>
       </div>
-
       <div class="nav-section">
         <div class="nav-section-title nav-section-big">Valider</div>
-        <button class="nav-item" onclick="showPage('quiz', this)">
-          <span class="nav-dot"></span>Quiz de validation
-        </button>
+        <button class="nav-item" onclick="showPage('quiz', this)"><span class="nav-dot"></span>Quiz de validation</button>
       </div>
-
       <div class="nav-section">
-        <button class="nav-item nav-item-brs-header" onclick="goTo('brs-cas')">
-          ★ &nbsp;Module BRS
-        </button>
+        <button class="nav-item nav-item-brs-header" onclick="goTo('brs-cas')">★ &nbsp;Module BRS</button>
       </div>
-
     </nav>
 
     <div class="progress-bar">
@@ -1705,9 +1489,10 @@
           <div class="hero-inner">
             <div class="hero-eyebrow">BRS Shipbrokers · Formation interne</div>
             <h1 class="hero-title">Comprendre pour utiliser l'IA<br>avec <em>efficacité et vigilance</em></h1>
+
             <div class="hero-search-wrap" id="hero-search-wrap">
               <span class="hero-search-icon">🔍</span>
-              <input class="hero-search" id="hero-search" type="text" placeholder="Chercher une situation : traduire, contrat, veille, charterparty..." autocomplete="off" oninput="heroSearch(this.value)" onkeydown="heroSearchKey(event)">
+              <input class="hero-search" id="hero-search" type="text" placeholder="Chercher une situation : traduire, contrat, veille, charterparty..." autocomplete="off" oninput="heroSearch(this.value)" onkeydown="heroSearchKey(event)">
               <div class="hero-search-results" id="hero-search-results"></div>
             </div>
 
@@ -1716,38 +1501,35 @@
             <div class="hero-entry-group" style="margin-bottom:0;">
               <div class="hero-entry-label">Accès par outil</div>
               <div class="hero-tools">
-                <button class="hero-tool-chip" onclick="showPage('chatgpt', document.querySelector('[onclick*=\'chatgpt\']'))">ChatGPT</button>
-                <button class="hero-tool-chip" onclick="showPage('claude', document.querySelector('[onclick*=\'claude\']'))">Claude</button>
-                <button class="hero-tool-chip" onclick="showPage('gemini', document.querySelector('[onclick*=\'gemini\']'))">Gemini</button>
-                <button class="hero-tool-chip" onclick="showPage('copilot', document.querySelector('[onclick*=\'copilot\']'))">Copilot</button>
-                <button class="hero-tool-chip" onclick="showPage('perplexity', document.querySelector('[onclick*=\'perplexity\']'))">Perplexity</button>
-                <button class="hero-tool-chip" onclick="showPage('lechat', document.querySelector('[onclick*=\'lechat\']'))">Le Chat 🇫🇷</button>
-                <button class="hero-tool-chip" onclick="showPage('poe', document.querySelector('[onclick*=\'poe\']'))">Poe</button>
+                <button class="hero-tool-chip" onclick="showPage('chatgpt', document.querySelector('[onclick*='chatgpt']'))">ChatGPT</button>
+                <button class="hero-tool-chip" onclick="showPage('claude', document.querySelector('[onclick*='claude']'))">Claude</button>
+                <button class="hero-tool-chip" onclick="showPage('gemini', document.querySelector('[onclick*='gemini']'))">Gemini</button>
+                <button class="hero-tool-chip" onclick="showPage('copilot', document.querySelector('[onclick*='copilot']'))">Copilot</button>
+                <button class="hero-tool-chip" onclick="showPage('perplexity', document.querySelector('[onclick*='perplexity']'))">Perplexity</button>
+                <button class="hero-tool-chip" onclick="showPage('lechat', document.querySelector('[onclick*='lechat']'))">Le Chat 🇫🇷</button>
+                <button class="hero-tool-chip" onclick="showPage('poe', document.querySelector('[onclick*='poe']'))">Poe</button>
               </div>
             </div>
 
-            <div class="hero-meta" style="margin:20px 0 28px;">
-              Sources : <span>Benoît Raphaël / Génération IA</span> · Harvard / BCG (2023)
-            </div>
+            <div class="hero-meta" style="margin:16px 0 24px;">Sources : <span>Benoît Raphaël / Génération IA</span> · Harvard / BCG (2023)</div>
 
             <div class="hero-brs-block">
               <div class="hero-brs-label">★ &nbsp;Module BRS</div>
               <div class="hero-situation-chips">
-                <button class="hero-situation-chip brs" onclick="showPage('brs-cas', document.querySelector('[onclick*=\'brs-cas\']'))">Cas d'usage</button>
-                <button class="hero-situation-chip brs" onclick="showPage('brs-situations', document.querySelector('[onclick*=\'brs-situations\']'))">Cas par métiers</button>
-                <button class="hero-situation-chip brs" onclick="showPage('brs-copilot', document.querySelector('[onclick*=\'brs-copilot\']'))">Copilot</button>
-                <button class="hero-situation-chip brs" onclick="showPage('brs-reflexes', document.querySelector('[onclick*=\'brs-reflexes\']'))">Réflexes IA</button>
-                <button class="hero-situation-chip brs" onclick="showPage('brs-delegation', document.querySelector('[onclick*=\'brs-delegation\']'))">Ce qu'on délègue chez BRS</button>
+                <button class="hero-situation-chip brs" onclick="goTo('brs-cas')">Cas d'usage</button>
+                <button class="hero-situation-chip brs" onclick="goTo('brs-situations')">Cas par métiers</button>
+                <button class="hero-situation-chip brs" onclick="goTo('brs-copilot')">Copilot chez BRS</button>
+                <button class="hero-situation-chip brs" onclick="goTo('brs-reflexes')">Réflexes IA</button>
+                <button class="hero-situation-chip brs" onclick="goTo('brs-delegation')">Ce qu'on délègue chez BRS</button>
               </div>
             </div>
 
             <button class="start-btn" onclick="navigate(1)">Commencer la formation →</button>
-
           </div>
         </div>
       </div>
 
-      <!-- ══════════════════════════════════════════
+            <!-- ══════════════════════════════════════════
            PAGE : LLM FONCTIONNEMENT
       ═══════════════════════════════════════════ -->
       <div class="page" id="page-llm-fonctionnement">
@@ -1951,14 +1733,8 @@
           <div class="module-tag">Module 2 : ChatGPT</div>
           <h1 class="module-title">ChatGPT, <em>GPT-5</em></h1>
           <p class="module-desc">L'outil le plus polyvalent du marché. Exceptionnel pour la génération de texte, la créativité et le code. Moins fiable sur les données chiffrées sans outil dédié.</p>
-        
-        <div class="divider"></div>
-        <h2>Sources &amp; données</h2>
-        <div class="sources-block">
-          <div class="sources-block-title">Entraînement · Accès · Confidentialité</div>
-          <table class="sources-table"><tbody><tr><td><span class="source-label">Sources</span><span class="source-value ">Web public, livres, GitHub, Wikipedia, Reddit. Coupure : début 2025.</span></td><td><span class="source-label">Connexion web</span><span class="source-value ok">Oui : recherche activable (mode o3)</span></td><td><span class="source-label">Contexte</span><span class="source-value ">128 000 tokens (~96 000 mots)</span></td></tr><tr><td><span class="source-label">Modèle</span><span class="source-value ">GPT-5 (Plus/Pro), GPT-4o mini (gratuit)</span></td><td><span class="source-label">Hébergement</span><span class="source-value warn">Serveurs US (Microsoft Azure)</span></td><td><span class="source-label">RGPD</span><span class="source-value warn">Plan Team/Enterprise : données non utilisées pour l'entraînement</span></td></tr></tbody></table>
         </div>
-</div>
+
         <div class="do-dont">
           <div class="do-block">
             <h3>Où il excelle</h3>
@@ -1985,27 +1761,13 @@
           <strong>⏱ Étude Nielsen (2023)</strong>
           ChatGPT fait surtout gagner du temps sur le brainstorming et le premier jet. En revanche, corriger un brouillon IA prend <em>plus de temps</em> qu'un brouillon personnel. Investissez en phase 1 (prompt), pas en phase 2 (correction).
         </div>
-        <div class="source-item">
-          <div class="source-label">Connexion web</div>
-          <div class="source-value ">Oui : recherche activable (mode o3)</div>
+
+        <div class="divider"></div>
+        <div class="info-box" style="font-size:15px;line-height:1.75;">
+          <strong>Sources &amp; données</strong><br>
+          Entraîné sur le web public, livres, GitHub, Wikipedia, Reddit (coupure début 2025). Connexion web activable. Fenêtre : 128 000 tokens. Modèle : GPT-5 (payant), GPT-4o mini (gratuit). Hébergement US. Données protégées en plan Team/Enterprise.
         </div>
-        <div class="source-item">
-          <div class="source-label">Fenêtre de contexte</div>
-          <div class="source-value ">128 000 tokens (~96 000 mots)</div>
-        </div>
-        <div class="source-item">
-          <div class="source-label">Modèle actuel</div>
-          <div class="source-value ">GPT-5 (Plus/Pro) · GPT-4o mini (gratuit)</div>
-        </div>
-        <div class="source-item">
-          <div class="source-label">Hébergement</div>
-          <div class="source-value ">Serveurs US (Microsoft Azure)</div>
-        </div>
-        <div class="source-item">
-          <div class="source-label">RGPD / confidentialité</div>
-          <div class="source-value warn">Plan Team/Enterprise : données non utilisées pour l'entraînement</div>
-        </div>
-        </div>      </div>
+      </div>
 
       <!-- ══════════════════════════════════════════
            PAGE : CLAUDE
@@ -2015,14 +1777,8 @@
           <div class="module-tag">Module 3 : Claude</div>
           <h1 class="module-title">Claude, <em>Opus 4.6</em></h1>
           <p class="module-desc">Le plus rigoureux sur l'analyse longue. Signale ses incertitudes, résiste aux instructions contradictoires. Fenêtre de 200 000 tokens, l'équivalent de 2 romans denses en une session.</p>
-        
-        <div class="divider"></div>
-        <h2>Sources &amp; données</h2>
-        <div class="sources-block">
-          <div class="sources-block-title">Entraînement · Accès · Confidentialité</div>
-          <table class="sources-table"><tbody><tr><td><span class="source-label">Sources</span><span class="source-value ">Web public, livres, code, données publiques. Coupure : début 2025.</span></td><td><span class="source-label">Connexion web</span><span class="source-value warn">Non : pas de connexion web native</span></td><td><span class="source-label">Contexte</span><span class="source-value ok">200 000 tokens (~150 000 mots), point fort distinctif</span></td></tr><tr><td><span class="source-label">Modèle</span><span class="source-value ">Claude Sonnet 4.6 (Pro), Claude Opus 4.6 (Max)</span></td><td><span class="source-label">Hébergement</span><span class="source-value warn">Serveurs US (AWS)</span></td><td><span class="source-label">RGPD</span><span class="source-value warn">Plan Pro/Team/Enterprise : données non utilisées pour l'entraînement</span></td></tr></tbody></table>
         </div>
-</div>
+
         <div class="do-dont">
           <div class="do-block">
             <h3>Où il excelle</h3>
@@ -2045,28 +1801,33 @@
           </div>
         </div>
 
+        <h2>Do / Don't en pratique</h2>
+        <div class="card" style="margin-bottom:14px;">
+          <div class="technique-num">✓ Do</div>
+          <p style="margin:0;font-size:13.5px;"><strong>Confiez-lui vos documents longs avec balises XML.</strong><br>
+          Exemple&nbsp;: <code style="background:var(--cream);padding:2px 6px;border-radius:4px;font-size:12px;">&lt;document&gt;[Votre texte de 50+ pages]&lt;/document&gt;</code> : Identifie les 3 risques stratégiques absents de la conclusion.</p>
+        </div>
+        <div class="card" style="margin-bottom:14px;">
+          <div class="technique-num">✓ Do</div>
+          <p style="margin:0;font-size:13.5px;"><strong>Demandez le raisonnement avant la réponse.</strong><br>
+          «&nbsp;Avant de répondre, examine l'essence du problème et ses implications larges. Expose ta démarche. Ensuite seulement, donne ta recommandation.&nbsp;»</p>
+        </div>
+        <div class="card" style="margin-bottom:24px;">
+          <div class="technique-num">✓ Do</div>
+          <p style="margin:0;font-size:13.5px;"><strong>Utilisez les Projects pour un contexte persistant d'équipe.</strong><br>
+          Créez un Project «&nbsp;Client X&nbsp;» avec le brief, le ton de marque et les livrables : Claude les mémorise pour tous les membres.</p>
+        </div>
 
-        <div class="source-item">
-          <div class="source-label">Connexion web</div>
-          <div class="source-value ">Non : pas de connexion web native</div>
+        <div class="warn-box">
+          ⚠️ Ne demandez pas d'images ou de vidéos à Claude : il est centré texte et code. Pour les tâches multimodales créatives, utilisez ChatGPT (DALL-E) ou Gemini.
         </div>
-        <div class="source-item">
-          <div class="source-label">Fenêtre de contexte</div>
-          <div class="source-value ">200 000 tokens (~150 000 mots) : point fort distinctif</div>
+
+        <div class="divider"></div>
+        <div class="info-box" style="font-size:15px;line-height:1.75;">
+          <strong>Sources &amp; données</strong><br>
+          Entraîné sur le web public, livres, code (coupure début 2025). Pas de connexion web native. Fenêtre : 200 000 tokens, point fort distinctif. Modèle : Claude Sonnet 4.6 (Pro), Opus 4.6 (Max). Hébergement US. Données protégées en plan Pro/Team/Enterprise.
         </div>
-        <div class="source-item">
-          <div class="source-label">Modèle actuel</div>
-          <div class="source-value ">Claude Sonnet 4.6 (Pro) · Claude Opus 4.6 (Max)</div>
-        </div>
-        <div class="source-item">
-          <div class="source-label">Hébergement</div>
-          <div class="source-value ">Serveurs US (AWS)</div>
-        </div>
-        <div class="source-item">
-          <div class="source-label">RGPD / confidentialité</div>
-          <div class="source-value warn">Plan Pro/Team/Enterprise : données non utilisées</div>
-        </div>
-        </div>      </div>
+      </div>
 
       <!-- ══════════════════════════════════════════
            PAGE : GEMINI
@@ -2076,14 +1837,8 @@
           <div class="module-tag">Module 4 : Gemini</div>
           <h1 class="module-title">Gemini, <em>2.5 Pro</em></h1>
           <p class="module-desc">L'outil de référence dans Google Workspace. Lit vos fichiers Drive, Gmail, Docs directement, sans copier-coller. Son avantage est dans l'intégration native, pas dans l'usage hors écosystème.</p>
-        
-        <div class="divider"></div>
-        <h2>Sources &amp; données</h2>
-        <div class="sources-block">
-          <div class="sources-block-title">Entraînement · Accès · Confidentialité</div>
-          <table class="sources-table"><tbody><tr><td><span class="source-label">Sources</span><span class="source-value ">Web public + données Google exclusives : Search, YouTube, Maps, Gmail anonymisé.</span></td><td><span class="source-label">Connexion web</span><span class="source-value ok">Oui : connexion web permanente par défaut</span></td><td><span class="source-label">Contexte</span><span class="source-value ok">1 million de tokens (Gemini 2.5 Pro)</span></td></tr><tr><td><span class="source-label">Modèle</span><span class="source-value ">Gemini 2.5 Pro (AI Pro), Flash 2.0 (gratuit)</span></td><td><span class="source-label">Hébergement</span><span class="source-value warn">Serveurs US (Google Cloud)</span></td><td><span class="source-label">RGPD</span><span class="source-value warn">Workspace Business/Enterprise : données protégées</span></td></tr></tbody></table>
         </div>
-</div>
+
         <div class="do-dont">
           <div class="do-block">
             <h3>Où il excelle</h3>
@@ -2108,27 +1863,13 @@
           <strong>💡 Astuce pratique</strong>
           Dans Google Docs, tapez <strong>@Gemini</strong> pour invoquer l'IA directement dans votre document. Dans Sheets, Gemini analyse vos données en contexte réel, aucune exportation nécessaire.
         </div>
-        <div class="source-item">
-          <div class="source-label">Connexion web</div>
-          <div class="source-value ">Oui : connexion web permanente par défaut</div>
+
+        <div class="divider"></div>
+        <div class="info-box" style="font-size:15px;line-height:1.75;">
+          <strong>Sources &amp; données</strong><br>
+          Entraîné sur le web public et les données Google exclusives : Search, YouTube, Maps, Gmail anonymisé. Connexion web permanente par défaut. Fenêtre : 1 million de tokens. Modèle : Gemini 2.5 Pro (payant), Flash 2.0 (gratuit). Hébergement US. Données protégées en Workspace Business/Enterprise.
         </div>
-        <div class="source-item">
-          <div class="source-label">Fenêtre de contexte</div>
-          <div class="source-value ">1 million de tokens (Gemini 2.5 Pro)</div>
-        </div>
-        <div class="source-item">
-          <div class="source-label">Modèle actuel</div>
-          <div class="source-value ">Gemini 2.5 Pro (AI Pro) · Flash 2.0 (gratuit)</div>
-        </div>
-        <div class="source-item">
-          <div class="source-label">Hébergement</div>
-          <div class="source-value ">Serveurs US (Google Cloud)</div>
-        </div>
-        <div class="source-item">
-          <div class="source-label">RGPD / confidentialité</div>
-          <div class="source-value warn">Workspace Business/Enterprise : données protégées</div>
-        </div>
-        </div>      </div>
+      </div>
 
       <!-- ══════════════════════════════════════════
            PAGE : COPILOT
@@ -2138,14 +1879,8 @@
           <div class="module-tag">Module 5 : Microsoft Copilot</div>
           <h1 class="module-title">Microsoft <em>Copilot</em></h1>
           <p class="module-desc">L'outil qui transforme vos données Microsoft 365 en actions : emails, fichiers, réunions, données internes. Sa valeur est conditionnée au plan M365 payant.</p>
-        
-        <div class="divider"></div>
-        <h2>Sources &amp; données</h2>
-        <div class="sources-block">
-          <div class="sources-block-title">Entraînement · Accès · Confidentialité</div>
-          <table class="sources-table"><tbody><tr><td><span class="source-label">Sources</span><span class="source-value ">Base GPT-5 + index Bing temps réel + (M365 payant) vos données internes.</span></td><td><span class="source-label">Connexion web</span><span class="source-value ok">Oui : Bing intégré par défaut</span></td><td><span class="source-label">Contexte</span><span class="source-value warn">Limité sur données internes selon la config M365</span></td></tr><tr><td><span class="source-label">Modèle</span><span class="source-value ">GPT-5 (M365 Copilot payant), Copilot Chat (gratuit)</span></td><td><span class="source-label">Hébergement</span><span class="source-value warn">Serveurs US/EU selon config Enterprise</span></td><td><span class="source-label">RGPD</span><span class="source-value warn">Enterprise : données non utilisées. Config DSI requise.</span></td></tr></tbody></table>
         </div>
-</div>
+
         <div class="do-dont">
           <div class="do-block">
             <h3>Où il excelle</h3>
@@ -2170,27 +1905,13 @@
           <strong>⚠️ Point clé</strong>
           L'accès aux données internes nécessite le plan <strong>M365 Copilot payant (30 $/mois/utilisateur)</strong>. La version gratuite ne lit pas vos fichiers. Prévoir 2h de formation par profil d'usage : les gains de productivité arrivent après la maîtrise.
         </div>
-        <div class="source-item">
-          <div class="source-label">Connexion web</div>
-          <div class="source-value ">Oui : Bing intégré par défaut</div>
+
+        <div class="divider"></div>
+        <div class="info-box" style="font-size:15px;line-height:1.75;">
+          <strong>Sources &amp; données</strong><br>
+          Base GPT-5 + index Bing temps réel + (M365 payant) vos données internes. Connexion web via Bing. Fenêtre limitée selon la config M365. Modèle : GPT-5 (M365 payant), Copilot Chat (gratuit). Hébergement US/EU selon config Enterprise. Données protégées en version Enterprise, config DSI requise.
         </div>
-        <div class="source-item">
-          <div class="source-label">Fenêtre de contexte</div>
-          <div class="source-value ">Limité sur données internes selon la config M365</div>
-        </div>
-        <div class="source-item">
-          <div class="source-label">Modèle actuel</div>
-          <div class="source-value ">GPT-5 (M365 Copilot payant) · Copilot Chat (gratuit)</div>
-        </div>
-        <div class="source-item">
-          <div class="source-label">Hébergement</div>
-          <div class="source-value ">Serveurs US/EU selon config Enterprise</div>
-        </div>
-        <div class="source-item">
-          <div class="source-label">RGPD / confidentialité</div>
-          <div class="source-value ok">Enterprise : données non utilisées pour l'entraînement. Config DSI requise.</div>
-        </div>
-        </div>      </div>
+      </div>
 
       <!-- ══════════════════════════════════════════
            PAGE : PERPLEXITY
@@ -2200,14 +1921,8 @@
           <div class="module-tag">Module 6 : Perplexity</div>
           <h1 class="module-title">Perplexity, <em>moteur IA sourcé</em></h1>
           <p class="module-desc">Chaque affirmation est sourcée, chaque source est vérifiable en un clic. Incomparable pour la veille factuelle. Pas conçu pour rédiger ou créer du contenu.</p>
-        
-        <div class="divider"></div>
-        <h2>Sources &amp; données</h2>
-        <div class="sources-block">
-          <div class="sources-block-title">Entraînement · Accès · Confidentialité</div>
-          <table class="sources-table"><tbody><tr><td><span class="source-label">Sources</span><span class="source-value ">100 % temps réel : recherche web systématique sur chaque requête.</span></td><td><span class="source-label">Connexion web</span><span class="source-value ok">Oui : 100 % web, principe fondamental</span></td><td><span class="source-label">Contexte</span><span class="source-value ">Standard : adapté à la recherche factuelle</span></td></tr><tr><td><span class="source-label">Modèle</span><span class="source-value ">Surcouche sur GPT-5, Claude ou Gemini selon la requête</span></td><td><span class="source-label">Hébergement</span><span class="source-value warn">Serveurs US</span></td><td><span class="source-label">RGPD</span><span class="source-value bad">Pas de contrat DPA public. Ne pas y mettre de données confidentielles.</span></td></tr></tbody></table>
         </div>
-</div>
+
         <div class="do-dont">
           <div class="do-block">
             <h3>Où il excelle</h3>
@@ -2232,27 +1947,13 @@
           <strong>💡 Usage optimal en deux temps</strong>
           Perplexity pour les faits et les sources → ChatGPT ou Claude pour la rédaction. Deux outils, deux rôles distincts.
         </div>
-        <div class="source-item">
-          <div class="source-label">Connexion web</div>
-          <div class="source-value ">Oui : 100 % web, c'est son principe fondamental</div>
+
+        <div class="divider"></div>
+        <div class="info-box" style="font-size:15px;line-height:1.75;">
+          <strong>Sources &amp; données</strong><br>
+          100 % temps réel : recherche web systématique sur chaque requête. Pas de données d'entraînement figées. Surcouche sur GPT-5, Claude ou Gemini selon la requête. Hébergement US. Pas de contrat DPA public : ne pas y mettre de données confidentielles.
         </div>
-        <div class="source-item">
-          <div class="source-label">Fenêtre de contexte</div>
-          <div class="source-value ">Standard : adapté à la recherche factuelle, pas aux longs documents</div>
-        </div>
-        <div class="source-item">
-          <div class="source-label">Modèle actuel</div>
-          <div class="source-value ">Surcouche sur GPT-5, Claude ou Gemini selon la requête</div>
-        </div>
-        <div class="source-item">
-          <div class="source-label">Hébergement</div>
-          <div class="source-value ">Serveurs US</div>
-        </div>
-        <div class="source-item">
-          <div class="source-label">RGPD / confidentialité</div>
-          <div class="source-value warn">Pas de contrat DPA public. Ne pas y mettre de données confidentielles.</div>
-        </div>
-        </div>      </div>
+      </div>
 
       <!-- ══════════════════════════════════════════
            PAGE : LE CHAT
@@ -2262,14 +1963,8 @@
           <div class="module-tag">Module 7 : Le Chat · Mistral AI 🇫🇷</div>
           <h1 class="module-title">Le Chat, <em>souverain européen</em></h1>
           <p class="module-desc">Seul outil souverain de ce comparatif. Données hébergées en Europe, RGPD natif, mémoire persistante, génération à ~1 000 mots/seconde.</p>
-        
-        <div class="divider"></div>
-        <h2>Sources &amp; données</h2>
-        <div class="sources-block">
-          <div class="sources-block-title">Entraînement · Accès · Confidentialité</div>
-          <table class="sources-table"><tbody><tr><td><span class="source-label">Sources</span><span class="source-value ">Web public (priorité français), livres, code. Modèles open source Mistral.</span></td><td><span class="source-label">Connexion web</span><span class="source-value ok">Oui : Pro = partenariat AFP pour actualités vérifiées</span></td><td><span class="source-label">Contexte</span><span class="source-value ">32 000 tokens (Mistral Large)</span></td></tr><tr><td><span class="source-label">Modèle</span><span class="source-value ">Mistral Large 2 (Pro), Mistral 7B (gratuit)</span></td><td><span class="source-label">Hébergement</span><span class="source-value ok">Serveurs EU uniquement (Paris). Aucune loi américaine applicable.</span></td><td><span class="source-label">RGPD</span><span class="source-value ok">RGPD natif sans configuration. Désactiver le partage en version gratuite.</span></td></tr></tbody></table>
         </div>
-</div>
+
         <div class="do-dont">
           <div class="do-block">
             <h3>Où il excelle</h3>
@@ -2295,27 +1990,13 @@
           ⚠️ Version gratuite&nbsp;: vérifiez la désactivation du partage de données → Paramètres → Préférences → décocher «&nbsp;Autoriser l'utilisation de vos interactions&nbsp;».<br><br>
           🎁 Free Mobile&nbsp;: 12 mois Pro offerts aux abonnés.
         </div>
-        <div class="source-item">
-          <div class="source-label">Connexion web</div>
-          <div class="source-value ">Oui : Pro : partenariat AFP pour actualités vérifiées</div>
+
+        <div class="divider"></div>
+        <div class="info-box" style="font-size:15px;line-height:1.75;">
+          <strong>Sources &amp; données</strong><br>
+          Entraîné sur le web public (priorité français), livres, code. Modèles open source Mistral. Connexion web, Pro = partenariat AFP. Fenêtre : 32 000 tokens. Modèle : Mistral Large 2 (Pro), Mistral 7B (gratuit). Hébergement EU uniquement (Paris), aucune loi américaine applicable. RGPD natif sans configuration.
         </div>
-        <div class="source-item">
-          <div class="source-label">Fenêtre de contexte</div>
-          <div class="source-value ">32 000 tokens (Mistral Large)</div>
-        </div>
-        <div class="source-item">
-          <div class="source-label">Modèle actuel</div>
-          <div class="source-value ">Mistral Large 2 (Pro) · Mistral 7B (gratuit)</div>
-        </div>
-        <div class="source-item">
-          <div class="source-label">Hébergement</div>
-          <div class="source-value ok">Serveurs EU uniquement (Paris). Aucune loi américaine applicable.</div>
-        </div>
-        <div class="source-item">
-          <div class="source-label">RGPD / confidentialité</div>
-          <div class="source-value ok">RGPD natif sans configuration. Désactiver le partage en version gratuite.</div>
-        </div>
-        </div>      </div>
+      </div>
 
       <!-- ══════════════════════════════════════════
            PAGE : POE
@@ -2325,14 +2006,8 @@
           <div class="module-tag">Module 8 : Poe (Quora)</div>
           <h1 class="module-title">Poe, <em>100+ modèles</em></h1>
           <p class="module-desc">L'interface unique qui donne accès à ChatGPT, Claude, Gemini, Llama et plus de 100 modèles dans une seule app, avec un abonnement unique.</p>
-        
-        <div class="divider"></div>
-        <h2>Sources &amp; données</h2>
-        <div class="sources-block">
-          <div class="sources-block-title">Entraînement · Accès · Confidentialité</div>
-          <table class="sources-table"><tbody><tr><td><span class="source-label">Sources</span><span class="source-value ">Accès à 100+ modèles : GPT-5, Claude, Gemini, Llama, Mistral et plus.</span></td><td><span class="source-label">Connexion web</span><span class="source-value ">Selon le modèle choisi</span></td><td><span class="source-label">Contexte</span><span class="source-value ">Selon le modèle choisi</span></td></tr><tr><td><span class="source-label">Modèle</span><span class="source-value ">Choix parmi 100+ modèles (abonnement unique)</span></td><td><span class="source-label">Hébergement</span><span class="source-value bad">Serveurs US Poe + serveurs du modèle : double exposition.</span></td><td><span class="source-label">RGPD</span><span class="source-value bad">Données transitent par Poe avant le modèle. Éviter toute donnée sensible.</span></td></tr></tbody></table>
         </div>
-</div>
+
         <div class="do-dont">
           <div class="do-block">
             <h3>Où il excelle</h3>
@@ -2356,27 +2031,13 @@
           <strong>⚠️ Confidentialité</strong>
           Vos données transitent par les serveurs Poe avant d'atteindre le modèle. Pour les données sensibles, utilisez directement l'interface officielle (claude.ai, chat.openai.com). Serveurs américains, pas de garantie RGPD.
         </div>
-        <div class="source-item">
-          <div class="source-label">Connexion web</div>
-          <div class="source-value ">Selon le modèle choisi</div>
+
+        <div class="divider"></div>
+        <div class="info-box" style="font-size:15px;line-height:1.75;">
+          <strong>Sources &amp; données</strong><br>
+          Accès à 100+ modèles : GPT-5, Claude, Gemini, Llama, Mistral et plus. Connexion web et fenêtre selon le modèle choisi. Hébergement US (Poe + modèle utilisé) : double exposition. Pas de contrat DPA. Éviter toute donnée sensible.
         </div>
-        <div class="source-item">
-          <div class="source-label">Fenêtre de contexte</div>
-          <div class="source-value ">Selon le modèle choisi</div>
-        </div>
-        <div class="source-item">
-          <div class="source-label">Modèle actuel</div>
-          <div class="source-value ">Choix parmi 100+ modèles (abonnement unique)</div>
-        </div>
-        <div class="source-item">
-          <div class="source-label">Hébergement</div>
-          <div class="source-value bad">Serveurs US Poe + serveurs du modèle utilisé : double exposition.</div>
-        </div>
-        <div class="source-item">
-          <div class="source-label">RGPD / confidentialité</div>
-          <div class="source-value bad">Données transitent par Poe avant le modèle. Éviter toute donnée sensible.</div>
-        </div>
-        </div>      </div>
+      </div>
 
       <!-- ══════════════════════════════════════════
            PAGE : SCÉNARIOS
@@ -2620,51 +2281,6 @@
         <div class="warn-box">
           <strong>⚠️ Ces outils évoluent vite</strong>
           Tarifs, modèles et conditions changent fréquemment. Ce qui est vrai aujourd'hui peut être périmé dans 6 mois. Vérifiez avant de déployer.
-        </div>
-      </div>
-
-      <!-- ══════════════════════════════════════════
-           PAGE : UN BESOIN, UNE IA
-      ═══════════════════════════════════════════ -->
-      <div class="page" id="page-besoin-ia">
-        <div class="module-hero">
-          <div class="module-tag">Choisir</div>
-          <h1 class="module-title">Un besoin, <em>une IA</em></h1>
-          <p class="module-desc">Partez du besoin, pas de l'outil. Trois questions orientent le choix : les données sont-elles confidentielles ? Ai-je besoin de faits récents ? Le document est-il long ?</p>
-        </div>
-
-        <div class="compare-wrapper">
-          <table class="compare-table">
-            <thead>
-              <tr>
-                <th>Besoin</th>
-                <th>Outil recommandé</th>
-                <th>Condition / remarque</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td><strong>Analyser des données Excel ou chiffres internes</strong></td><td>Copilot</td><td>Plan M365 payant requis. Travaille directement dans vos fichiers sans export.</td></tr>
-              <tr><td><strong>Rédiger : email, note, mémo, rapport</strong></td><td>ChatGPT · Claude · Le Chat</td><td>Le Chat si contenu confidentiel. Claude pour les textes longs et complexes.</td></tr>
-              <tr><td><strong>Reformuler ou changer de registre</strong></td><td>ChatGPT · Le Chat</td><td>Le Chat en volume si données internes.</td></tr>
-              <tr><td><strong>Traduire un document</strong></td><td>ChatGPT · Le Chat</td><td>Le Chat pour les traductions confidentielles (contrats, RH). Relecture native obligatoire sur les clauses à enjeu.</td></tr>
-              <tr><td><strong>Chercher un fait, une date, une réglementation récente</strong></td><td>Perplexity</td><td>Chaque affirmation sourcée et vérifiable en un clic. Toujours ouvrir la source avant de publier.</td></tr>
-              <tr><td><strong>Veille continue sur un sujet</strong></td><td>Perplexity · Gemini</td><td>Perplexity Spaces pour organiser la veille en équipe. Gemini si Google Workspace.</td></tr>
-              <tr><td><strong>Analyser un document long (50+ pages)</strong></td><td>Claude</td><td>200 000 tokens : point fort distinctif. Idéal pour contrats, rapports, corpus.</td></tr>
-              <tr><td><strong>Résumer une réunion Teams</strong></td><td>Copilot</td><td>Plan M365 payant. Prompt précis : "liste les décisions, les actions et les questions ouvertes".</td></tr>
-              <tr><td><strong>Travailler sur des fichiers Google Drive / Gmail / Sheets</strong></td><td>Gemini</td><td>Intégration native sans copier-coller. Tapez @Gemini dans Google Docs.</td></tr>
-              <tr><td><strong>Données sensibles : RH, finance, contrats confidentiels</strong></td><td>Le Chat · Copilot Enterprise</td><td>Le Chat : hébergement EU, RGPD natif. Copilot Enterprise : config DSI requise. Jamais en version gratuite.</td></tr>
-              <tr><td><strong>Brainstorming, idéation, angles créatifs</strong></td><td>ChatGPT</td><td>Le plus polyvalent pour la génération d'idées et les variantes A/B.</td></tr>
-              <tr><td><strong>Raisonnement structuré, analyse critique</strong></td><td>Claude</td><td>Résiste aux instructions contradictoires. Demandez-lui de jouer l'avocat du diable.</td></tr>
-              <tr><td><strong>Comparer plusieurs modèles sur une même tâche</strong></td><td>Poe</td><td>Accès à 100+ modèles. Utile pour identifier le meilleur outil sur une tâche récurrente. Éviter les données sensibles.</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="tip-box">
-          <strong>La règle des trois questions</strong>
-          1. Les données sont-elles confidentielles ? → Le Chat ou Copilot Enterprise en priorité.<br>
-          2. Ai-je besoin de faits récents ou vérifiés ? → Perplexity en premier.<br>
-          3. Le document dépasse 30 pages ? → Claude.
         </div>
       </div>
 
@@ -3018,143 +2634,6 @@
       </div>
 
 
-
-      <!-- ══════════════════════════════════════════
-           PAGE : WORKFLOWS
-      ═══════════════════════════════════════════ -->
-      <div class="page" id="page-workflows">
-        <div class="module-hero">
-          <div class="module-tag">Module 4</div>
-          <h1 class="module-title">Enchaîner <em>les outils</em></h1>
-          <p class="module-desc">Chaque outil a un rôle, pas un territoire. La valeur vient de leur enchaînement. Aucun output d'IA ne passe directement dans un autre outil sans point de contrôle humain.</p>
-        </div>
-
-        <h2>Trois workflows types</h2>
-
-        <div class="card" style="margin-bottom:14px;">
-          <div class="technique-num">Workflow 1  :  Veille + analyse</div>
-          <div class="technique-title" style="font-size:16px;color:var(--navy);margin-bottom:14px;">Pour tout sujet factuel à analyser ensuite</div>
-          <div style="display:flex;align-items:stretch;gap:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;">
-            <div style="flex:1;padding:14px 16px;background:var(--surface2);">
-              <div class="technique-num" style="margin-bottom:4px;">Perplexity</div>
-              <div style="font-size:14px;font-weight:600;color:var(--navy);margin-bottom:4px;">Faits sourcés</div>
-              <div style="font-size:13px;color:var(--muted);">Chiffres, dates, textes réglementaires  :  chaque affirmation vérifiable</div>
-            </div>
-            <div style="display:flex;align-items:center;padding:0 10px;color:var(--orange);font-weight:800;">→</div>
-            <div style="flex:1;padding:14px 16px;background:var(--surface2);">
-              <div class="technique-num" style="margin-bottom:4px;">Claude</div>
-              <div style="font-size:14px;font-weight:600;color:var(--navy);margin-bottom:4px;">Analyse, mise en perspective</div>
-              <div style="font-size:13px;color:var(--muted);">Traitement long, raisonnement sur les données récupérées</div>
-            </div>
-            <div style="display:flex;align-items:center;padding:0 10px;color:var(--muted);font-weight:800;">→</div>
-            <div style="flex:1;padding:14px 16px;background:var(--surface2);">
-              <div class="technique-num" style="margin-bottom:4px;">Le Chat</div>
-              <div style="font-size:14px;font-weight:600;color:var(--navy);margin-bottom:4px;">Si données sensibles</div>
-              <div style="font-size:13px;color:var(--muted);">Remplace Claude pour tout contenu confidentiel</div>
-            </div>
-          </div>
-          <div class="tip-box" style="margin-top:12px;margin-bottom:0;font-size:14px;">
-            <strong>Point de contrôle</strong> Les données Perplexity sont vérifiées à la source avant d'être passées à Claude.
-          </div>
-        </div>
-
-        <div class="card" style="margin-bottom:14px;">
-          <div class="technique-num">Workflow 2  :  Recherche + rédaction</div>
-          <div class="technique-title" style="font-size:16px;color:var(--navy);margin-bottom:14px;">Pour tout contenu nécessitant des données récentes</div>
-          <div style="display:flex;align-items:stretch;gap:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;">
-            <div style="flex:1;padding:14px 16px;background:var(--surface2);">
-              <div class="technique-num" style="margin-bottom:4px;">Perplexity</div>
-              <div style="font-size:14px;font-weight:600;color:var(--navy);margin-bottom:4px;">Données, dates, chiffres vérifiés</div>
-              <div style="font-size:13px;color:var(--muted);">Sources primaires, liens cliquables</div>
-            </div>
-            <div style="display:flex;align-items:center;padding:0 10px;color:var(--orange);font-weight:800;">→</div>
-            <div style="flex:1;padding:14px 16px;background:var(--surface2);">
-              <div class="technique-num" style="margin-bottom:4px;">ChatGPT</div>
-              <div style="font-size:14px;font-weight:600;color:var(--navy);margin-bottom:4px;">Rédaction, variantes</div>
-              <div style="font-size:13px;color:var(--muted);">On lui fournit les données  :  il ne les invente pas</div>
-            </div>
-            <div style="display:flex;align-items:center;padding:0 10px;color:var(--orange);font-weight:800;">→</div>
-            <div style="flex:1;padding:14px 16px;background:var(--surface2);">
-              <div class="technique-num" style="margin-bottom:4px;">Humain</div>
-              <div style="font-size:14px;font-weight:600;color:var(--navy);margin-bottom:4px;">Relecture chiffres</div>
-              <div style="font-size:13px;color:var(--muted);">Chaque donnée chiffrée vérifiée avant publication</div>
-            </div>
-          </div>
-          <div class="warn-box" style="margin-top:12px;margin-bottom:0;font-size:14px;">
-            <strong>Point de contrôle</strong> On ne passe jamais un chiffre généré par une IA dans une autre IA sans vérification.
-          </div>
-        </div>
-
-        <div class="card" style="margin-bottom:28px;">
-          <div class="technique-num">Workflow 3  :  Document long + synthèse</div>
-          <div class="technique-title" style="font-size:16px;color:var(--navy);margin-bottom:14px;">Pour rapports, contrats, corpus</div>
-          <div style="display:flex;align-items:stretch;gap:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;">
-            <div style="flex:1;padding:14px 16px;background:var(--surface2);">
-              <div class="technique-num" style="margin-bottom:4px;">Claude</div>
-              <div style="font-size:14px;font-weight:600;color:var(--navy);margin-bottom:4px;">Ingestion, extraction structurée</div>
-              <div style="font-size:13px;color:var(--muted);">200 000 tokens  :  jusqu'à 150 000 mots en une session</div>
-            </div>
-            <div style="display:flex;align-items:center;padding:0 10px;color:var(--orange);font-weight:800;">→</div>
-            <div style="flex:1;padding:14px 16px;background:var(--surface2);">
-              <div class="technique-num" style="margin-bottom:4px;">ChatGPT</div>
-              <div style="font-size:14px;font-weight:600;color:var(--navy);margin-bottom:4px;">Reformulation, adaptation</div>
-              <div style="font-size:13px;color:var(--muted);">Adapter le ton et le niveau selon le destinataire</div>
-            </div>
-          </div>
-          <div class="tip-box" style="margin-top:12px;margin-bottom:0;font-size:14px;">
-            <strong>Point de contrôle</strong> La synthèse Claude est relue par quelqu'un qui connaît le document avant d'être passée à ChatGPT.
-          </div>
-        </div>
-
-        <div class="warn-box">
-          <strong>Règle transversale</strong>
-          On ne fait jamais passer un output d'IA directement dans un autre outil sans vérification intermédiaire. Chaque étape de transmission est un point de contrôle humain.
-        </div>
-      </div>
-
-      <!-- ══════════════════════════════════════════
-           PAGE : DÉLÉGATION
-      ═══════════════════════════════════════════ -->
-      <div class="page" id="page-delegation">
-        <div class="module-hero">
-          <div class="module-tag">Module 5</div>
-          <h1 class="module-title">Guide pratique : <em>bien utiliser l'IA</em></h1>
-        </div>
-
-        <h2>Trois zones d'usage</h2>
-
-        <div class="card" style="border-left:4px solid #1A6B3C;margin-bottom:12px;">
-          <div class="technique-num" style="color:#1A6B3C;">Zone verte  :  délégation sans risque</div>
-          <p style="margin:0;">Mise en forme, changement de ton, premier jet sur brief détaillé, synthèse d'un texte que vous avez lu, création de variantes, reformulation.</p>
-        </div>
-
-        <div class="card" style="border-left:4px solid #B7791F;margin-bottom:12px;">
-          <div class="technique-num" style="color:#B7791F;">Zone orange  :  délégation avec contrôle obligatoire</div>
-          <p style="margin:0;">Synthèse d'un texte non lu, chiffres et données, veille réglementaire, comparaison de versions, traductions importantes.</p>
-        </div>
-
-        <div class="card" style="border-left:4px solid #C0392B;margin-bottom:28px;">
-          <div class="technique-num" style="color:#C0392B;">Zone rouge  :  à ne jamais déléguer</div>
-          <p style="margin:0;">Jugement sur un sujet que vous ne maîtrisez pas, décisions engageant des tiers, validation de chiffres que vous ne pouvez pas vérifier vous-même.</p>
-        </div>
-
-        <div class="divider"></div>
-
-        <h2>Le piège principal</h2>
-        <div class="warn-box">
-          <strong>L'IA ne dit jamais "je ne suis pas sûr"</strong>
-          Elle produit toujours une réponse cohérente, qu'elle soit vraie ou fausse. Ne publiez jamais un chiffre, une date ou un nom sans vérification indépendante.
-        </div>
-
-        <div class="divider"></div>
-
-        <h2>Enchaîner les outils</h2>
-        <div class="tip-box">
-          <strong>Règle simple</strong>
-          Ne faites jamais passer un résultat d'IA dans un autre outil sans vérification humaine intermédiaire. Chaque étape = point de contrôle.
-        </div>
-      </div>
-
       <!-- ══════════════════════════════════════════
            PAGE : BRS SITUATIONS
       ═══════════════════════════════════════════ -->
@@ -3167,11 +2646,11 @@
 
         <div class="brs-topnav">
           <span class="brs-topnav-label">Module BRS</span>
-        <button class="brs-topnav-btn" onclick="goTo('brs-cas')">Cas d'usage</button>
-        <button class="brs-topnav-btn current" onclick="goTo('brs-situations')">Cas par métiers</button>
-        <button class="brs-topnav-btn" onclick="goTo('brs-copilot')">Copilot chez BRS</button>
-        <button class="brs-topnav-btn" onclick="goTo('brs-reflexes')">Réflexes IA</button>
-        <button class="brs-topnav-btn" onclick="goTo('brs-delegation')">Ce qu'on délègue chez BRS</button>
+          <button class="brs-topnav-btn" onclick="goTo('brs-cas')">Cas d'usage</button>
+          <button class="brs-topnav-btn current" onclick="goTo('brs-situations')">Cas par métiers</button>
+          <button class="brs-topnav-btn" onclick="goTo('brs-copilot')">Copilot chez BRS</button>
+          <button class="brs-topnav-btn" onclick="goTo('brs-reflexes')">Réflexes IA</button>
+          <button class="brs-topnav-btn" onclick="goTo('brs-delegation')">Ce qu'on délègue chez BRS</button>
         </div>
 
 
@@ -3376,11 +2855,11 @@
 
         <div class="brs-topnav">
           <span class="brs-topnav-label">Module BRS</span>
-        <button class="brs-topnav-btn" onclick="goTo('brs-cas')">Cas d'usage</button>
-        <button class="brs-topnav-btn" onclick="goTo('brs-situations')">Cas par métiers</button>
-        <button class="brs-topnav-btn current" onclick="goTo('brs-copilot')">Copilot chez BRS</button>
-        <button class="brs-topnav-btn" onclick="goTo('brs-reflexes')">Réflexes IA</button>
-        <button class="brs-topnav-btn" onclick="goTo('brs-delegation')">Ce qu'on délègue chez BRS</button>
+          <button class="brs-topnav-btn" onclick="goTo('brs-cas')">Cas d'usage</button>
+          <button class="brs-topnav-btn" onclick="goTo('brs-situations')">Cas par métiers</button>
+          <button class="brs-topnav-btn current" onclick="goTo('brs-copilot')">Copilot chez BRS</button>
+          <button class="brs-topnav-btn" onclick="goTo('brs-reflexes')">Réflexes IA</button>
+          <button class="brs-topnav-btn" onclick="goTo('brs-delegation')">Ce qu'on délègue chez BRS</button>
         </div>
 
 
@@ -3477,11 +2956,11 @@
 
         <div class="brs-topnav">
           <span class="brs-topnav-label">Module BRS</span>
-        <button class="brs-topnav-btn" onclick="goTo('brs-cas')">Cas d'usage</button>
-        <button class="brs-topnav-btn" onclick="goTo('brs-situations')">Cas par métiers</button>
-        <button class="brs-topnav-btn" onclick="goTo('brs-copilot')">Copilot chez BRS</button>
-        <button class="brs-topnav-btn current" onclick="goTo('brs-reflexes')">Réflexes IA</button>
-        <button class="brs-topnav-btn" onclick="goTo('brs-delegation')">Ce qu'on délègue chez BRS</button>
+          <button class="brs-topnav-btn" onclick="goTo('brs-cas')">Cas d'usage</button>
+          <button class="brs-topnav-btn" onclick="goTo('brs-situations')">Cas par métiers</button>
+          <button class="brs-topnav-btn" onclick="goTo('brs-copilot')">Copilot chez BRS</button>
+          <button class="brs-topnav-btn current" onclick="goTo('brs-reflexes')">Réflexes IA</button>
+          <button class="brs-topnav-btn" onclick="goTo('brs-delegation')">Ce qu'on délègue chez BRS</button>
         </div>
 
 
@@ -3553,180 +3032,250 @@
 
     
       <!-- ══════════════════════════════════════════
+           PAGE : WORKFLOWS
+      ═══════════════════════════════════════════ -->
+      <div class="page" id="page-workflows">
+        <div class="module-hero">
+          <div class="module-tag">Utiliser</div>
+          <h1 class="module-title">Enchaîner <em>les outils</em></h1>
+          <p class="module-desc">Chaque outil a un rôle, pas un territoire. La valeur vient de leur enchaînement. Aucun output d'IA ne passe directement dans un autre outil sans point de contrôle humain.</p>
+        </div>
+
+        <h2>Trois workflows types</h2>
+
+        <div class="card" style="margin-bottom:16px;">
+          <div class="technique-num">Workflow 1 : Veille + analyse</div>
+          <div class="technique-title" style="font-size:16px;color:var(--navy);margin-bottom:12px;">Pour tout sujet factuel à analyser</div>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+            <div style="flex:1;min-width:140px;background:var(--surface2);border-radius:8px;padding:12px 14px;"><div class="technique-num" style="margin-bottom:4px;">Perplexity</div><div style="font-size:13px;color:var(--muted);">Faits sourcés, chaque affirmation vérifiable</div></div>
+            <div style="color:var(--orange);font-weight:800;font-size:18px;">→</div>
+            <div style="flex:1;min-width:140px;background:var(--surface2);border-radius:8px;padding:12px 14px;"><div class="technique-num" style="margin-bottom:4px;">Claude</div><div style="font-size:13px;color:var(--muted);">Analyse, raisonnement sur les données récupérées</div></div>
+            <div style="color:var(--muted);font-weight:800;font-size:18px;">→</div>
+            <div style="flex:1;min-width:140px;background:var(--surface2);border-radius:8px;padding:12px 14px;"><div class="technique-num" style="margin-bottom:4px;">Le Chat</div><div style="font-size:13px;color:var(--muted);">Si données confidentielles</div></div>
+          </div>
+          <div class="tip-box" style="margin-top:12px;margin-bottom:0;font-size:14px;"><strong>Point de contrôle</strong> Les données Perplexity sont vérifiées à la source avant d'être passées à Claude.</div>
+        </div>
+
+        <div class="card" style="margin-bottom:16px;">
+          <div class="technique-num">Workflow 2 : Recherche + rédaction</div>
+          <div class="technique-title" style="font-size:16px;color:var(--navy);margin-bottom:12px;">Pour tout contenu nécessitant des données récentes</div>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+            <div style="flex:1;min-width:140px;background:var(--surface2);border-radius:8px;padding:12px 14px;"><div class="technique-num" style="margin-bottom:4px;">Perplexity</div><div style="font-size:13px;color:var(--muted);">Sources primaires, liens cliquables</div></div>
+            <div style="color:var(--orange);font-weight:800;font-size:18px;">→</div>
+            <div style="flex:1;min-width:140px;background:var(--surface2);border-radius:8px;padding:12px 14px;"><div class="technique-num" style="margin-bottom:4px;">ChatGPT</div><div style="font-size:13px;color:var(--muted);">Rédaction à partir des données fournies</div></div>
+            <div style="color:var(--orange);font-weight:800;font-size:18px;">→</div>
+            <div style="flex:1;min-width:140px;background:var(--surface2);border-radius:8px;padding:12px 14px;"><div class="technique-num" style="margin-bottom:4px;">Humain</div><div style="font-size:13px;color:var(--muted);">Chaque chiffre vérifié avant publication</div></div>
+          </div>
+          <div class="warn-box" style="margin-top:12px;margin-bottom:0;font-size:14px;"><strong>Point de contrôle</strong> On ne passe jamais un chiffre d'une IA dans une autre sans vérification.</div>
+        </div>
+
+        <div class="card" style="margin-bottom:24px;">
+          <div class="technique-num">Workflow 3 : Document long + synthèse</div>
+          <div class="technique-title" style="font-size:16px;color:var(--navy);margin-bottom:12px;">Pour rapports, contrats, corpus</div>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+            <div style="flex:1;min-width:140px;background:var(--surface2);border-radius:8px;padding:12px 14px;"><div class="technique-num" style="margin-bottom:4px;">Claude</div><div style="font-size:13px;color:var(--muted);">200 000 tokens, jusqu'à 150 000 mots en une session</div></div>
+            <div style="color:var(--orange);font-weight:800;font-size:18px;">→</div>
+            <div style="flex:1;min-width:140px;background:var(--surface2);border-radius:8px;padding:12px 14px;"><div class="technique-num" style="margin-bottom:4px;">ChatGPT</div><div style="font-size:13px;color:var(--muted);">Reformulation, adaptation au destinataire</div></div>
+          </div>
+          <div class="tip-box" style="margin-top:12px;margin-bottom:0;font-size:14px;"><strong>Point de contrôle</strong> La synthèse Claude est relue avant d'être passée à ChatGPT.</div>
+        </div>
+
+        <div class="warn-box">
+          <strong>Règle simple</strong>
+          Ne faites jamais passer un résultat d'IA dans un autre outil sans vérification humaine intermédiaire. Chaque étape = point de contrôle.
+        </div>
+      </div>
+
+
+      <!-- ══════════════════════════════════════════
+           PAGE : DELEGATION
+      ═══════════════════════════════════════════ -->
+      <div class="page" id="page-delegation">
+        <div class="module-hero">
+          <div class="module-tag">Utiliser</div>
+          <h1 class="module-title">Guide pratique : <em>bien utiliser l'IA</em></h1>
+        </div>
+
+        <h2>Trois zones d'usage</h2>
+        <div class="card" style="border-left:4px solid #1A6B3C;margin-bottom:12px;">
+          <div class="technique-num" style="color:#1A6B3C;">Zone verte : délégation sans risque</div>
+          <p style="margin:0;">Mise en forme, changement de ton, premier jet sur brief détaillé, synthèse d'un texte que vous avez lu, création de variantes, reformulation.</p>
+        </div>
+        <div class="card" style="border-left:4px solid #B7791F;margin-bottom:12px;">
+          <div class="technique-num" style="color:#B7791F;">Zone orange : délégation avec contrôle obligatoire</div>
+          <p style="margin:0;">Synthèse d'un texte non lu, chiffres et données, veille réglementaire, comparaison de versions, traductions importantes.</p>
+        </div>
+        <div class="card" style="border-left:4px solid #C0392B;margin-bottom:28px;">
+          <div class="technique-num" style="color:#C0392B;">Zone rouge : à ne jamais déléguer</div>
+          <p style="margin:0;">Jugement sur un sujet que vous ne maîtrisez pas, décisions engageant des tiers, validation de chiffres que vous ne pouvez pas vérifier vous-même.</p>
+        </div>
+
+        <div class="divider"></div>
+        <h2>Le piège principal</h2>
+        <div class="warn-box">
+          <strong>L'IA ne dit jamais "je ne suis pas sûr"</strong>
+          Elle produit toujours une réponse cohérente, qu'elle soit vraie ou fausse. Ne publiez jamais un chiffre, une date ou un nom sans vérification indépendante.
+        </div>
+
+        <div class="divider"></div>
+        <h2>Enchaîner les outils</h2>
+        <div class="tip-box">
+          <strong>Règle simple</strong>
+          Ne faites jamais passer un résultat d'IA dans un autre outil sans vérification humaine intermédiaire. Chaque étape = point de contrôle.
+        </div>
+      </div>
+
+
+      <!-- ══════════════════════════════════════════
            PAGE : BRS CAS D'USAGE
       ═══════════════════════════════════════════ -->
       <div class="page" id="page-brs-cas">
         <div class="module-hero">
           <div class="module-tag">BRS</div>
           <h1 class="module-title">Cas <em>d'usage</em></h1>
-          <p class="module-desc">Cinq situations concrètes du quotidien BRS  :  quel outil, pour quoi faire, et ce que l'IA ne remplace pas. Les items marqués <span style="background:rgba(183,121,31,0.1);color:#B7791F;font-size:11px;padding:2px 7px;border-radius:4px;font-weight:700;">À valider</span> seront confirmés avec les équipes.</p>
+          <p class="module-desc">Cinq situations concrètes du quotidien BRS. Les items marqués <span style="background:rgba(183,121,31,0.1);color:#B7791F;font-size:11px;padding:2px 7px;border-radius:4px;font-weight:700;">À valider</span> seront confirmés avec les équipes.</p>
         </div>
 
         <div class="brs-topnav">
           <span class="brs-topnav-label">Module BRS</span>
-        <button class="brs-topnav-btn current" onclick="goTo('brs-cas')">Cas d'usage</button>
-        <button class="brs-topnav-btn" onclick="goTo('brs-situations')">Cas par métiers</button>
-        <button class="brs-topnav-btn" onclick="goTo('brs-copilot')">Copilot chez BRS</button>
-        <button class="brs-topnav-btn" onclick="goTo('brs-reflexes')">Réflexes IA</button>
-        <button class="brs-topnav-btn" onclick="goTo('brs-delegation')">Ce qu'on délègue chez BRS</button>
+          <button class="brs-topnav-btn current" onclick="goTo('brs-cas')">Cas d'usage</button>
+          <button class="brs-topnav-btn" onclick="goTo('brs-situations')">Cas par métiers</button>
+          <button class="brs-topnav-btn" onclick="goTo('brs-copilot')">Copilot chez BRS</button>
+          <button class="brs-topnav-btn" onclick="goTo('brs-reflexes')">Réflexes IA</button>
+          <button class="brs-topnav-btn" onclick="goTo('brs-delegation')">Ce qu'on délègue chez BRS</button>
         </div>
 
 
         <div class="card" style="margin-bottom:14px;">
-          <div class="technique-num" style="color:var(--orange);">01  :  Synthétiser un rapport de marché</div>
-          <p style="font-size:13px;color:var(--muted);font-style:italic;margin-bottom:12px;">Rapport BRS annuel, circulaires Clarkson, données Baltic Exchange, notes AXSMarine. Volume élevé, temps court.</p>
+          <div class="technique-num" style="color:var(--orange);">01 : Synthétiser un rapport de marché</div>
+          <p style="font-size:13px;color:var(--muted);font-style:italic;margin-bottom:12px;">Rapport BRS annuel, circulaires Clarkson, données Baltic Exchange, notes AXSMarine.</p>
           <div class="do-dont" style="margin-bottom:12px;">
-            <div class="do-block">
-              <h3>L'IA fait</h3>
-              <ul class="checklist">
-                <li>Ingérer 80 pages, extraire les données chiffrées par segment (tanker, vrac sec, LNG, LPG)</li>
-                <li>Identifier les tendances signalées par les auteurs, produire un résumé structuré</li>
-              </ul>
-            </div>
-            <div class="dont-block">
-              <h3>L'IA ne fait pas</h3>
-              <ul class="checklist" style="--c:#C0392B">
-                <li>Juger si une tendance est crédible au regard des fixtures réelles</li>
-                <li>Détecter une incohérence avec le marché. Le jugement reste humain.</li>
-              </ul>
-            </div>
+            <div class="do-block"><h3>L'IA fait</h3><ul class="checklist"><li>Ingérer 80 pages, extraire les données chiffrées par segment (tanker, vrac sec, LNG, LPG)</li><li>Identifier les tendances signalées par les auteurs</li></ul></div>
+            <div class="dont-block"><h3>L'IA ne fait pas</h3><ul class="checklist"><li>Juger si une tendance est crédible au regard des fixtures réelles</li><li>Détecter une incohérence avec le marché</li></ul></div>
           </div>
-          <div class="tip-box" style="margin-bottom:8px;font-size:13px;"><strong>Outil recommandé :</strong> Claude (fenêtre 200 000 tokens)</div>
-          <div style="background:var(--navy);border-radius:6px;padding:12px 16px;font-family:monospace;font-size:12px;color:rgba(255,255,255,0.85);">&lt;document&gt;[rapport collé]&lt;/document&gt;<br>Extrais les données chiffrées par segment maritime.<br>Pour chaque segment : tendance signalée, chiffre principal, période couverte.<br>Format tableau.</div>
+          <div class="tip-box" style="margin-bottom:8px;font-size:13px;"><strong>Outil :</strong> Claude (fenêtre 200 000 tokens)</div>
+          <div style="background:var(--navy);border-radius:6px;padding:10px 14px;font-family:monospace;font-size:12px;color:rgba(255,255,255,0.85);">&lt;document&gt;[rapport collé]&lt;/document&gt;<br>Extrais les données chiffrées par segment. Pour chaque segment : tendance signalée, chiffre principal, période.</div>
         </div>
 
         <div class="card" style="margin-bottom:14px;">
-          <div class="technique-num" style="color:var(--orange);">02  :  Analyser un document contractuel</div>
-          <p style="font-size:13px;color:var(--muted);font-style:italic;margin-bottom:12px;">Charterparties, MoA, contrats de construction neuve. Souvent sur base de proformas standards (NYPE, Asbatankvoy, Norwegian Saleform).</p>
+          <div class="technique-num" style="color:var(--orange);">02 : Analyser un document contractuel</div>
+          <p style="font-size:13px;color:var(--muted);font-style:italic;margin-bottom:12px;">Charterparties, MoA, contrats de construction neuve. Proformas standards (NYPE, Asbatankvoy, Norwegian Saleform).</p>
           <div class="do-dont" style="margin-bottom:12px;">
-            <div class="do-block">
-              <h3>L'IA fait</h3>
-              <ul class="checklist">
-                <li>Comparer deux versions clause par clause</li>
-                <li>Identifier les écarts par rapport à un proforma standard fourni</li>
-                <li>Signaler les zones d'ambiguïté</li>
-              </ul>
-            </div>
-            <div class="dont-block">
-              <h3>L'IA ne fait pas</h3>
-              <ul class="checklist">
-                <li>Valider juridiquement un contrat</li>
-                <li>Détecter une clause liée à une pratique de marché récente. La sortie Claude est une liste de points d'attention, pas un avis juridique.</li>
-              </ul>
-            </div>
+            <div class="do-block"><h3>L'IA fait</h3><ul class="checklist"><li>Comparer deux versions clause par clause</li><li>Identifier les écarts par rapport à un proforma standard fourni</li></ul></div>
+            <div class="dont-block"><h3>L'IA ne fait pas</h3><ul class="checklist"><li>Valider juridiquement un contrat</li><li>Détecter une clause liée à une pratique de marché récente</li></ul></div>
           </div>
-          <div class="tip-box" style="margin-bottom:0;font-size:13px;"><strong>Outil recommandé :</strong> Claude. Le Chat si le contrat est confidentiel. <span style="background:rgba(183,121,31,0.1);color:#B7791F;font-size:11px;padding:2px 7px;border-radius:4px;font-weight:700;margin-left:6px;">À valider</span> Proformas standards ou bases propriétaires maison ?</div>
+          <div class="tip-box" style="font-size:13px;margin-bottom:0;"><strong>Outil :</strong> Claude. Le Chat si confidentiel. <span style="background:rgba(183,121,31,0.1);color:#B7791F;font-size:11px;padding:2px 6px;border-radius:3px;font-weight:700;">À valider</span> Proformas standards ou bases propriétaires maison ?</div>
         </div>
 
         <div class="card" style="margin-bottom:14px;">
-          <div class="technique-num" style="color:var(--orange);">03  :  Rédiger en plusieurs langues</div>
-          <p style="font-size:13px;color:var(--muted);font-style:italic;margin-bottom:12px;">42 nationalités, 20 bureaux. Recaps de fixture, notes clients, briefs internes. Anglais, grec, norvégien, mandarin, espagnol.</p>
+          <div class="technique-num" style="color:var(--orange);">03 : Rédiger en plusieurs langues</div>
+          <p style="font-size:13px;color:var(--muted);font-style:italic;margin-bottom:12px;">42 nationalités, 20 bureaux. Recaps de fixture, notes clients, briefs internes.</p>
           <div class="do-dont" style="margin-bottom:12px;">
-            <div class="do-block">
-              <h3>L'IA fait</h3>
-              <ul class="checklist">
-                <li>Traduire un recap en conservant la structure</li>
-                <li>Adapter le registre selon le destinataire</li>
-              </ul>
-            </div>
-            <div class="dont-block">
-              <h3>L'IA ne fait pas</h3>
-              <ul class="checklist">
-                <li>Garantir la précision des termes contractuels en grec maritime ou mandarin commercial</li>
-                <li>Remplacer la relecture par un locuteur natif pour tout passage à enjeu</li>
-              </ul>
-            </div>
+            <div class="do-block"><h3>L'IA fait</h3><ul class="checklist"><li>Traduire un recap en conservant la structure</li><li>Adapter le registre selon le destinataire</li></ul></div>
+            <div class="dont-block"><h3>L'IA ne fait pas</h3><ul class="checklist"><li>Garantir la précision des termes contractuels en grec maritime ou mandarin</li><li>Remplacer la relecture par un locuteur natif</li></ul></div>
           </div>
-          <div class="tip-box" style="margin-bottom:0;font-size:13px;"><strong>Outil recommandé :</strong> ChatGPT ou Claude selon la longueur. Le Chat si confidentiel. <span style="background:rgba(183,121,31,0.1);color:#B7791F;font-size:11px;padding:2px 7px;border-radius:4px;font-weight:700;margin-left:6px;">À valider</span> Paires de langues fréquentes par desk ?</div>
+          <div class="tip-box" style="font-size:13px;margin-bottom:0;"><strong>Outil :</strong> ChatGPT ou Claude. Le Chat si confidentiel. <span style="background:rgba(183,121,31,0.1);color:#B7791F;font-size:11px;padding:2px 6px;border-radius:3px;font-weight:700;">À valider</span> Paires de langues fréquentes par desk ?</div>
         </div>
 
         <div class="card" style="margin-bottom:14px;">
-          <div class="technique-num" style="color:var(--orange);">04  :  Veille réglementaire</div>
-          <p style="font-size:13px;color:var(--muted);font-style:italic;margin-bottom:12px;">IMO (CII, EEXI), EU ETS depuis 2024, marchés carbone. Réglementation en mouvement rapide.</p>
+          <div class="technique-num" style="color:var(--orange);">04 : Veille réglementaire</div>
+          <p style="font-size:13px;color:var(--muted);font-style:italic;margin-bottom:12px;">IMO (CII, EEXI), EU ETS depuis 2024, marchés carbone.</p>
           <div class="do-dont" style="margin-bottom:12px;">
-            <div class="do-block">
-              <h3>L'IA fait</h3>
-              <ul class="checklist">
-                <li>Trouver le texte exact d'une règle IMO récente avec lien source</li>
-                <li>Vérifier une date d'entrée en vigueur</li>
-              </ul>
-            </div>
-            <div class="dont-block">
-              <h3>L'IA ne fait pas</h3>
-              <ul class="checklist">
-                <li>Interpréter l'impact d'une règle sur un contrat existant</li>
-                <li>Dire si un navire donné est conforme</li>
-              </ul>
-            </div>
+            <div class="do-block"><h3>L'IA fait</h3><ul class="checklist"><li>Trouver le texte exact d'une règle IMO avec lien source</li><li>Vérifier une date d'entrée en vigueur</li></ul></div>
+            <div class="dont-block"><h3>L'IA ne fait pas</h3><ul class="checklist"><li>Interpréter l'impact sur un contrat existant</li><li>Dire si un navire donné est conforme</li></ul></div>
           </div>
-          <div class="tip-box" style="margin-bottom:0;font-size:13px;"><strong>Workflow :</strong> Perplexity (faits) → Claude (analyse d'impact) → vérification sur IMO.org / Journal officiel EU</div>
+          <div class="tip-box" style="font-size:13px;margin-bottom:0;"><strong>Workflow :</strong> Perplexity (faits) → Claude (analyse d'impact) → vérification sur IMO.org / Journal officiel EU</div>
         </div>
 
-        <div class="card" style="margin-bottom:28px;">
-          <div class="technique-num" style="color:var(--orange);">05  :  Préparer un brief client ou une note de marché</div>
-          <p style="font-size:13px;color:var(--muted);font-style:italic;margin-bottom:12px;">Avant un appel client, avant une présentation. Le broker rassemble des données disparates et doit produire quelque chose de structuré rapidement.</p>
+        <div class="card" style="margin-bottom:24px;">
+          <div class="technique-num" style="color:var(--orange);">05 : Préparer un brief client ou une note de marché</div>
+          <p style="font-size:13px;color:var(--muted);font-style:italic;margin-bottom:12px;">Avant un appel client, avant une présentation.</p>
           <div class="do-dont" style="margin-bottom:12px;">
-            <div class="do-block">
-              <h3>L'IA fait</h3>
-              <ul class="checklist">
-                <li>Structurer une note à partir de données fournies</li>
-                <li>Adapter le niveau de détail selon l'interlocuteur (armateur vs industriel vs investisseur)</li>
-              </ul>
-            </div>
-            <div class="dont-block">
-              <h3>L'IA ne fait pas</h3>
-              <ul class="checklist">
-                <li>Connaître l'historique de la relation client</li>
-                <li>Produire un taux de fret  :  elle organise des chiffres qu'on lui fournit</li>
-              </ul>
-            </div>
+            <div class="do-block"><h3>L'IA fait</h3><ul class="checklist"><li>Structurer une note à partir de données fournies</li><li>Adapter le niveau selon l'interlocuteur</li></ul></div>
+            <div class="dont-block"><h3>L'IA ne fait pas</h3><ul class="checklist"><li>Connaître l'historique de la relation client</li><li>Produire un taux de fret</li></ul></div>
           </div>
-          <div class="tip-box" style="margin-bottom:0;font-size:13px;"><strong>Outil recommandé :</strong> Claude pour les notes longues. ChatGPT pour les variantes. <span style="background:rgba(183,121,31,0.1);color:#B7791F;font-size:11px;padding:2px 7px;border-radius:4px;font-weight:700;margin-left:6px;">À valider</span> Formats de notes clients standardisés en interne ?</div>
+          <div class="tip-box" style="font-size:13px;margin-bottom:0;"><strong>Outil :</strong> Claude pour les notes longues. ChatGPT pour les variantes. <span style="background:rgba(183,121,31,0.1);color:#B7791F;font-size:11px;padding:2px 6px;border-radius:3px;font-weight:700;">À valider</span> Formats de notes clients standardisés ?</div>
         </div>
       </div>
 
+
       <!-- ══════════════════════════════════════════
-           PAGE : BRS DÉLÉGATION
+           PAGE : BRS DELEGATION
       ═══════════════════════════════════════════ -->
       <div class="page" id="page-brs-delegation">
         <div class="module-hero">
           <div class="module-tag">BRS</div>
           <h1 class="module-title">Ce qu'on délègue <em>chez BRS</em></h1>
-          <p class="module-desc">Ce tableau est la règle de travail. Il s'applique à tous les profils  :  broker, support, encadrement.</p>
+          <p class="module-desc">Ce tableau s'applique à tous les profils : broker, support, encadrement.</p>
         </div>
 
         <div class="brs-topnav">
           <span class="brs-topnav-label">Module BRS</span>
-        <button class="brs-topnav-btn" onclick="goTo('brs-cas')">Cas d'usage</button>
-        <button class="brs-topnav-btn" onclick="goTo('brs-situations')">Cas par métiers</button>
-        <button class="brs-topnav-btn" onclick="goTo('brs-copilot')">Copilot chez BRS</button>
-        <button class="brs-topnav-btn" onclick="goTo('brs-reflexes')">Réflexes IA</button>
-        <button class="brs-topnav-btn current" onclick="goTo('brs-delegation')">Ce qu'on délègue chez BRS</button>
+          <button class="brs-topnav-btn" onclick="goTo('brs-cas')">Cas d'usage</button>
+          <button class="brs-topnav-btn" onclick="goTo('brs-situations')">Cas par métiers</button>
+          <button class="brs-topnav-btn" onclick="goTo('brs-copilot')">Copilot chez BRS</button>
+          <button class="brs-topnav-btn" onclick="goTo('brs-reflexes')">Réflexes IA</button>
+          <button class="brs-topnav-btn current" onclick="goTo('brs-delegation')">Ce qu'on délègue chez BRS</button>
         </div>
 
 
         <div class="compare-wrapper">
           <table class="compare-table">
-            <thead>
-              <tr><th>Tâche</th><th>L'IA peut</th><th>L'IA ne peut pas</th></tr>
-            </thead>
+            <thead><tr><th>Tâche</th><th>L'IA peut</th><th>L'IA ne peut pas</th></tr></thead>
             <tbody>
               <tr><td>Synthèse de rapport de marché</td><td style="color:#1A6B3C;font-weight:700;">Oui</td><td>Juger la crédibilité d'une tendance</td></tr>
               <tr><td>Comparaison de deux charterparties</td><td style="color:#1A6B3C;font-weight:700;">Oui</td><td>Valider juridiquement une clause</td></tr>
               <tr><td>Traduction d'une note interne</td><td style="color:#1A6B3C;font-weight:700;">Oui</td><td>Traduction contractuelle sans relecture native</td></tr>
-              <tr><td>Veille réglementaire IMO / EU ETS</td><td style="color:#1A6B3C;font-weight:700;">Oui  :  Perplexity</td><td>Interpréter l'impact sur un navire précis</td></tr>
+              <tr><td>Veille réglementaire IMO / EU ETS</td><td style="color:#1A6B3C;font-weight:700;">Oui (Perplexity)</td><td>Interpréter l'impact sur un navire précis</td></tr>
               <tr><td>Premier jet d'une note client</td><td style="color:#1A6B3C;font-weight:700;">Oui</td><td>Connaître l'historique relationnel du client</td></tr>
-              <tr><td>Produire un taux de fret</td><td style="color:#C0392B;font-weight:700;">Non</td><td>C'est le cœur du métier broker</td></tr>
-              <tr><td>Recommander un navire</td><td style="color:#C0392B;font-weight:700;">Non</td><td>C'est le cœur du métier broker</td></tr>
+              <tr><td>Produire un taux de fret</td><td style="color:#C0392B;font-weight:700;">Non</td><td>C'est le coeur du métier broker</td></tr>
+              <tr><td>Recommander un navire</td><td style="color:#C0392B;font-weight:700;">Non</td><td>C'est le coeur du métier broker</td></tr>
               <tr><td>Décision d'achat/vente (S&amp;P)</td><td style="color:#C0392B;font-weight:700;">Non</td><td>Engagement commercial, responsabilité humaine</td></tr>
               <tr><td>Données client en version gratuite</td><td style="color:#C0392B;font-weight:700;">Jamais</td><td>Confidentialité non garantie</td></tr>
             </tbody>
           </table>
         </div>
-
         <div class="warn-box">
           <strong>Règle BRS</strong>
-          Toute donnée chiffrée dans une note client est vérifiée sur sa source primaire avant envoi. L'IA organise des chiffres qu'on lui fournit  :  elle ne produit pas de chiffres.
+          Toute donnée chiffrée dans une note client est vérifiée sur sa source primaire avant envoi. L'IA organise des chiffres qu'on lui fournit, elle ne produit pas de chiffres.
+        </div>
+      </div>
+
+
+      <!-- ══════════════════════════════════════════
+           PAGE : UN BESOIN, UNE IA
+      ═══════════════════════════════════════════ -->
+      <div class="page" id="page-besoin-ia">
+        <div class="module-hero">
+          <div class="module-tag">Choisir</div>
+          <h1 class="module-title">Un besoin, <em>une IA</em></h1>
+          <p class="module-desc">Trois questions orientent le choix : les données sont-elles confidentielles ? Ai-je besoin de faits récents ? Le document est-il long ?</p>
+        </div>
+        <div class="compare-wrapper">
+          <table class="compare-table">
+            <thead><tr><th>Besoin</th><th>Outil recommandé</th><th>Condition / remarque</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Analyser des données Excel ou chiffres internes</strong></td><td>Copilot</td><td>Plan M365 payant requis. Travaille directement dans vos fichiers sans export.</td></tr>
+              <tr><td><strong>Rédiger : email, note, mémo, rapport</strong></td><td>ChatGPT, Claude, Le Chat</td><td>Le Chat si contenu confidentiel. Claude pour les textes longs et complexes.</td></tr>
+              <tr><td><strong>Reformuler ou changer de registre</strong></td><td>ChatGPT, Le Chat</td><td>Le Chat en volume si données internes.</td></tr>
+              <tr><td><strong>Traduire un document</strong></td><td>ChatGPT, Le Chat</td><td>Le Chat pour les traductions confidentielles. Relecture native obligatoire sur les clauses à enjeu.</td></tr>
+              <tr><td><strong>Chercher un fait, une date, une réglementation récente</strong></td><td>Perplexity</td><td>Chaque affirmation sourcée et vérifiable en un clic. Toujours ouvrir la source avant de publier.</td></tr>
+              <tr><td><strong>Veille continue sur un sujet</strong></td><td>Perplexity, Gemini</td><td>Perplexity Spaces pour organiser la veille en équipe. Gemini si Google Workspace.</td></tr>
+              <tr><td><strong>Analyser un document long (50+ pages)</strong></td><td>Claude</td><td>200 000 tokens : point fort distinctif. Idéal pour contrats, rapports, corpus.</td></tr>
+              <tr><td><strong>Résumer une réunion Teams</strong></td><td>Copilot</td><td>Plan M365 payant. Prompt précis : "liste les décisions, les actions et les questions ouvertes".</td></tr>
+              <tr><td><strong>Travailler sur des fichiers Google Drive / Gmail / Sheets</strong></td><td>Gemini</td><td>Intégration native sans copier-coller. Tapez @Gemini dans Google Docs.</td></tr>
+              <tr><td><strong>Données sensibles : RH, finance, contrats confidentiels</strong></td><td>Le Chat, Copilot Enterprise</td><td>Le Chat : hébergement EU, RGPD natif. Copilot Enterprise : config DSI requise. Jamais en version gratuite.</td></tr>
+              <tr><td><strong>Brainstorming, idéation, angles créatifs</strong></td><td>ChatGPT</td><td>Le plus polyvalent pour la génération d'idées et les variantes A/B.</td></tr>
+              <tr><td><strong>Raisonnement structuré, analyse critique</strong></td><td>Claude</td><td>Résiste aux instructions contradictoires. Demandez-lui de jouer l'avocat du diable.</td></tr>
+              <tr><td><strong>Comparer plusieurs modèles sur une même tâche</strong></td><td>Poe</td><td>Accès à 100+ modèles. Utile pour identifier le meilleur outil sur une tâche récurrente. Éviter les données sensibles.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip-box">
+          <strong>La règle des trois questions</strong>
+          1. Les données sont-elles confidentielles ? Le Chat ou Copilot Enterprise en priorité.<br>
+          2. Ai-je besoin de faits récents ou vérifiés ? Perplexity en premier.<br>
+          3. Le document dépasse 30 pages ? Claude.
         </div>
       </div>
 
@@ -3744,9 +3293,9 @@ function checkPw() {
   if (val === PW) {
     document.getElementById('gate').style.display = 'none';
   } else {
-    inp.classList.add('error');
+    inp.style.borderColor = '#f87171';
     err.style.display = 'block';
-    setTimeout(() => inp.classList.remove('error'), 600);
+    setTimeout(() => inp.style.borderColor = '', 600);
   }
 }
 document.addEventListener('DOMContentLoaded', () => {
@@ -3754,19 +3303,26 @@ document.addEventListener('DOMContentLoaded', () => {
   if (pw) pw.addEventListener('keydown', e => { if (e.key === 'Enter') checkPw(); });
 });
 
+function goTo(id) {
+  const btn = [...document.querySelectorAll('.nav-item')].find(b =>
+    b.getAttribute('onclick') && b.getAttribute('onclick').includes("'" + id + "'")
+  );
+  showPage(id, btn || null);
+}
+
 
 const PAGES = [
   'intro','llm-fonctionnement','llm-limites','llm-sources',
   'chatgpt','claude','gemini','copilot','perplexity','lechat','poe',
   'besoin-ia','confidentialite','tarifs',
-  'workflows','delegation',
+  'scenarios','workflows','delegation',
   'regles-prompt','patterns','techniques','quiz',
   'brs-cas','brs-situations','brs-copilot','brs-reflexes','brs-delegation'
 ];
 
 const TITLES = {
   intro: "Vue d'ensemble",
-  'llm-fonctionnement': 'Comprendre les LLM',
+  'llm-fonctionnement': 'Fonctionnement réel',
   'llm-limites': 'Limites structurelles',
   'llm-sources': 'Sources et données',
   chatgpt: 'ChatGPT',
@@ -3777,12 +3333,12 @@ const TITLES = {
   lechat: 'Le Chat',
   poe: 'Poe',
   'besoin-ia': 'Un besoin, une IA',
-  'besoin-ia': 'Un besoin, une IA',
   confidentialite: 'Confidentialité & RGPD',
   tarifs: 'Tarifs',
+  scenarios: 'Situations générales',
   workflows: 'Enchaîner les outils',
   delegation: "Ce qu'on délègue",
-  'regles-prompt': 'Prompting',
+  'regles-prompt': 'Règles universelles',
   patterns: 'Patterns à éviter',
   techniques: 'Techniques avancées',
   quiz: 'Quiz',
@@ -4134,13 +3690,6 @@ document.addEventListener('click', e => {
     document.getElementById('hero-search-results').classList.remove('open');
   }
 });
-
-function goTo(id) {
-  const btn = [...document.querySelectorAll('.nav-item')].find(b =>
-    b.getAttribute('onclick') && b.getAttribute('onclick').includes("'" + id + "'")
-  );
-  showPage(id, btn || null);
-}
 
 // Init
 buildQuiz();
