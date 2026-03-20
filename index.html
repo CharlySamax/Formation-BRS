@@ -201,7 +201,7 @@
   }
 
   .nav-item:hover { background: rgba(255,255,255,0.08); color: #fff; }
-  .nav-item.active { background: var(--orange); color: #fff; font-weight: 600; }
+  .nav-item.active { background: var(--blue); color: #fff; font-weight: 600; }
 
   .nav-dot {
     width: 5px; height: 5px;
@@ -844,6 +844,68 @@
   }
   .brs-topnav-btn:hover { background: #fff; color: var(--orange); }
   .brs-topnav-btn.current { background: #fff; color: var(--orange); }
+
+
+  /* Sources block */
+  .sources-block {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin: 0 0 28px;
+    width: 100%;
+  }
+  .sources-block-title {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+  .sources-table { width: 100%; border-collapse: collapse; }
+  .sources-table td {
+    padding: 6px 16px 6px 0;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border);
+    width: 33.33%;
+  }
+  .sources-table tr:last-child td { border-bottom: none; }
+  .source-label {
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 2px;
+  }
+  .source-value {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.4;
+    display: block;
+  }
+  .source-value.ok   { color: #1A6B3C; }
+  .source-value.warn { color: #B7791F; }
+  .source-value.bad  { color: #C0392B; }
+
+
+  .nav-item-brs-header {
+    background: var(--orange) !important;
+    color: #fff !important;
+    font-weight: 800 !important;
+    font-size: 14px !important;
+    letter-spacing: 0.04em;
+    border-radius: 7px;
+    margin: 4px 0;
+    justify-content: center;
+    text-align: center;
+  }
+  .nav-item-brs-header:hover {
+    background: #c05316 !important;
+  }
 
   /* ── MOBILE TOGGLE ──────────────────────── */
   .mobile-toggle {
@@ -1530,9 +1592,7 @@
         <button class="nav-item" onclick="showPage('llm-limites', this)">
           <span class="nav-dot"></span>Limites structurelles
         </button>
-        <button class="nav-item" onclick="showPage('llm-sources', this)">
-          <span class="nav-dot"></span>Sources et données
-        </button>
+
       </div>
 
       <div class="nav-section">
@@ -1557,6 +1617,9 @@
         </button>
         <button class="nav-item" onclick="showPage('poe', this)">
           <span class="nav-dot"></span>Poe (Quora)
+        </button>
+        <button class="nav-item" onclick="showPage('besoin-ia', this)">
+          <span class="nav-dot"></span>Un besoin, une IA
         </button>
         <button class="nav-item" onclick="showPage('confidentialite', this)">
           <span class="nav-dot"></span>Confidentialité & RGPD
@@ -1597,6 +1660,12 @@
         <div class="nav-section-title nav-section-big">Valider</div>
         <button class="nav-item" onclick="showPage('quiz', this)">
           <span class="nav-dot"></span>Quiz de validation
+        </button>
+      </div>
+
+      <div class="nav-section">
+        <button class="nav-item nav-item-brs-header" onclick="goTo('brs-cas')">
+          ★ &nbsp;Module BRS
         </button>
       </div>
 
@@ -1883,7 +1952,6 @@
           <h1 class="module-title">ChatGPT, <em>GPT-5</em></h1>
           <p class="module-desc">L'outil le plus polyvalent du marché. Exceptionnel pour la génération de texte, la créativité et le code. Moins fiable sur les données chiffrées sans outil dédié.</p>
         </div>
-
         <div class="do-dont">
           <div class="do-block">
             <h3>Où il excelle</h3>
@@ -1910,6 +1978,34 @@
           <strong>⏱ Étude Nielsen (2023)</strong>
           ChatGPT fait surtout gagner du temps sur le brainstorming et le premier jet. En revanche, corriger un brouillon IA prend <em>plus de temps</em> qu'un brouillon personnel. Investissez en phase 1 (prompt), pas en phase 2 (correction).
         </div>
+        <div class="source-item">
+          <div class="source-label">Connexion web</div>
+          <div class="source-value ">Oui : recherche activable (mode o3)</div>
+        </div>
+        <div class="source-item">
+          <div class="source-label">Fenêtre de contexte</div>
+          <div class="source-value ">128 000 tokens (~96 000 mots)</div>
+        </div>
+        <div class="source-item">
+          <div class="source-label">Modèle actuel</div>
+          <div class="source-value ">GPT-5 (Plus/Pro) · GPT-4o mini (gratuit)</div>
+        </div>
+        <div class="source-item">
+          <div class="source-label">Hébergement</div>
+          <div class="source-value ">Serveurs US (Microsoft Azure)</div>
+        </div>
+        <div class="source-item">
+          <div class="source-label">RGPD / confidentialité</div>
+          <div class="source-value warn">Plan Team/Enterprise : données non utilisées pour l'entraînement</div>
+        </div>
+        </div>
+
+        <div class="divider"></div>
+        <h2>Sources &amp; données</h2>
+        <div class="sources-block">
+          <table class="sources-table"><tbody><tr><td><span class="source-label">Sources d'entraînement</span><span class="source-value ">Web public, livres, GitHub, Wikipedia, Reddit. Coupure : début 2025.</span></td><td><span class="source-label">Connexion web</span><span class="source-value ok">Oui : recherche activable (mode o3)</span></td><td><span class="source-label">Fenêtre de contexte</span><span class="source-value ">128 000 tokens (~96 000 mots)</span></td></tr><tr><td><span class="source-label">Modèle actuel</span><span class="source-value ">GPT-5 (Plus/Pro) · GPT-4o mini (gratuit)</span></td><td><span class="source-label">Hébergement</span><span class="source-value warn">Serveurs US (Microsoft Azure)</span></td><td><span class="source-label">RGPD</span><span class="source-value warn">Plan Team/Enterprise : données non utilisées pour l'entraînement</span></td></tr></tbody></table>
+        </div>
+
       </div>
 
       <!-- ══════════════════════════════════════════
@@ -1921,7 +2017,6 @@
           <h1 class="module-title">Claude, <em>Opus 4.6</em></h1>
           <p class="module-desc">Le plus rigoureux sur l'analyse longue. Signale ses incertitudes, résiste aux instructions contradictoires. Fenêtre de 200 000 tokens, l'équivalent de 2 romans denses en une session.</p>
         </div>
-
         <div class="do-dont">
           <div class="do-block">
             <h3>Où il excelle</h3>
@@ -1944,26 +2039,35 @@
           </div>
         </div>
 
-        <h2>Do / Don't en pratique</h2>
-        <div class="card" style="margin-bottom:14px;">
-          <div class="technique-num">✓ Do</div>
-          <p style="margin:0;font-size:13.5px;"><strong>Confiez-lui vos documents longs avec balises XML.</strong><br>
-          Exemple&nbsp;: <code style="background:var(--cream);padding:2px 6px;border-radius:4px;font-size:12px;">&lt;document&gt;[Votre texte de 50+ pages]&lt;/document&gt;</code> : Identifie les 3 risques stratégiques absents de la conclusion.</p>
+
+        <div class="source-item">
+          <div class="source-label">Connexion web</div>
+          <div class="source-value ">Non : pas de connexion web native</div>
         </div>
-        <div class="card" style="margin-bottom:14px;">
-          <div class="technique-num">✓ Do</div>
-          <p style="margin:0;font-size:13.5px;"><strong>Demandez le raisonnement avant la réponse.</strong><br>
-          «&nbsp;Avant de répondre, examine l'essence du problème et ses implications larges. Expose ta démarche. Ensuite seulement, donne ta recommandation.&nbsp;»</p>
+        <div class="source-item">
+          <div class="source-label">Fenêtre de contexte</div>
+          <div class="source-value ">200 000 tokens (~150 000 mots) : point fort distinctif</div>
         </div>
-        <div class="card" style="margin-bottom:24px;">
-          <div class="technique-num">✓ Do</div>
-          <p style="margin:0;font-size:13.5px;"><strong>Utilisez les Projects pour un contexte persistant d'équipe.</strong><br>
-          Créez un Project «&nbsp;Client X&nbsp;» avec le brief, le ton de marque et les livrables : Claude les mémorise pour tous les membres.</p>
+        <div class="source-item">
+          <div class="source-label">Modèle actuel</div>
+          <div class="source-value ">Claude Sonnet 4.6 (Pro) · Claude Opus 4.6 (Max)</div>
+        </div>
+        <div class="source-item">
+          <div class="source-label">Hébergement</div>
+          <div class="source-value ">Serveurs US (AWS)</div>
+        </div>
+        <div class="source-item">
+          <div class="source-label">RGPD / confidentialité</div>
+          <div class="source-value warn">Plan Pro/Team/Enterprise : données non utilisées</div>
+        </div>
         </div>
 
-        <div class="warn-box">
-          ⚠️ Ne demandez pas d'images ou de vidéos à Claude : il est centré texte et code. Pour les tâches multimodales créatives, utilisez ChatGPT (DALL-E) ou Gemini.
+        <div class="divider"></div>
+        <h2>Sources &amp; données</h2>
+        <div class="sources-block">
+          <table class="sources-table"><tbody><tr><td><span class="source-label">Sources d'entraînement</span><span class="source-value ">Web public, livres, code, données publiques. Coupure : début 2025.</span></td><td><span class="source-label">Connexion web</span><span class="source-value warn">Non : pas de connexion web native</span></td><td><span class="source-label">Fenêtre de contexte</span><span class="source-value ok">200 000 tokens (~150 000 mots) : point fort distinctif</span></td></tr><tr><td><span class="source-label">Modèle actuel</span><span class="source-value ">Claude Sonnet 4.6 (Pro) · Claude Opus 4.6 (Max)</span></td><td><span class="source-label">Hébergement</span><span class="source-value warn">Serveurs US (AWS)</span></td><td><span class="source-label">RGPD</span><span class="source-value warn">Plan Pro/Team/Enterprise : données non utilisées pour l'entraînement</span></td></tr></tbody></table>
         </div>
+
       </div>
 
       <!-- ══════════════════════════════════════════
@@ -1975,7 +2079,6 @@
           <h1 class="module-title">Gemini, <em>2.5 Pro</em></h1>
           <p class="module-desc">L'outil de référence dans Google Workspace. Lit vos fichiers Drive, Gmail, Docs directement, sans copier-coller. Son avantage est dans l'intégration native, pas dans l'usage hors écosystème.</p>
         </div>
-
         <div class="do-dont">
           <div class="do-block">
             <h3>Où il excelle</h3>
@@ -2000,6 +2103,34 @@
           <strong>💡 Astuce pratique</strong>
           Dans Google Docs, tapez <strong>@Gemini</strong> pour invoquer l'IA directement dans votre document. Dans Sheets, Gemini analyse vos données en contexte réel, aucune exportation nécessaire.
         </div>
+        <div class="source-item">
+          <div class="source-label">Connexion web</div>
+          <div class="source-value ">Oui : connexion web permanente par défaut</div>
+        </div>
+        <div class="source-item">
+          <div class="source-label">Fenêtre de contexte</div>
+          <div class="source-value ">1 million de tokens (Gemini 2.5 Pro)</div>
+        </div>
+        <div class="source-item">
+          <div class="source-label">Modèle actuel</div>
+          <div class="source-value ">Gemini 2.5 Pro (AI Pro) · Flash 2.0 (gratuit)</div>
+        </div>
+        <div class="source-item">
+          <div class="source-label">Hébergement</div>
+          <div class="source-value ">Serveurs US (Google Cloud)</div>
+        </div>
+        <div class="source-item">
+          <div class="source-label">RGPD / confidentialité</div>
+          <div class="source-value warn">Workspace Business/Enterprise : données protégées</div>
+        </div>
+        </div>
+
+        <div class="divider"></div>
+        <h2>Sources &amp; données</h2>
+        <div class="sources-block">
+          <table class="sources-table"><tbody><tr><td><span class="source-label">Sources d'entraînement</span><span class="source-value ">Web public + données Google exclusives : Search, YouTube, Maps, Gmail anonymisé.</span></td><td><span class="source-label">Connexion web</span><span class="source-value ok">Oui : connexion web permanente par défaut</span></td><td><span class="source-label">Fenêtre de contexte</span><span class="source-value ok">1 million de tokens (Gemini 2.5 Pro)</span></td></tr><tr><td><span class="source-label">Modèle actuel</span><span class="source-value ">Gemini 2.5 Pro (AI Pro) · Flash 2.0 (gratuit)</span></td><td><span class="source-label">Hébergement</span><span class="source-value warn">Serveurs US (Google Cloud)</span></td><td><span class="source-label">RGPD</span><span class="source-value warn">Workspace Business/Enterprise : données protégées</span></td></tr></tbody></table>
+        </div>
+
       </div>
 
       <!-- ══════════════════════════════════════════
@@ -2011,7 +2142,6 @@
           <h1 class="module-title">Microsoft <em>Copilot</em></h1>
           <p class="module-desc">L'outil qui transforme vos données Microsoft 365 en actions : emails, fichiers, réunions, données internes. Sa valeur est conditionnée au plan M365 payant.</p>
         </div>
-
         <div class="do-dont">
           <div class="do-block">
             <h3>Où il excelle</h3>
@@ -2036,6 +2166,34 @@
           <strong>⚠️ Point clé</strong>
           L'accès aux données internes nécessite le plan <strong>M365 Copilot payant (30 $/mois/utilisateur)</strong>. La version gratuite ne lit pas vos fichiers. Prévoir 2h de formation par profil d'usage : les gains de productivité arrivent après la maîtrise.
         </div>
+        <div class="source-item">
+          <div class="source-label">Connexion web</div>
+          <div class="source-value ">Oui : Bing intégré par défaut</div>
+        </div>
+        <div class="source-item">
+          <div class="source-label">Fenêtre de contexte</div>
+          <div class="source-value ">Limité sur données internes selon la config M365</div>
+        </div>
+        <div class="source-item">
+          <div class="source-label">Modèle actuel</div>
+          <div class="source-value ">GPT-5 (M365 Copilot payant) · Copilot Chat (gratuit)</div>
+        </div>
+        <div class="source-item">
+          <div class="source-label">Hébergement</div>
+          <div class="source-value ">Serveurs US/EU selon config Enterprise</div>
+        </div>
+        <div class="source-item">
+          <div class="source-label">RGPD / confidentialité</div>
+          <div class="source-value ok">Enterprise : données non utilisées pour l'entraînement. Config DSI requise.</div>
+        </div>
+        </div>
+
+        <div class="divider"></div>
+        <h2>Sources &amp; données</h2>
+        <div class="sources-block">
+          <table class="sources-table"><tbody><tr><td><span class="source-label">Sources d'entraînement</span><span class="source-value ">Base GPT-5 + index Bing temps réel + (M365 payant) vos données internes.</span></td><td><span class="source-label">Connexion web</span><span class="source-value ok">Oui : Bing intégré par défaut</span></td><td><span class="source-label">Fenêtre de contexte</span><span class="source-value warn">Limité sur données internes selon la config M365</span></td></tr><tr><td><span class="source-label">Modèle actuel</span><span class="source-value ">GPT-5 (M365 Copilot payant) · Copilot Chat (gratuit)</span></td><td><span class="source-label">Hébergement</span><span class="source-value warn">Serveurs US/EU selon config Enterprise</span></td><td><span class="source-label">RGPD</span><span class="source-value warn">Enterprise : données non utilisées. Config DSI requise.</span></td></tr></tbody></table>
+        </div>
+
       </div>
 
       <!-- ══════════════════════════════════════════
@@ -2047,7 +2205,6 @@
           <h1 class="module-title">Perplexity, <em>moteur IA sourcé</em></h1>
           <p class="module-desc">Chaque affirmation est sourcée, chaque source est vérifiable en un clic. Incomparable pour la veille factuelle. Pas conçu pour rédiger ou créer du contenu.</p>
         </div>
-
         <div class="do-dont">
           <div class="do-block">
             <h3>Où il excelle</h3>
@@ -2072,6 +2229,34 @@
           <strong>💡 Usage optimal en deux temps</strong>
           Perplexity pour les faits et les sources → ChatGPT ou Claude pour la rédaction. Deux outils, deux rôles distincts.
         </div>
+        <div class="source-item">
+          <div class="source-label">Connexion web</div>
+          <div class="source-value ">Oui : 100 % web, c'est son principe fondamental</div>
+        </div>
+        <div class="source-item">
+          <div class="source-label">Fenêtre de contexte</div>
+          <div class="source-value ">Standard : adapté à la recherche factuelle, pas aux longs documents</div>
+        </div>
+        <div class="source-item">
+          <div class="source-label">Modèle actuel</div>
+          <div class="source-value ">Surcouche sur GPT-5, Claude ou Gemini selon la requête</div>
+        </div>
+        <div class="source-item">
+          <div class="source-label">Hébergement</div>
+          <div class="source-value ">Serveurs US</div>
+        </div>
+        <div class="source-item">
+          <div class="source-label">RGPD / confidentialité</div>
+          <div class="source-value warn">Pas de contrat DPA public. Ne pas y mettre de données confidentielles.</div>
+        </div>
+        </div>
+
+        <div class="divider"></div>
+        <h2>Sources &amp; données</h2>
+        <div class="sources-block">
+          <table class="sources-table"><tbody><tr><td><span class="source-label">Sources d'entraînement</span><span class="source-value ">100 % temps réel : recherche web systématique sur chaque requête.</span></td><td><span class="source-label">Connexion web</span><span class="source-value ok">Oui : 100 % web, principe fondamental</span></td><td><span class="source-label">Fenêtre de contexte</span><span class="source-value ">Standard : adapté à la recherche factuelle, pas aux longs documents</span></td></tr><tr><td><span class="source-label">Modèle actuel</span><span class="source-value ">Surcouche sur GPT-5, Claude ou Gemini selon la requête</span></td><td><span class="source-label">Hébergement</span><span class="source-value warn">Serveurs US</span></td><td><span class="source-label">RGPD</span><span class="source-value bad">Pas de contrat DPA public. Ne pas y mettre de données confidentielles.</span></td></tr></tbody></table>
+        </div>
+
       </div>
 
       <!-- ══════════════════════════════════════════
@@ -2083,7 +2268,6 @@
           <h1 class="module-title">Le Chat, <em>souverain européen</em></h1>
           <p class="module-desc">Seul outil souverain de ce comparatif. Données hébergées en Europe, RGPD natif, mémoire persistante, génération à ~1 000 mots/seconde.</p>
         </div>
-
         <div class="do-dont">
           <div class="do-block">
             <h3>Où il excelle</h3>
@@ -2109,6 +2293,34 @@
           ⚠️ Version gratuite&nbsp;: vérifiez la désactivation du partage de données → Paramètres → Préférences → décocher «&nbsp;Autoriser l'utilisation de vos interactions&nbsp;».<br><br>
           🎁 Free Mobile&nbsp;: 12 mois Pro offerts aux abonnés.
         </div>
+        <div class="source-item">
+          <div class="source-label">Connexion web</div>
+          <div class="source-value ">Oui : Pro : partenariat AFP pour actualités vérifiées</div>
+        </div>
+        <div class="source-item">
+          <div class="source-label">Fenêtre de contexte</div>
+          <div class="source-value ">32 000 tokens (Mistral Large)</div>
+        </div>
+        <div class="source-item">
+          <div class="source-label">Modèle actuel</div>
+          <div class="source-value ">Mistral Large 2 (Pro) · Mistral 7B (gratuit)</div>
+        </div>
+        <div class="source-item">
+          <div class="source-label">Hébergement</div>
+          <div class="source-value ok">Serveurs EU uniquement (Paris). Aucune loi américaine applicable.</div>
+        </div>
+        <div class="source-item">
+          <div class="source-label">RGPD / confidentialité</div>
+          <div class="source-value ok">RGPD natif sans configuration. Désactiver le partage en version gratuite.</div>
+        </div>
+        </div>
+
+        <div class="divider"></div>
+        <h2>Sources &amp; données</h2>
+        <div class="sources-block">
+          <table class="sources-table"><tbody><tr><td><span class="source-label">Sources d'entraînement</span><span class="source-value ">Web public (priorité français), livres, code. Modèles open source Mistral.</span></td><td><span class="source-label">Connexion web</span><span class="source-value ok">Oui : Pro : partenariat AFP pour actualités vérifiées</span></td><td><span class="source-label">Fenêtre de contexte</span><span class="source-value ">32 000 tokens (Mistral Large)</span></td></tr><tr><td><span class="source-label">Modèle actuel</span><span class="source-value ">Mistral Large 2 (Pro) · Mistral 7B (gratuit)</span></td><td><span class="source-label">Hébergement</span><span class="source-value ok">Serveurs EU uniquement (Paris). Aucune loi américaine applicable.</span></td><td><span class="source-label">RGPD</span><span class="source-value ok">RGPD natif sans configuration. Désactiver le partage en version gratuite.</span></td></tr></tbody></table>
+        </div>
+
       </div>
 
       <!-- ══════════════════════════════════════════
@@ -2120,7 +2332,6 @@
           <h1 class="module-title">Poe, <em>100+ modèles</em></h1>
           <p class="module-desc">L'interface unique qui donne accès à ChatGPT, Claude, Gemini, Llama et plus de 100 modèles dans une seule app, avec un abonnement unique.</p>
         </div>
-
         <div class="do-dont">
           <div class="do-block">
             <h3>Où il excelle</h3>
@@ -2144,6 +2355,34 @@
           <strong>⚠️ Confidentialité</strong>
           Vos données transitent par les serveurs Poe avant d'atteindre le modèle. Pour les données sensibles, utilisez directement l'interface officielle (claude.ai, chat.openai.com). Serveurs américains, pas de garantie RGPD.
         </div>
+        <div class="source-item">
+          <div class="source-label">Connexion web</div>
+          <div class="source-value ">Selon le modèle choisi</div>
+        </div>
+        <div class="source-item">
+          <div class="source-label">Fenêtre de contexte</div>
+          <div class="source-value ">Selon le modèle choisi</div>
+        </div>
+        <div class="source-item">
+          <div class="source-label">Modèle actuel</div>
+          <div class="source-value ">Choix parmi 100+ modèles (abonnement unique)</div>
+        </div>
+        <div class="source-item">
+          <div class="source-label">Hébergement</div>
+          <div class="source-value bad">Serveurs US Poe + serveurs du modèle utilisé : double exposition.</div>
+        </div>
+        <div class="source-item">
+          <div class="source-label">RGPD / confidentialité</div>
+          <div class="source-value bad">Données transitent par Poe avant le modèle. Éviter toute donnée sensible.</div>
+        </div>
+        </div>
+
+        <div class="divider"></div>
+        <h2>Sources &amp; données</h2>
+        <div class="sources-block">
+          <table class="sources-table"><tbody><tr><td><span class="source-label">Sources d'entraînement</span><span class="source-value ">Accès à 100+ modèles : GPT-5, Claude, Gemini, Llama, Mistral et plus.</span></td><td><span class="source-label">Connexion web</span><span class="source-value ">Selon le modèle choisi</span></td><td><span class="source-label">Fenêtre de contexte</span><span class="source-value ">Selon le modèle choisi</span></td></tr><tr><td><span class="source-label">Modèle actuel</span><span class="source-value ">Choix parmi 100+ modèles (abonnement unique)</span></td><td><span class="source-label">Hébergement</span><span class="source-value bad">Serveurs US Poe + serveurs du modèle : double exposition.</span></td><td><span class="source-label">RGPD</span><span class="source-value bad">Données transitent par Poe avant le modèle. Éviter toute donnée sensible.</span></td></tr></tbody></table>
+        </div>
+
       </div>
 
       <!-- ══════════════════════════════════════════
@@ -2388,6 +2627,51 @@
         <div class="warn-box">
           <strong>⚠️ Ces outils évoluent vite</strong>
           Tarifs, modèles et conditions changent fréquemment. Ce qui est vrai aujourd'hui peut être périmé dans 6 mois. Vérifiez avant de déployer.
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════════
+           PAGE : UN BESOIN, UNE IA
+      ═══════════════════════════════════════════ -->
+      <div class="page" id="page-besoin-ia">
+        <div class="module-hero">
+          <div class="module-tag">Choisir</div>
+          <h1 class="module-title">Un besoin, <em>une IA</em></h1>
+          <p class="module-desc">Partez du besoin, pas de l'outil. Trois questions orientent le choix : les données sont-elles confidentielles ? Ai-je besoin de faits récents ? Le document est-il long ?</p>
+        </div>
+
+        <div class="compare-wrapper">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Besoin</th>
+                <th>Outil recommandé</th>
+                <th>Condition / remarque</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Analyser des données Excel ou chiffres internes</strong></td><td>Copilot</td><td>Plan M365 payant requis. Travaille directement dans vos fichiers sans export.</td></tr>
+              <tr><td><strong>Rédiger : email, note, mémo, rapport</strong></td><td>ChatGPT · Claude · Le Chat</td><td>Le Chat si contenu confidentiel. Claude pour les textes longs et complexes.</td></tr>
+              <tr><td><strong>Reformuler ou changer de registre</strong></td><td>ChatGPT · Le Chat</td><td>Le Chat en volume si données internes.</td></tr>
+              <tr><td><strong>Traduire un document</strong></td><td>ChatGPT · Le Chat</td><td>Le Chat pour les traductions confidentielles (contrats, RH). Relecture native obligatoire sur les clauses à enjeu.</td></tr>
+              <tr><td><strong>Chercher un fait, une date, une réglementation récente</strong></td><td>Perplexity</td><td>Chaque affirmation sourcée et vérifiable en un clic. Toujours ouvrir la source avant de publier.</td></tr>
+              <tr><td><strong>Veille continue sur un sujet</strong></td><td>Perplexity · Gemini</td><td>Perplexity Spaces pour organiser la veille en équipe. Gemini si Google Workspace.</td></tr>
+              <tr><td><strong>Analyser un document long (50+ pages)</strong></td><td>Claude</td><td>200 000 tokens : point fort distinctif. Idéal pour contrats, rapports, corpus.</td></tr>
+              <tr><td><strong>Résumer une réunion Teams</strong></td><td>Copilot</td><td>Plan M365 payant. Prompt précis : "liste les décisions, les actions et les questions ouvertes".</td></tr>
+              <tr><td><strong>Travailler sur des fichiers Google Drive / Gmail / Sheets</strong></td><td>Gemini</td><td>Intégration native sans copier-coller. Tapez @Gemini dans Google Docs.</td></tr>
+              <tr><td><strong>Données sensibles : RH, finance, contrats confidentiels</strong></td><td>Le Chat · Copilot Enterprise</td><td>Le Chat : hébergement EU, RGPD natif. Copilot Enterprise : config DSI requise. Jamais en version gratuite.</td></tr>
+              <tr><td><strong>Brainstorming, idéation, angles créatifs</strong></td><td>ChatGPT</td><td>Le plus polyvalent pour la génération d'idées et les variantes A/B.</td></tr>
+              <tr><td><strong>Raisonnement structuré, analyse critique</strong></td><td>Claude</td><td>Résiste aux instructions contradictoires. Demandez-lui de jouer l'avocat du diable.</td></tr>
+              <tr><td><strong>Comparer plusieurs modèles sur une même tâche</strong></td><td>Poe</td><td>Accès à 100+ modèles. Utile pour identifier le meilleur outil sur une tâche récurrente. Éviter les données sensibles.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="tip-box">
+          <strong>La règle des trois questions</strong>
+          1. Les données sont-elles confidentielles ? → Le Chat ou Copilot Enterprise en priorité.<br>
+          2. Ai-je besoin de faits récents ou vérifiés ? → Perplexity en premier.<br>
+          3. Le document dépasse 30 pages ? → Claude.
         </div>
       </div>
 
@@ -3481,7 +3765,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const PAGES = [
   'intro','llm-fonctionnement','llm-limites','llm-sources',
   'chatgpt','claude','gemini','copilot','perplexity','lechat','poe',
-  'confidentialite','tarifs',
+  'besoin-ia','confidentialite','tarifs',
   'workflows','delegation',
   'regles-prompt','patterns','techniques','quiz',
   'brs-cas','brs-situations','brs-copilot','brs-reflexes','brs-delegation'
@@ -3499,6 +3783,8 @@ const TITLES = {
   perplexity: 'Perplexity',
   lechat: 'Le Chat',
   poe: 'Poe',
+  'besoin-ia': 'Un besoin, une IA',
+  'besoin-ia': 'Un besoin, une IA',
   confidentialite: 'Confidentialité & RGPD',
   tarifs: 'Tarifs',
   workflows: 'Enchaîner les outils',
