@@ -274,9 +274,27 @@
   /* ── CONTENT AREA ───────────────────────── */
   .content { padding: 48px 64px 80px; width: 100%; max-width: 100%; box-sizing: border-box; }
 
-  /* ── PAGE ───────────────────────────────── */
-  .page { display: none !important; }
-  .page.active { display: block !important; visibility: visible !important; opacity: 1 !important; }
+  
+/* Force visibility of page content */
+.page.active > * { visibility: visible; opacity: 1; }
+.page.active .module-hero,
+.page.active .do-dont,
+.page.active .card-grid,
+.page.active .zones-row,
+.page.active .widget-wrap,
+.page.active .warn-box,
+.page.active .tip-box {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+.page.active .zones-row { display: grid; }
+.page.active .do-dont { display: flex; }
+.page.active .card-grid { display: grid; }
+
+/* ── PAGE ───────────────────────────────── */
+  .page { display: none; }
+  .page.active { display: block; }
   .content { overflow-x: hidden; }
   .main { overflow-x: hidden; }
 
@@ -2452,7 +2470,11 @@ Conclus par :
   <div class="module-hero">
     <div class="module-tag">Bloc 4 · 20 min</div>
     <h1 class="module-title">3 cas <em>concrets BRS</em></h1>
-    <p class="module-desc">Pour chaque cas : le contexte, le prompt a utiliser, ce qu'on attendid="page-bloc5-regles">
+    <p class="module-desc">Pour chaque cas : le contexte, le prompt à utiliser, ce qu'on attend.</p>
+  </div>
+</div>
+
+<div class="page" id="page-bloc5-regles">
   <div class="module-hero">
     <div class="module-tag">Bloc 5 · 10 min</div>
     <h1 class="module-title">Règles, patterns <em>et techniques</em></h1>
@@ -3821,12 +3843,11 @@ updateNav();
 function showPage(id, btn) {
   const idx = PAGES.indexOf(id);
   if (idx < 0) return;
-  document.querySelectorAll(`.page`).forEach(p => { p.classList.remove(`active`); p.removeAttribute('style'); });
+  document.querySelectorAll(`.page`).forEach(p => p.classList.remove(`active`));
   document.querySelectorAll(`.nav-item`).forEach(b => b.classList.remove(`active`));
   const page = document.getElementById(`page-` + id);
   if (!page) return;
   page.classList.add(`active`);
-  page.setAttribute('style', 'display:block !important; visibility:visible !important; opacity:1 !important;');
   if (btn) btn.classList.add(`active`);
   current = idx;
   visited.add(idx);
@@ -4615,9 +4636,6 @@ function initPage(id) {
 
 // ── INIT ON LOAD ─────────────────────────
 document.addEventListener(`DOMContentLoaded`, () => {
-  // Auto-correction : replace any .page outside .content
-  const _ct = document.querySelector('.content');
-  if (_ct) document.querySelectorAll('.page').forEach(pg => { if (!_ct.contains(pg)) _ct.appendChild(pg); });
   showPage(`intro`, document.querySelector(`.nav-item`));
   console.log('Formation BRS v23-mars-2026 — OK');
 });
