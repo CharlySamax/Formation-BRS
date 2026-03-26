@@ -260,6 +260,7 @@
     border: 1px solid var(--border);
   }
   .btn-ghost:hover { color: var(--navy); border-color: var(--navy); }
+.btn-ghost:disabled { opacity: 0.35; cursor: not-allowed; }
 
   .btn-home { background: var(--navy); color: #fff; font-weight: 700; border: none; font-size: 15px; }
   .btn-home:hover { background: var(--orange); }
@@ -276,7 +277,7 @@
 
   /* ── PAGE ───────────────────────────────── */
   .page { display: none; animation: fadeIn 0.25s ease; }
-  .page.active { display: block; }
+  .page.active { display: block; padding: 40px 0 0; }
   .content { overflow-x: hidden; }
   .main { overflow-x: hidden; }
 
@@ -1560,7 +1561,7 @@
 .zone-rouge .zone-f-title { color: var(--danger); }
 .tool-family-f {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
   gap: 12px;
   margin-bottom: 20px;
 }
@@ -1914,9 +1915,10 @@
 
     <!-- CONFIDENTIALITE / TARIFS -->
     <div class="nav-section">
-      <div class="nav-section-title nav-section-big">Référence</div>
+      <div class="nav-section-title nav-section-big">Références</div>
       <button class="nav-item" onclick="showPage('confidentialite',this)"><span class="nav-dot"></span>Confidentialité &amp; RGPD</button>
       <button class="nav-item" onclick="showPage('tarifs',this)"><span class="nav-dot"></span>Tarifs · mars 2026</button>
+      <button class="nav-item" onclick="showPage('mentions',this)"><span class="nav-dot"></span>Mentions légales</button>
     </div>
 
     <!-- UTILISER -->
@@ -1926,6 +1928,7 @@
       <button class="nav-item nav-item-brs-header" onclick="showPage('brs-situations',this)">Situations BRS</button>
       <button class="nav-item" onclick="showPage('brs-copilot',this)"><span class="nav-dot"></span>Copilot chez BRS</button>
       <button class="nav-item" onclick="showPage('brs-reflexes',this)"><span class="nav-dot"></span>Réflexes IA BRS</button>
+      <button class="nav-item" onclick="showPage('brs-delegation',this)"><span class="nav-dot"></span>Ce qu'on délègue chez BRS</button>
       <button class="nav-item" onclick="showPage('protocoles',this)"><span class="nav-dot"></span>Protocoles de relecture</button>
     </div>
 
@@ -2110,7 +2113,7 @@
 <div class="page" id="page-bloc1-consequences">
   <div class="module-hero">
     <div class="module-tag">Bloc 1 · 10 min</div>
-    <h1 class="module-title">Le mot « piraterie » <em>combien de chiffres par IA ?</em></h1>
+    <h1 class="module-title">Le mot « piraterie » : <em>combien de chiffres par IA</em></h1>
     <p class="module-desc">Chaque IA encode ce mot en une liste de nombres. Plus la liste est longue, plus les nuances sont capturées. Mais longueur ne veut pas dire précision : la qualité des données d'entraînement compte autant que la taille.</p>
   </div>
 
@@ -2148,7 +2151,7 @@
 
     <div class="wtab-pane" id="b1c-t1">
       <p style="font-size:17px;color:var(--muted);line-height:1.65;margin-bottom:6px;">Le même mot. Trois niveaux de contexte. Six réponses différentes.</p>
-      <p style="font-size:15px;color:var(--muted);margin-bottom:18px;">Cliquez sur un prompt pour comparer les 6 réponses côte à côte.</p>
+      <p style="font-size:17px;color:var(--muted);margin-bottom:18px;">Cliquez sur un prompt pour comparer les 6 réponses côte à côte.</p>
 
       <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:16px;">
         <button onclick="b1ShowCompare(0,this)" class="b1c-prompt-btn" style="text-align:left;padding:10px 14px;border:1.5px solid var(--border);border-radius:var(--radius);background:var(--white);cursor:pointer;font-family:inherit;transition:border-color .15s;">
@@ -2178,20 +2181,20 @@
     <div style="font-size:20px;font-weight:800;color:var(--navy);margin-bottom:16px;">Ce que ça change pour vous</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
       <div class="card-sm" style="border-top:3px solid var(--navy);">
-        <strong style="font-size:14px;color:var(--navy);">1. Le contexte doit être redonné à chaque fois</strong>
-        <p style="font-size:13px;margin-top:6px;color:var(--muted);line-height:1.65;">Le modèle n’apprend pas de vos échanges. Ce que vous lui expliquez dans un prompt ne le forme pas. À la prochaine conversation, il repart de zéro. Si vous avez précisé que vous travaillez sur un voyage charter, il ne s’en souvient pas la fois suivante.</p>
+        <strong style="font-size:16px;color:var(--navy);">1. Le contexte doit être redonné à chaque fois</strong>
+        <p style="font-size:15px;margin-top:6px;color:var(--muted);line-height:1.65;">Le modèle n’apprend pas de vos échanges. Ce que vous lui expliquez dans un prompt ne le forme pas. À la prochaine conversation, il repart de zéro. Si vous avez précisé que vous travaillez sur un voyage charter, il ne s’en souvient pas la fois suivante.</p>
       </div>
       <div class="card-sm" style="border-top:3px solid var(--orange);">
-        <strong style="font-size:14px;color:var(--orange);">2. Un prompt bien construit pèse lourd</strong>
-        <p style="font-size:13px;margin-top:6px;color:var(--muted);line-height:1.65;">Puisque le modèle recalcule tout à partir de ce que vous lui donnez, la qualité de votre prompt détermine directement la qualité de la réponse. Ce n’est pas « bien parler à une machine », c’est lui fournir les coordonnées dont elle a besoin pour orienter ses calculs.</p>
+        <strong style="font-size:16px;color:var(--orange);">2. Un prompt bien construit pèse lourd</strong>
+        <p style="font-size:15px;margin-top:6px;color:var(--muted);line-height:1.65;">Puisque le modèle recalcule tout à partir de ce que vous lui donnez, la qualité de votre prompt détermine directement la qualité de la réponse. Ce n’est pas « bien parler à une machine », c’est lui fournir les coordonnées dont elle a besoin pour orienter ses calculs.</p>
       </div>
       <div class="card-sm" style="border-top:3px solid var(--danger);">
-        <strong style="font-size:14px;color:var(--danger);">3. Il ne se corrige pas</strong>
-        <p style="font-size:13px;margin-top:6px;color:var(--muted);line-height:1.65;">Il n’a pas de mécanisme interne qui détecte ses propres erreurs. Une réponse fausse sort avec la même fluidité qu’une réponse exacte. La relecture reste indispensable.</p>
+        <strong style="font-size:16px;color:var(--danger);">3. Il ne se corrige pas</strong>
+        <p style="font-size:15px;margin-top:6px;color:var(--muted);line-height:1.65;">Il n’a pas de mécanisme interne qui détecte ses propres erreurs. Une réponse fausse sort avec la même fluidité qu’une réponse exacte. La relecture reste indispensable.</p>
       </div>
       <div class="card-sm" style="border-top:3px solid var(--success);">
-        <strong style="font-size:14px;color:var(--success);">4. Le bon outil dépend du besoin</strong>
-        <p style="font-size:13px;margin-top:6px;color:var(--muted);line-height:1.65;">Document long à analyser ou rédiger → Claude<br>Information récente à vérifier (War Risk, incident, sanction IMO) → Perplexity<br>Fichiers internes BRS, environnement Microsoft → Copilot<br>Données sensibles, confidentialité → Le Chat (Mistral)</p>
+        <strong style="font-size:16px;color:var(--success);">4. Le bon outil dépend du besoin</strong>
+        <p style="font-size:15px;margin-top:6px;color:var(--muted);line-height:1.65;">Document long à analyser ou rédiger → Claude<br>Information récente à vérifier (War Risk, incident, sanction IMO) → Perplexity<br>Fichiers internes BRS, environnement Microsoft → Copilot<br>Données sensibles, confidentialité → Le Chat (Mistral)</p>
       </div>
     </div>
   </div>
@@ -2331,7 +2334,7 @@
       <p style="font-size:15px;margin-top:6px;">Copilot peut pointer des sections. Mais l'analyse juridique reste humaine. Pour un document long : préférer Claude en complément.</p>
     </div>
   </div>
-  <div class="warn-box" style="margin-top:6px;"><strong>A retenir</strong> Copilot lit vos fichiers M365. Il ne connaît pas le droit maritime, vos pratiques de marché ou les conditions du moment. Vous, oui.</div>
+  <div class="warn-box" style="margin-top:6px;"><strong>À retenir</strong> Copilot lit vos fichiers M365. Il ne connaît pas le droit maritime, vos pratiques de marché ou les conditions du moment. Vous, oui.</div>
 </div>
 
 <!-- ═══ BLOC 3 : EXERCICE ═══ -->
@@ -2353,7 +2356,7 @@
     <p class="module-desc">Ces réflexes s'appliquent à chaque tâche, quel que soit l'outil. Cliquez sur un réflexe pour le détail.</p>
   </div>
   <div id="ec-piliers"></div>
-  <div class="warn-box" style="margin-top:14px;"><strong>A retenir</strong> l'IA produit vite et bien. L'esprit critique, c'est ce qui fait la différence entre un résultat utilisable et un résultat dangereux.</div>
+  <div class="warn-box" style="margin-top:14px;"><strong>À retenir</strong> l'IA produit vite et bien. L'esprit critique, c'est ce qui fait la différence entre un résultat utilisable et un résultat dangereux.</div>
 </div>
 
 <!-- ═══ RELECTURE ═══ -->
@@ -2411,7 +2414,7 @@
         <div style="overflow-x:auto;margin-bottom:14px;">
           <table class="diff-table-f" id="rl-diff-table"></table>
         </div>
-        <div class="warn-box"><strong>Le chiffre qui compte</strong> Un humain pressé en trouve 2 ou 3. Une deuxième IA en trouve 17 en quelques secondes. Sur un document a fort enjeu juridique ou commercial, ce différentiel peut etre très coûteux.</div>
+        <div class="warn-box"><strong>Le chiffre qui compte</strong> Un humain pressé en trouve 2 ou 3. Une deuxième IA en trouve 17 en quelques secondes. Sur un document a fort enjeu juridique ou commercial, ce différentiel peut être très coûteux.</div>
       </div>
     </div>
   </div>
@@ -2465,7 +2468,7 @@ Conclus par :
 <span class="pe-ph">[COLLER LE TEXTE A ANALYSER ICI]</span></div>
         <button class="copy-prompt-btn" onclick="copyEl('pr-expert-box')">Copier ce prompt</button>
         <div class="tip-box" style="margin-top:14px;"><strong>Résultat attendu</strong> Une liste structurée de 10 a 20 points classés par gravité, avec les formulations exactes a corriger.</div>
-        <div class="warn-box"><strong>A retenir</strong> les règles impératives en début de prompt sont essentielles. Sans elles, l'IA comble les manques avec des données inventées plutôt que de signaler l'incertitude.</div>
+        <div class="warn-box"><strong>À retenir</strong> les règles impératives en début de prompt sont essentielles. Sans elles, l'IA comble les manques avec des données inventées plutôt que de signaler l'incertitude.</div>
       </div>
 
       <div class="wtab-pane" id="pr1">
@@ -2475,7 +2478,7 @@ Conclus par :
           <div class="card-sm" style="border-top:3px solid var(--success);"><strong style="font-size:15px;">La structure en 6 points</strong><p style="font-size:15px;margin-top:6px;">Oblige l'IA a passer en revue chaque catégorie d'erreur, y compris les oublis qu'elle ne signalerait pas spontanément.</p></div>
           <div class="card-sm" style="border-top:3px solid var(--warn);"><strong style="font-size:15px;">La gravité</strong><p style="font-size:15px;margin-top:6px;">Sans elle, l'IA liste tout au meme niveau. Savoir ce qui est critique vs mineur détermine ce que vous corrigez en priorité.</p></div>
           <div class="card-sm"><strong style="font-size:15px;">La conclusion forcée</strong><p style="font-size:15px;margin-top:6px;">Demander les « informations complémentaires » force l'IA a signaler ce qu'elle ne peut pas analyser.</p></div>
-          <div class="card-sm"><strong style="font-size:15px;">La deuxième IA</strong><p style="font-size:15px;margin-top:6px;">Ce prompt est concu pour etre utilisé par une IA différente de celle qui a produit le texte. Les deux n'ont pas les memes biais.</p></div>
+          <div class="card-sm"><strong style="font-size:15px;">La deuxième IA</strong><p style="font-size:15px;margin-top:6px;">Ce prompt est concu pour être utilisé par une IA différente de celle qui a produit le texte. Les deux n'ont pas les memes biais.</p></div>
         </div>
         <div class="info-box" style="margin-top:14px;"><strong>Ce que ce prompt ne fait pas</strong> il ne remplace pas un juriste qui connaît votre droit applicable, vos pratiques de desk et votre client. Il détecte les incohérences générales. Votre expertise détecte le reste.</div>
       </div>
@@ -2493,7 +2496,15 @@ Conclus par :
   <div class="module-hero">
     <div class="module-tag">Bloc 4 · 20 min</div>
     <h1 class="module-title">3 cas <em>concrets BRS</em></h1>
-    <p class="module-desc">Pour chaque cas : le contexte, le prompt a utiliser, ce qu'on attendid="page-bloc5-regles">
+    <p class="module-desc">Pour chaque cas : le contexte, le prompt à utiliser, ce qu'on attend.</p>
+  </div>
+  <div class="widget-wrap">
+    <div id="b4-cas-nav" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;"></div>
+    <div id="b4-cas-body"></div>
+  </div>
+</div>
+
+<div class="page" id="page-bloc5-regles">
   <div class="module-hero">
     <div class="module-tag">Bloc 5 · 10 min</div>
     <h1 class="module-title">Règles, patterns <em>et techniques</em></h1>
@@ -2532,15 +2543,7 @@ Conclus par :
   </div>
 </div>
 
-hub.io/Utiliser-IA/" target="_blank" style="color:var(--blue);">charlysamax.github.io/Utiliser-IA</a></span>
-        
-  <div class="widget-wrap">
-    <div id="b4-cas-nav" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;"></div>
-    <div id="b4-cas-body"></div>
-  </div>
-</div>
-      </div>
-    
+
   <div class="page" id="page-confidentialite">
         <div class="module-hero">
           <div class="module-tag">Choisir</div>
@@ -2595,7 +2598,11 @@ hub.io/Utiliser-IA/" target="_blank" style="color:var(--blue);">charlysamax.gith
         <div class="warn-box" style="">
           🚫 Ne collez jamais de données clients, RH ou financières dans une version gratuite de ces outils. Pour les données sensibles en contexte européen, <strong>Le Chat est le seul choix sans configuration supplémentaire</strong>.
         </div>
-      </div>
+      
+</div>
+  </div>
+
+</div>
 
 <div class="page" id="page-tarifs">
         <div class="module-hero">
@@ -2662,199 +2669,288 @@ hub.io/Utiliser-IA/" target="_blank" style="color:var(--blue);">charlysamax.gith
       </div>
 
 <div class="page" id="page-regles-prompt">
-        <div class="module-hero">
-          <div class="module-tag">Prompting</div>
-          <h1 class="module-title">Règles <em>universelles</em></h1>
-          <p class="module-desc">Valables pour tous les outils, quelle que soit la tâche.</p>
-        </div>
+  <div class="module-hero">
+    <div class="module-tag">Prompting</div>
+    <h1 class="module-title">Règles <em>universelles</em></h1>
+    <p class="module-desc">Valables pour tous les outils, quelle que soit la tâche.</p>
+  </div>
 
-        <div class="card-grid">
-          <div class="card-sm">
-            <div class="technique-num">✅ Règle 1</div>
-            <div class="technique-title">Structurez : QUOI / POURQUOI / COMMENT</div>
-            <p style="font-size:13px;color:var(--muted);margin:0;">QUOI = la tâche (verbe d'action + objectif). POURQUOI = le contexte, votre rôle, la finalité. COMMENT = le format, le ton, la longueur. L'ordre influence directement la qualité de la réponse.</p>
-          </div>
-          <div class="card-sm">
-            <div class="technique-num">✅ Règle 2</div>
-            <div class="technique-title">Donnez un rôle précis + une contrainte de format</div>
-            <p style="font-size:13px;color:var(--muted);margin:0;">«&nbsp;Tu es consultant RH. Rédige un mail de refus, ton bienveillant, 3 paragraphes max.&nbsp;» Le modèle suit précisément les contraintes explicites.</p>
-          </div>
-          <div class="card-sm">
-            <div class="technique-num">✅ Règle 3</div>
-            <div class="technique-title">Découpez les tâches complexes</div>
-            <p style="font-size:13px;color:var(--muted);margin:0;">Étape 1 «&nbsp;Donne-moi 5 angles.&nbsp;» Étape 2 «&nbsp;Développe l'angle 3.&nbsp;» Une seule demande longue = résultat moyen. Plusieurs étapes séquentielles = résultat supérieur.</p>
-          </div>
-          <div class="card-sm">
-            <div class="technique-num">⚠️ Règle 4</div>
-            <div class="technique-title">Itérez plutôt que de recommencer</div>
-            <p style="font-size:13px;color:var(--muted);margin:0;">Si la réponse est décevante «&nbsp;C'est trop générique, précise avec l'exemple de…&nbsp;» Enrichissez le prompt initial plutôt que de repartir de zéro.</p>
-          </div>
-          <div class="card-sm">
-            <div class="technique-num">⚠️ Règle 5</div>
-            <div class="technique-title">Vérifiez toujours les faits</div>
-            <p style="font-size:13px;color:var(--muted);margin:0;">Tous les outils peuvent se tromper avec conviction. Ne publiez jamais un chiffre, une date ou un nom sans vérification indépendante.</p>
-          </div>
-          <div class="card-sm">
-            <div class="technique-num">🚫 Règle 6</div>
-            <div class="technique-title">Jamais de données confidentielles</div>
-            <p style="font-size:13px;color:var(--muted);margin:0;">Noms de clients, données RH, contrats, secrets commerciaux aucun outil grand public (version gratuite) ne garantit la confidentialité absolue.</p>
-          </div>
-        </div>
+  <div style="border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:24px;">
+
+    <div style="display:grid;grid-template-columns:60px 220px 1fr 1fr;background:var(--navy);border-bottom:1px solid var(--border);">
+      <div style="padding:10px 14px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,0.6);">#</div>
+      <div style="padding:10px 14px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,0.6);">Règle</div>
+      <div style="padding:10px 14px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,0.6);">Description</div>
+      <div style="padding:10px 14px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,0.6);">Exemple BRS</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:60px 220px 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:14px;font-size:15px;font-weight:800;color:var(--orange);background:var(--surface2);border-right:1px solid var(--border);display:flex;align-items:flex-start;justify-content:center;">R1</div>
+      <div style="padding:14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Structurer&nbsp;: QUOI / POURQUOI / COMMENT</div>
+      <div style="padding:14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);line-height:1.6;">
+        QUOI = la tâche (verbe d'action + objectif)<br>
+        POURQUOI = le contexte, votre rôle, la finalité<br>
+        COMMENT = le format, le ton, la longueur<br>
+        <span style="color:var(--text);font-style:italic;">L'ordre influence directement la qualité</span>
       </div>
+      <div style="padding:14px;font-size:13px;color:var(--muted);line-height:1.6;font-style:italic;">«&nbsp;Rédige [QUOI] un résumé de ce CP. Je suis broker tanker chez BRS [POURQUOI]. 10 lignes max, points clés, format bullet [COMMENT].&nbsp;»</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:60px 220px 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:14px;font-size:15px;font-weight:800;color:var(--orange);background:var(--surface2);border-right:1px solid var(--border);display:flex;align-items:flex-start;justify-content:center;">R2</div>
+      <div style="padding:14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Donner un rôle précis + une contrainte de format</div>
+      <div style="padding:14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);line-height:1.6;">
+        Préciser le rôle (expert, juriste, analyste) et les contraintes (longueur, ton, structure).<br>
+        <span style="color:var(--text);font-style:italic;">Le modèle suit précisément les contraintes explicites.</span>
+      </div>
+      <div style="padding:14px;font-size:13px;color:var(--muted);line-height:1.6;font-style:italic;">«&nbsp;Tu es juriste maritime senior. Analyse cette clause laytime. Résume les risques en 5 points, ton factuel.&nbsp;»</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:60px 220px 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:14px;font-size:15px;font-weight:800;color:var(--orange);background:var(--surface2);border-right:1px solid var(--border);display:flex;align-items:flex-start;justify-content:center;">R3</div>
+      <div style="padding:14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Découper les tâches complexes</div>
+      <div style="padding:14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);line-height:1.6;">
+        Une seule demande longue = résultat moyen<br>
+        Plusieurs étapes séquentielles = résultat supérieur<br>
+        <span style="color:var(--text);font-style:italic;">Chaque étape nourrit la suivante.</span>
+      </div>
+      <div style="padding:14px;font-size:13px;color:var(--muted);line-height:1.6;font-style:italic;">Étape 1&nbsp;: «&nbsp;Identifie les 5 clauses à risque dans ce CP.&nbsp;»<br>Étape 2&nbsp;: «&nbsp;Pour la clause 3, rédige une contre-proposition.&nbsp;»</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:60px 220px 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:14px;font-size:15px;font-weight:800;color:var(--orange);background:var(--surface2);border-right:1px solid var(--border);display:flex;align-items:flex-start;justify-content:center;">R4</div>
+      <div style="padding:14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Itérer plutôt que recommencer</div>
+      <div style="padding:14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);line-height:1.6;">Si la réponse est décevante, enrichir le prompt initial plutôt que repartir de zéro. Préciser ce qui manque, ce qui est inexact, ou changer le rôle assigné.</div>
+      <div style="padding:14px;font-size:13px;color:var(--muted);line-height:1.6;font-style:italic;">«&nbsp;Ta réponse est trop générale. Concentre-toi sur le risque War Risk spécifiquement et cite les clauses CONWARTIME.&nbsp;»</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:60px 220px 1fr 1fr;">
+      <div style="padding:14px;font-size:15px;font-weight:800;color:var(--orange);background:var(--surface2);border-right:1px solid var(--border);display:flex;align-items:flex-start;justify-content:center;">R5</div>
+      <div style="padding:14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Nourrir l'IA avec des documents de référence</div>
+      <div style="padding:14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);line-height:1.6;">
+        Coller un document existant (données, structure, format souhaités) avant de demander la production.<br>
+        <span style="color:var(--text);font-style:italic;">L'IA calque sur l'exemple fourni.</span>
+      </div>
+      <div style="padding:14px;font-size:13px;color:var(--muted);line-height:1.6;font-style:italic;">«&nbsp;Voici notre template d'Annual Review [coller]. Rédige la section tanker 2025 sur ce modèle à partir des données suivantes…&nbsp;»</div>
+    </div>
+
+  </div>
+
+  <div class="tip-box">→ Règle méta&nbsp;: reformuler votre demande comme si vous briefiez un consultant externe compétent mais sans contexte. Plus vous êtes précis, meilleur est le résultat.</div>
+</div>
 
 <div class="page" id="page-patterns">
-        <div class="module-hero">
-          <div class="module-tag">Prompting</div>
-          <h1 class="module-title">Patterns à <em>éviter</em></h1>
-          <p class="module-desc">Ce que les LLM produisent naturellement et qui dégrade vos prompts et vos textes.</p>
-        </div>
+  <div class="module-hero">
+    <div class="module-tag">Prompting</div>
+    <h1 class="module-title">Patterns à <em>éviter</em></h1>
+    <p class="module-desc">Ce que les LLM produisent naturellement et qui dégrade vos prompts et vos textes.</p>
+  </div>
 
-        <div class="pattern-list">
-          <div class="pattern-card pattern-avoid">
-            <div class="pattern-icon">🚫</div>
-            <div class="pattern-title">Formules de cadrage</div>
-            <div class="pattern-ex">«&nbsp;Dans un monde qui s'accélère…&nbsp;» / «&nbsp;À l'ère de…&nbsp;»</div>
-          </div>
-          <div class="pattern-card pattern-do">
-            <div class="pattern-icon">✓</div>
-            <div class="pattern-title">Alternative</div>
-            <div class="pattern-ex">Entrez directement dans le sujet sans dramatiser le contexte.</div>
-          </div>
+  <!-- PATTERNS STYLISTIQUES -->
+  <h3 style="margin-bottom:12px;">Patterns stylistiques</h3>
+  <div style="border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:28px;">
 
-          <div class="pattern-card pattern-avoid">
-            <div class="pattern-icon">🚫</div>
-            <div class="pattern-title">Antithèses binaires</div>
-            <div class="pattern-ex">«&nbsp;Ce n'est pas X, c'est Y&nbsp;» avec emphase typographique</div>
-          </div>
-          <div class="pattern-card pattern-do">
-            <div class="pattern-icon">✓</div>
-            <div class="pattern-title">Alternative</div>
-            <div class="pattern-ex">Affirmations directes sans contraste artificiel.</div>
-          </div>
+    <div style="display:grid;grid-template-columns:200px 1fr 1fr;background:var(--surface2);border-bottom:1px solid var(--border);">
+      <div style="padding:10px 14px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);">Pattern</div>
+      <div style="padding:10px 14px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--danger);">🚫 À éviter</div>
+      <div style="padding:10px 14px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--success);">✓ À la place</div>
+    </div>
 
-          <div class="pattern-card pattern-avoid">
-            <div class="pattern-icon">🚫</div>
-            <div class="pattern-title">Intensifieurs vides</div>
-            <div class="pattern-ex">«&nbsp;crucial&nbsp;», «&nbsp;clé&nbsp;», «&nbsp;essentiel&nbsp;», «&nbsp;absolument&nbsp;»</div>
-          </div>
-          <div class="pattern-card pattern-do">
-            <div class="pattern-icon">✓</div>
-            <div class="pattern-title">Alternative</div>
-            <div class="pattern-ex">Si quelque chose est important, montrez-le par l'argument.</div>
-          </div>
+    <div style="display:grid;grid-template-columns:200px 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:11px 14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Formules de cadrage</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);">«&nbsp;Dans un monde qui s'accélère…&nbsp;» / «&nbsp;À l'ère de…&nbsp;»</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--text);">Entrez directement dans le sujet sans dramatiser le contexte.</div>
+    </div>
 
-          <div class="pattern-card pattern-avoid">
-            <div class="pattern-icon">🚫</div>
-            <div class="pattern-title">Doublement rhétorique</div>
-            <div class="pattern-ex">Répéter la même idée 2-3 fois avec reformulations minimales</div>
-          </div>
-          <div class="pattern-card pattern-do">
-            <div class="pattern-icon">✓</div>
-            <div class="pattern-title">Alternative</div>
-            <div class="pattern-ex">Une seule fois, bien dit. Densité &gt; volume.</div>
-          </div>
+    <div style="display:grid;grid-template-columns:200px 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:11px 14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Antithèses binaires</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);">«&nbsp;Ce n'est pas X, c'est Y&nbsp;» avec emphase typographique</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--text);">Affirmations directes sans contraste artificiel.</div>
+    </div>
 
-          <div class="pattern-card pattern-avoid">
-            <div class="pattern-icon">🚫</div>
-            <div class="pattern-title">Métadiscours / sur-articulation</div>
-            <div class="pattern-ex">«&nbsp;Dans cette section, nous allons voir…&nbsp;» / «&nbsp;Comme vu précédemment…&nbsp;»</div>
-          </div>
-          <div class="pattern-card pattern-do">
-            <div class="pattern-icon">✓</div>
-            <div class="pattern-title">Alternative</div>
-            <div class="pattern-ex">Supprimez les balises de navigation : le texte se tient seul.</div>
-          </div>
+    <div style="display:grid;grid-template-columns:200px 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:11px 14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Intensifieurs vides</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);">«&nbsp;crucial&nbsp;», «&nbsp;clé&nbsp;», «&nbsp;essentiel&nbsp;», «&nbsp;absolument&nbsp;»</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--text);">Montrez l'importance par l'argument, pas par l'adjectif.</div>
+    </div>
 
-          <div class="pattern-card pattern-avoid">
-            <div class="pattern-icon">🚫</div>
-            <div class="pattern-title">Bullet points compulsifs</div>
-            <div class="pattern-ex">Tout en listes, y compris ce qui s'écrit naturellement en prose</div>
-          </div>
-          <div class="pattern-card pattern-do">
-            <div class="pattern-icon">✓</div>
-            <div class="pattern-title">Alternative</div>
-            <div class="pattern-ex">Réservez les listes à ce qui est réellement énumérable.</div>
-          </div>
+    <div style="display:grid;grid-template-columns:200px 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:11px 14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Doublement rhétorique</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);">Répéter la même idée 2-3 fois avec reformulations minimales</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--text);">Une seule fois, bien dit. Densité plutôt que volume.</div>
+    </div>
 
-          <div class="pattern-card pattern-avoid">
-            <div class="pattern-icon">🚫</div>
-            <div class="pattern-title">Préambules phatiques</div>
-            <div class="pattern-ex">«&nbsp;C'est une excellente question…&nbsp;» / «&nbsp;Merci de soulever ce point…&nbsp;»</div>
-          </div>
-          <div class="pattern-card pattern-do">
-            <div class="pattern-icon">✓</div>
-            <div class="pattern-title">Alternative</div>
-            <div class="pattern-ex">Commencez par la réponse, pas par la politesse.</div>
-          </div>
+    <div style="display:grid;grid-template-columns:200px 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:11px 14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Métadiscours / sur-articulation</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);">«&nbsp;Dans cette section, nous allons voir…&nbsp;» / «&nbsp;Comme vu précédemment…&nbsp;»</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--text);">Supprimez-les. Écrivez directement le contenu.</div>
+    </div>
 
-          <div class="pattern-card pattern-avoid">
-            <div class="pattern-icon">🚫</div>
-            <div class="pattern-title">Hyperboles de révélation</div>
-            <div class="pattern-ex">«&nbsp;La nuance qui CHANGE TOUT&nbsp;» / «&nbsp;L'erreur FATALE&nbsp;»</div>
-          </div>
-          <div class="pattern-card pattern-do">
-            <div class="pattern-icon">✓</div>
-            <div class="pattern-title">Alternative</div>
-            <div class="pattern-ex">Évitez les majuscules dramatiques et les superlatifs vides.</div>
-          </div>
-        </div>
+    <div style="display:grid;grid-template-columns:200px 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:11px 14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Bullet points compulsifs</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);">Tout en listes, y compris ce qui s'écrit naturellement en prose</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--text);">Réservez les listes à ce qui est réellement énumérable.</div>
+    </div>
 
-        <div class="tip-box">
-          <strong>Source</strong>
-          Ces patterns sont tirés de l'analyse «&nbsp;Anatomie d'un texte ChatGPT&nbsp;», Benoît Raphaël / Génération IA.
-        </div>
-      </div>
+    <div style="display:grid;grid-template-columns:200px 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:11px 14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Préambules phatiques</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);">«&nbsp;C'est une excellente question…&nbsp;» / «&nbsp;Merci de soulever ce point…&nbsp;»</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--text);">Commencez par la réponse, pas par la politesse.</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:200px 1fr 1fr;">
+      <div style="padding:11px 14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Hyperboles de révélation</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);">«&nbsp;La nuance qui CHANGE TOUT&nbsp;» / «&nbsp;L'erreur FATALE&nbsp;»</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--text);">Évitez les majuscules dramatiques et les superlatifs vides.</div>
+    </div>
+  </div>
+
+  <!-- PATTERNS TYPOGRAPHIQUES -->
+  <h3 style="margin-bottom:12px;">Patterns typographiques à surveiller</h3>
+  <div style="border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:28px;">
+
+    <div style="display:grid;grid-template-columns:160px 1fr 1fr;background:var(--surface2);border-bottom:1px solid var(--border);">
+      <div style="padding:10px 14px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);">Sujet</div>
+      <div style="padding:10px 14px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--danger);">❌ À éviter</div>
+      <div style="padding:10px 14px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--success);">✓ Correct</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:160px 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:11px 14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Capitales</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);">«&nbsp;Les Trois Piliers de la Stratégie&nbsp;»</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--text);">«&nbsp;Les trois piliers de la stratégie&nbsp;» — Exception&nbsp;: titres d'œuvres, noms propres</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:160px 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:11px 14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Guillemets</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);">"citation" (guillemets droits anglais)</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--text);">«&nbsp;citation&nbsp;» (guillemets français avec espaces insécables)</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:160px 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:11px 14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Émojis</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);">Usage systématique&nbsp;: ✨ 🚀 💡 🎯</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--text);">Uniquement si demandé ou contexte très informel. Ce tableau utilise 🚫 ✓ de façon fonctionnelle&nbsp;: c'est cohérent.</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:160px 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:11px 14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Tirets</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);">Tiret cadratin — avec espaces (usage anglo-saxon) / tiret long pour les listes</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--text);">Tiret demi-cadratin – avec espaces (usage français), ou&nbsp;: deux-points, point-virgule, point / puce simple ou numérotation</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:160px 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:11px 14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Gras excessif</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);">Chaque concept important en gras</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--text);">Gras réservé aux vrais titres ou termes-clés isolés</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:160px 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:11px 14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Espaces insécables</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);">Manquantes avant&nbsp;: ; ! ?</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--text);">Présentes&nbsp;: espace fine insécable en français avant ; ! ?</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:160px 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:11px 14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Points de suspension</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);">Trois points séparés&nbsp;: . . .</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--text);">Caractère unique&nbsp;: …</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:160px 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:11px 14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Italique vs guillemets</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);">Mélanger les deux pour la même fonction</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--text);">Cohérence&nbsp;: <em>termes étrangers</em> / «&nbsp;citations&nbsp;»</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:160px 1fr 1fr;">
+      <div style="padding:11px 14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Listes de fragments</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);">Point final à chaque item / point après un titre ou sous-titre</div>
+      <div style="padding:11px 14px;font-size:14px;color:var(--text);">Pas de ponctuation à chaque item / pas de ponctuation après un titre</div>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <strong>Source</strong> «&nbsp;Anatomie d'un texte ChatGPT&nbsp;», Benoît Raphaël / Génération IA
+  </div>
+</div>
 
 <div class="page" id="page-techniques">
-        <div class="module-hero">
-          <div class="module-tag">Prompting avancé</div>
-          <h1 class="module-title">8 techniques <em>avancées</em></h1>
-          <p class="module-desc">Méthodes qui changent la qualité des résultats sur des tâches complexes. À utiliser après avoir maîtrisé les règles universelles.</p>
-        </div>
+  <div class="module-hero">
+    <div class="module-tag">Prompting avancé</div>
+    <h1 class="module-title">8 techniques <em>avancées</em></h1>
+    <p class="module-desc">Ces techniques donnent des résultats mesurables sur des tâches complexes.</p>
+  </div>
 
-        <div class="technique-list">
-          <div class="technique-card">
-            <div class="technique-num">🔧 Technique 1 : Few-shot</div>
-            <div class="technique-title">Exemples en amont</div>
-            <div class="technique-desc">Donnez 2-3 exemples du résultat attendu avant votre demande. Le modèle adopte le style, la structure et le ton de vos exemples.</div>
-          </div>
-          <div class="technique-card">
-            <div class="technique-num">🔧 Technique 2 : Prefill</div>
-            <div class="technique-title">Amorce de réponse</div>
-            <div class="technique-desc">Commencez la réponse vous-même. «&nbsp;Voici les 3 raisons principales 1.&nbsp;» Le modèle continue dans le ton et la structure que vous avez lancés.</div>
-          </div>
-          <div class="technique-card">
-            <div class="technique-num">🔧 Technique 3 : Auto-évaluation</div>
-            <div class="technique-title">Notation et reformulation</div>
-            <div class="technique-desc">Après une réponse «&nbsp;Note de 1 à 10, puis reformule pour atteindre 9.&nbsp;» Le modèle améliore de lui-même sa sortie.</div>
-          </div>
-          <div class="technique-card">
-            <div class="technique-num">🔧 Technique 4 : Tree of Thoughts</div>
-            <div class="technique-title">Explorer avant de développer</div>
-            <div class="technique-desc">«&nbsp;Identifie 3 angles possibles, évalue chacun, puis développe le meilleur.&nbsp;» Utile pour trouver des idées ou structurer un texte complexe.</div>
-          </div>
-          <div class="technique-card">
-            <div class="technique-num">🔧 Technique 5 : NSA</div>
-            <div class="technique-title">Niveau Supérieur d'Abstraction</div>
-            <div class="technique-desc">«&nbsp;Avant de répondre, utilise le NSA examine l'essence du problème et ses implications larges plutôt que les détails de surface.&nbsp;»</div>
-          </div>
-          <div class="technique-card">
-            <div class="technique-num">🔧 Technique 6 : Prompting inversé</div>
-            <div class="technique-title">L'IA clarifie d'abord</div>
-            <div class="technique-desc">«&nbsp;Pose-moi 5 questions (avec exemples de réponse) pour pouvoir rédiger la meilleure réponse possible.&nbsp;» L'IA clarifie avant d'agir.</div>
-          </div>
-          <div class="technique-card">
-            <div class="technique-num">🔧 Technique 7 : Vérification RAG</div>
-            <div class="technique-title">Source + extrait pour chaque affirmation</div>
-            <div class="technique-desc">Sur un document «&nbsp;Pour chaque affirmation, cite l'extrait exact et le numéro de page.&nbsp;» Limite les hallucinations et facilite la vérification.</div>
-          </div>
-          <div class="technique-card">
-            <div class="technique-num">🔧 Technique 8 : Balises XML</div>
-            <div class="technique-title">Séparer données et instruction</div>
-            <div class="technique-desc">Encadrez vos données avec des balises <code style="font-size:11px;background:var(--cream);padding:1px 5px;border-radius:3px;">&lt;texte&gt;[votre texte]&lt;/texte&gt;</code>. Puis donnez l'instruction. Évite les confusions.</div>
-          </div>
-        </div>
-      </div>
+  <div style="border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:24px;">
+
+    <div style="display:grid;grid-template-columns:60px 200px 1fr 1fr;background:var(--orange);border-bottom:1px solid var(--border);">
+      <div style="padding:10px 14px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,0.8);">#</div>
+      <div style="padding:10px 14px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,0.8);">Technique</div>
+      <div style="padding:10px 14px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,0.8);">Mécanisme</div>
+      <div style="padding:10px 14px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,0.8);">Prompt-type BRS</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:60px 200px 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:14px;font-size:15px;font-weight:800;color:var(--orange);background:var(--surface2);border-right:1px solid var(--border);display:flex;align-items:flex-start;justify-content:center;">T1</div>
+      <div style="padding:14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Prefill – Amorce</div>
+      <div style="padding:14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);line-height:1.6;">Commencer la réponse vous-même. Le modèle continue dans le ton et la structure lancés.<br><em style="color:var(--text);">= Efficace pour imposer un format ou un registre</em></div>
+      <div style="padding:14px;font-size:13px;color:var(--muted);line-height:1.6;font-style:italic;">«&nbsp;Voici les 3 clauses à risque identifiées dans ce CP&nbsp;: 1. [le modèle continue]&nbsp;»</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:60px 200px 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:14px;font-size:15px;font-weight:800;color:var(--orange);background:var(--surface2);border-right:1px solid var(--border);display:flex;align-items:flex-start;justify-content:center;">T2</div>
+      <div style="padding:14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Auto-évaluation</div>
+      <div style="padding:14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);line-height:1.6;">Demander au modèle une analyse critique de sa réponse puis de la réécrire.<br><em style="color:var(--text);">= Amélioration systématique sur la précision et la structure</em></div>
+      <div style="padding:14px;font-size:13px;color:var(--muted);line-height:1.6;font-style:italic;">«&nbsp;Note ta réponse de 1 à 10 sur la précision technique et la clarté. Puis réécris-la en visant 9/10.&nbsp;»</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:60px 200px 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:14px;font-size:15px;font-weight:800;color:var(--orange);background:var(--surface2);border-right:1px solid var(--border);display:flex;align-items:flex-start;justify-content:center;">T3</div>
+      <div style="padding:14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Cross-évaluation</div>
+      <div style="padding:14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);line-height:1.6;">Faire analyser la réponse d'un modèle par un autre (ex. ChatGPT → Claude).<br><em style="color:var(--text);">= Utile sur les sujets où les biais de corpus diffèrent</em></div>
+      <div style="padding:14px;font-size:13px;color:var(--muted);line-height:1.6;font-style:italic;">Copier la réponse ChatGPT dans Claude&nbsp;: «&nbsp;Analyse cette réponse, identifie les imprécisions et complète ce qui manque.&nbsp;»</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:60px 200px 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:14px;font-size:15px;font-weight:800;color:var(--orange);background:var(--surface2);border-right:1px solid var(--border);display:flex;align-items:flex-start;justify-content:center;">T4</div>
+      <div style="padding:14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Tree of Thoughts</div>
+      <div style="padding:14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);line-height:1.6;">Demander d'explorer plusieurs angles avant de développer.<br><em style="color:var(--text);">= Évite le développement prématuré du premier angle plausible</em></div>
+      <div style="padding:14px;font-size:13px;color:var(--muted);line-height:1.6;font-style:italic;">«&nbsp;Identifie 3 angles pour structurer cette note marché. Évalue chacun. Développe le plus adapté à un lecteur armateur.&nbsp;»</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:60px 200px 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:14px;font-size:15px;font-weight:800;color:var(--orange);background:var(--surface2);border-right:1px solid var(--border);display:flex;align-items:flex-start;justify-content:center;">T5</div>
+      <div style="padding:14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">NSA – Niveau supérieur d'abstraction</div>
+      <div style="padding:14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);line-height:1.6;">Forcer un recul sur le problème avant de répondre.<br><em style="color:var(--text);">= Efficace pour les sujets complexes ou stratégiques</em></div>
+      <div style="padding:14px;font-size:13px;color:var(--muted);line-height:1.6;font-style:italic;">«&nbsp;Avant de répondre, examine l'essence du problème et ses implications larges. Puis rédige.&nbsp;» (contexte&nbsp;: stratégie carbon desk)</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:60px 200px 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:14px;font-size:15px;font-weight:800;color:var(--orange);background:var(--surface2);border-right:1px solid var(--border);display:flex;align-items:flex-start;justify-content:center;">T6</div>
+      <div style="padding:14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Prompting inversé</div>
+      <div style="padding:14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);line-height:1.6;">L'IA pose des questions de clarification avant d'agir.<br><em style="color:var(--text);">= Révèle les zones d'ambiguïté dans votre demande</em></div>
+      <div style="padding:14px;font-size:13px;color:var(--muted);line-height:1.6;font-style:italic;">«&nbsp;Pose-moi 5 questions (avec exemples de réponse) pour rédiger la meilleure analyse possible de cette fixture.&nbsp;»</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:60px 200px 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:14px;font-size:15px;font-weight:800;color:var(--orange);background:var(--surface2);border-right:1px solid var(--border);display:flex;align-items:flex-start;justify-content:center;">T7</div>
+      <div style="padding:14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Vérification RAG</div>
+      <div style="padding:14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);line-height:1.6;">Sur un document fourni, demander une source exacte pour chaque affirmation.<br><em style="color:var(--text);">= Limite les hallucinations, facilite la relecture</em></div>
+      <div style="padding:14px;font-size:13px;color:var(--muted);line-height:1.6;font-style:italic;">«&nbsp;Pour chaque point de cette analyse, cite l'extrait exact du CP et le numéro de clause qui le justifie.&nbsp;»</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:60px 200px 1fr 1fr;">
+      <div style="padding:14px;font-size:15px;font-weight:800;color:var(--orange);background:var(--surface2);border-right:1px solid var(--border);display:flex;align-items:flex-start;justify-content:center;">T8</div>
+      <div style="padding:14px;font-size:14px;font-weight:700;color:var(--navy);background:var(--surface2);border-right:1px solid var(--border);">Balises XML</div>
+      <div style="padding:14px;font-size:14px;color:var(--muted);border-right:1px solid var(--border);line-height:1.6;">Encadrer données et instructions avec des balises distinctes.<br><em style="color:var(--text);">= Évite les confusions entre le contenu à traiter et la commande</em></div>
+      <div style="padding:14px;font-size:13px;color:var(--muted);line-height:1.6;font-style:italic;">«&nbsp;&lt;document&gt;[coller le CP]&lt;/document&gt; &lt;instruction&gt;Identifie les clauses War Risk et résume les obligations de l'armateur.&lt;/instruction&gt;&nbsp;»</div>
+    </div>
+
+  </div>
+
+  <div class="tip-box">→ Par où commencer&nbsp;: T7 (vérification RAG) et T2 (auto-évaluation) donnent des résultats immédiats sur n'importe quelle tâche. Les autres s'intègrent progressivement.</div>
+</div>
 
 <div class="page" id="page-scenarios">
         <div class="module-hero">
@@ -3127,7 +3223,7 @@ hub.io/Utiliser-IA/" target="_blank" style="color:var(--blue);">charlysamax.gith
           <button class="brs-topnav-btn current" onclick="goTo('brs-situations')">Cas par métiers</button>
           <button class="brs-topnav-btn" onclick="goTo('brs-copilot')">Copilot chez BRS</button>
           <button class="brs-topnav-btn" onclick="goTo('brs-reflexes')">Réflexes IA</button>
-          <button class="brs-topnav-btn" onclick="goTo('brs-reflexes')">Ce qu'on délègue chez BRS</button>
+          <button class="brs-topnav-btn" onclick="goTo('brs-delegation')">Ce qu'on délègue chez BRS</button>
         </div>
 
 
@@ -3333,7 +3429,7 @@ hub.io/Utiliser-IA/" target="_blank" style="color:var(--blue);">charlysamax.gith
           <button class="brs-topnav-btn" onclick="goTo('brs-situations')">Cas par métiers</button>
           <button class="brs-topnav-btn current" onclick="goTo('brs-copilot')">Copilot chez BRS</button>
           <button class="brs-topnav-btn" onclick="goTo('brs-reflexes')">Réflexes IA</button>
-          <button class="brs-topnav-btn" onclick="goTo('brs-reflexes')">Ce qu'on délègue chez BRS</button>
+          <button class="brs-topnav-btn" onclick="goTo('brs-delegation')">Ce qu'on délègue chez BRS</button>
         </div>
 
 
@@ -3434,81 +3530,338 @@ hub.io/Utiliser-IA/" target="_blank" style="color:var(--blue);">charlysamax.gith
           <button class="brs-topnav-btn" onclick="goTo('brs-situations')">Cas par métiers</button>
           <button class="brs-topnav-btn" onclick="goTo('brs-copilot')">Copilot chez BRS</button>
           <button class="brs-topnav-btn current" onclick="goTo('brs-reflexes')">Réflexes IA</button>
-          <button class="brs-topnav-btn" onclick="goTo('brs-reflexes')">Ce qu'on délègue chez BRS</button>
+          <button class="brs-topnav-btn" onclick="goTo('brs-delegation')">Ce qu'on délègue chez BRS</button>
         </div>
 
 
+        <p style="font-size:15px;color:var(--muted);margin-bottom:6px;">Ce qui s'applique à chaque outil, chaque tâche, chaque jour.</p>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:24px;">Usage interne BRS Ship Brokers · Version mars 2026</p>
+
         <div class="reflexes-grid">
           <div>
-            <div class="reflexes-col-title do">✓ &nbsp;6 DO : Réflexes à adopter</div>
+            <div class="reflexes-col-title do">✓ &nbsp;6 DO : RÉFLEXES À ADOPTER</div>
+
             <div class="reflex-card do">
               <div class="reflex-num">01</div>
-              <div class="reflex-title">Formuler l'objectif avant d'ouvrir un outil</div>
-              <div class="reflex-body">Comprendre, produire un texte, vérifier un chiffre, analyser des données ou préparer une réunion : formuler l'objectif en une phrase avant de choisir Copilot, Perplexity, Claude ou ChatGPT.</div>
+              <div class="reflex-title">Formuler l'objectif avant de choisir un outil</div>
+              <div class="reflex-body">
+                Avant d'ouvrir Copilot, Claude ou Perplexity, formuler en une phrase ce qu'on cherche à accomplir.
+                <ul style="margin:8px 0 8px 16px;padding:0;">
+                  <li>Comprendre un sujet ou un concept → ChatGPT, Claude</li>
+                  <li>Produire ou retravailler un texte → Claude, ChatGPT</li>
+                  <li>Vérifier un chiffre, une position réglementaire, une actualité marché → Perplexity</li>
+                  <li>Analyser des données internes, préparer une réunion Teams → Copilot</li>
+                  <li>Traiter un document confidentiel (contrat, RH, finance) → Le Chat ou Copilot Enterprise</li>
+                </ul>
+                <em>Ex. : « Je veux résumer ce charterparty de 60 pages pour en extraire les clauses à risque. » → Claude</em><br>
+                <em>Pour un rapport Annual Review → Copilot extrait les données M365, Claude structure et rédige.</em>
+              </div>
             </div>
+
             <div class="reflex-card do">
               <div class="reflex-num">02</div>
               <div class="reflex-title">Choisir l'outil selon la tâche</div>
-              <div class="reflex-body">Données internes BRS (Teams, Outlook, Excel, SharePoint) → Copilot en priorité. Faits, chiffres externes, réglementation, marché → Perplexity + vérification des sources. Rédaction longue ou sensible (clients, management) → Claude, avec validation métier.</div>
+              <div class="reflex-body">
+                Chaque outil a un profil de forces. Les combiner est plus efficace que d'en utiliser un seul.
+                <ul style="margin:8px 0 0 16px;padding:0;">
+                  <li><strong>Copilot en priorité</strong> → Données internes BRS (Teams, Outlook, Excel, SharePoint)</li>
+                  <li><strong>Perplexity + vérification des sources</strong> → Faits récents, chiffres de marché, réglementation, incidents</li>
+                  <li><strong>Claude</strong> → Rédaction longue, analyse de document volumineux, structuration</li>
+                  <li><strong>ChatGPT</strong> → Vitesse, reformulation, traduction rapide</li>
+                  <li><strong>Le Chat (hébergement EU) ou Copilot Enterprise</strong> → Données sensibles ou confidentielles</li>
+                </ul>
+              </div>
             </div>
+
             <div class="reflex-card do">
               <div class="reflex-num">03</div>
-              <div class="reflex-title">Qualifier la sensibilité des données</div>
-              <div class="reflex-body">Public / générique, interne, confidentiel (RH, contrats, clients, finance). Plus la donnée est sensible, plus on privilégie Copilot Enterprise, Le Chat ou des environnements validés par IT / Compliance, et moins on copie-colle dans des outils grand public.</div>
+              <div class="reflex-title">Qualifier la sensibilité avant d'envoyer</div>
+              <div class="reflex-body">
+                Trois niveaux, trois comportements :
+                <ul style="margin:8px 0 8px 16px;padding:0;">
+                  <li>Public / générique (sujet ouvert, pas de données BRS) → tous les outils</li>
+                  <li>Interne (données opérationnelles, noms de navires, indices) → Copilot ou outils avec confidentiality mode activé</li>
+                  <li>Confidentiel (RH, contrats clients, positions financières, dossiers juridiques) → Copilot Enterprise, Le Chat, ou anonymisation préalable</li>
+                </ul>
+                <span style="color:var(--warn);font-weight:600;">⚠</span> Ne jamais coller un contrat signé, une position de trading ou un dossier KYC dans un outil grand public non validé par IT.
+              </div>
             </div>
+
             <div class="reflex-card do">
               <div class="reflex-num">04</div>
-              <div class="reflex-title">Vérifier les faits avant de les utiliser</div>
-              <div class="reflex-body">Un chiffre, une date, une position réglementaire ou un nom d'entité produits par un outil IA doivent être vérifiés dans une source primaire avant d'être intégrés à un livrable, une communication client ou une note interne.</div>
+              <div class="reflex-title">Vérifier les faits</div>
+              <div class="reflex-body">
+                Une donnée plausible n'est pas une donnée vraie. Tout chiffre, date, position réglementaire, nom d'entité ou citation produit par un outil IA doit être vérifié dans une source primaire avant intégration dans un livrable, une communication client ou une note interne.
+                <ul style="margin:8px 0 8px 16px;padding:0;">
+                  <li>Taux de fret, indices (Baltic, VLCC) → Baltic Exchange, vos bases internes, Perplexity avec sources</li>
+                  <li>Réglementation IMO / EU ETS / CII → textes officiels IMO, EUR-Lex</li>
+                  <li>Sanctions, KYC, contreparties → OFAC, EU sanctions list, vos bases Trade Compliance</li>
+                </ul>
+                <em>Ex. : Perplexity cite ses sources. Cliquer sur chaque lien avant d'utiliser le chiffre.</em>
+              </div>
             </div>
+
             <div class="reflex-card do">
               <div class="reflex-num">05</div>
               <div class="reflex-title">Relire et assumer la décision</div>
-              <div class="reflex-body">L'IA propose, BRS décide : chaque email, note client, contrat, analyse financière ou conseil carbone doit être relu et assumé par une personne identifiée.</div>
+              <div class="reflex-body">
+                L'IA propose, BRS décide. Chaque texte ou analyse produit par un outil IA doit être relu et assumé par une personne identifiée avant tout envoi.<br><br>
+                <span style="color:var(--warn);font-weight:600;">⚠</span> Aucun texte généré par IA ne part au client, à un régulateur ou en externe sans adaptation au ton BRS et vérification Trade Compliance / KYC / sanctions.
+              </div>
             </div>
+
             <div class="reflex-card do">
               <div class="reflex-num">06</div>
               <div class="reflex-title">Documenter ce qui est validé</div>
-              <div class="reflex-body">Pour les livrables clés (Annual Review, notes marché, mémos carbone, synthèses juridiques), garder une trace des sources utilisées (internes + externes) et des validations métier (Research, Legal, Finance, Carbon).</div>
+              <div class="reflex-body">
+                Pour les livrables à enjeu, garder une trace des sources utilisées et des validations obtenues.
+                <ul style="margin:8px 0 8px 16px;padding:0;">
+                  <li>Annual Review, notes marché : sources internes + externes listées</li>
+                  <li>Mémos carbone : références EU ETS, CII, EEXI indiquées</li>
+                  <li>Synthèses juridiques : date de validation Legal notée</li>
+                  <li>Analyses de fixtures ou recaps : desk ayant relu identifié</li>
+                </ul>
+                <em>→ Un document traçable protège BRS en cas de question client ou de contrôle réglementaire.</em>
+              </div>
             </div>
           </div>
 
           <div>
-            <div class="reflexes-col-title dont">✗ &nbsp;5 DON'T : À éviter absolument</div>
+            <div class="reflexes-col-title dont">✗ &nbsp;5 DON'T : À ÉVITER ABSOLUMENT</div>
+
             <div class="reflex-card dont">
               <div class="reflex-num">01</div>
               <div class="reflex-title">Ne jamais publier un chiffre non sourcé</div>
-              <div class="reflex-body">Pas de taux de fret, prix du carbone, indicateur financier ou KPI externe issus uniquement d'un modèle IA sans source explicite et vérifiée.</div>
+              <div class="reflex-body">
+                Aucun taux de fret, prix du carbone, indicateur financier ou KPI externe issu uniquement d'un modèle IA ne doit apparaître dans un livrable sans source explicite et vérifiée.
+                <ul style="margin:8px 0 8px 16px;padding:0;">
+                  <li>Le modèle invente des chiffres plausibles avec la même fluidité qu'il cite des chiffres réels</li>
+                  <li>Perplexity cite ses sources : cliquer et vérifier chaque lien</li>
+                  <li>ChatGPT et Claude ne citent pas de sources par défaut : ne pas leur faire confiance sur les données chiffrées</li>
+                </ul>
+                <em>Ex. : VLCC TC rate cité par Claude sans source = à vérifier impérativement sur Baltic Exchange ou BIMCO.</em>
+              </div>
             </div>
+
             <div class="reflex-card dont">
               <div class="reflex-num">02</div>
               <div class="reflex-title">Ne pas coller de données sensibles dans des outils non validés</div>
-              <div class="reflex-body">Pas de contrats complets, données RH, dossiers clients ou fichiers financiers bruts dans des versions grand public ou des applications IA non approuvées par BRS.</div>
+              <div class="reflex-body">
+                Pas de contrats complets, données RH, dossiers clients, positions financières ou fichiers non anonymisés dans les versions grand public de ChatGPT, Claude.ai ou Gemini.
+                <ul style="margin:8px 0 8px 16px;padding:0;">
+                  <li>Ces outils peuvent utiliser les données pour améliorer leurs modèles (selon les paramètres)</li>
+                  <li>Règle minimum : désactiver le partage de données dans les paramètres avant tout usage professionnel</li>
+                  <li>Pour les données confidentielles : Copilot M365 Enterprise ou Le Chat (hébergement EU, RGPD natif)</li>
+                </ul>
+                <span style="color:var(--warn);font-weight:600;">⚠</span> La loi américaine Cloud Act peut contraindre les opérateurs US à transmettre des données à des autorités américaines, même hébergées hors US.
+              </div>
             </div>
+
             <div class="reflex-card dont">
               <div class="reflex-num">03</div>
               <div class="reflex-title">Ne pas confondre outil pédagogique et outil de vérification</div>
-              <div class="reflex-body">ChatGPT et Claude sont excellents pour comprendre un sujet, pas pour acter des chiffres ou des positions réglementaires. Pour cela : Perplexity + sources officielles + experts internes.</div>
+              <div class="reflex-body">
+                ChatGPT et Claude sont excellents pour comprendre, structurer, reformuler. Ils ne sont pas des sources de référence pour les faits.
+                <ul style="margin:8px 0 8px 16px;padding:0;">
+                  <li>Pour comprendre une clause CONWARTIME ou le fonctionnement du CII → Claude, ChatGPT</li>
+                  <li>Pour vérifier la valeur du CII d'un navire ou l'état des sanctions → Perplexity + sources officielles + experts internes</li>
+                  <li>Pour toute décision juridique ou réglementaire → Legal, Compliance, et textes officiels</li>
+                </ul>
+                <em>→ Règle simple : l'IA explique, la source primaire confirme.</em>
+              </div>
             </div>
+
             <div class="reflex-card dont">
               <div class="reflex-num">04</div>
               <div class="reflex-title">Ne pas considérer Copilot comme infaillible</div>
-              <div class="reflex-body">Copilot aide à naviguer dans les données M365, mais il peut manquer des éléments, résumer de travers ou ignorer un document clé. Toujours croiser avec son propre jugement sur les dossiers critiques.</div>
+              <div class="reflex-body">
+                Copilot lit et résume vos données M365, mais ses synthèses peuvent omettre des éléments, mal interpréter un thread ou ignorer un document clé.
+                <ul style="margin:8px 0 8px 16px;padding:0;">
+                  <li>Toujours croiser avec votre propre lecture sur les dossiers critiques</li>
+                  <li>Copilot n'a pas accès aux fichiers non indexés par SharePoint ou hors de votre périmètre M365</li>
+                  <li>Sur les contrats ou les fixtures, Copilot peut résumer sans détecter les anomalies : relecture métier obligatoire</li>
+                </ul>
+                <em>Ex. : Résumé de réunion Teams par Copilot : vérifier que les décisions et les noms sont corrects avant distribution.</em>
+              </div>
             </div>
+
             <div class="reflex-card dont">
               <div class="reflex-num">05</div>
               <div class="reflex-title">Ne pas laisser l'IA écrire à la place de BRS</div>
-              <div class="reflex-body">Aucun texte IA ne doit partir au client, à un régulateur ou en externe sans relecture et adaptation au ton BRS, ni sans prise en compte des enjeux Trade Compliance / KYC / sanctions.</div>
+              <div class="reflex-body">
+                L'IA génère du texte fluide et structuré. Ce n'est pas du texte BRS.
+                <ul style="margin:8px 0 8px 16px;padding:0;">
+                  <li>Adapter le ton, les formulations et les positions au style et aux engagements de BRS</li>
+                  <li>Aucun engagement commercial, juridique ou réglementaire ne s'engage sur la base d'un texte IA non relu</li>
+                  <li>Le client, le régulateur ou la contrepartie interagit avec BRS, pas avec un modèle de langage</li>
+                </ul>
+                <span style="color:var(--warn);font-weight:600;">⚠</span> Trade Compliance, KYC et sanctions : l'IA ne sait pas que votre contrepartie fait l'objet d'un examen. Ce jugement est humain.
+              </div>
             </div>
           </div>
         </div>
       </div>
 
 
-  </div><!-- /content -->
+  
+
+
+<div class="page" id="page-brs-delegation">
+  <div class="module-hero">
+    <div class="module-tag">BRS</div>
+    <h1 class="module-title">Ce qu'on <em>délègue chez BRS</em></h1>
+    <p class="module-desc">Ce tableau précise ce que l'IA peut prendre en charge, ce qu'elle prépare mais ne décide pas, et ce qui reste strictement humain.</p>
+  </div>
+
+  <div class="brs-topnav">
+    <span class="brs-topnav-label">Module BRS</span>
+    <button class="brs-topnav-btn" onclick="goTo('brs-situations')">Cas d'usage</button>
+    <button class="brs-topnav-btn" onclick="goTo('brs-situations')">Cas par métiers</button>
+    <button class="brs-topnav-btn" onclick="goTo('brs-copilot')">Copilot chez BRS</button>
+    <button class="brs-topnav-btn" onclick="goTo('brs-reflexes')">Réflexes IA</button>
+    <button class="brs-topnav-btn current" onclick="goTo('brs-delegation')">Ce qu'on délègue chez BRS</button>
+  </div>
+
+  <div style="margin-top:24px;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;">
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;background:var(--surface2);border-bottom:2px solid var(--border);">
+      <div style="padding:12px 16px;font-size:13px;font-weight:800;color:var(--navy);letter-spacing:.05em;text-transform:uppercase;">Tâche</div>
+      <div style="padding:12px 16px;font-size:13px;font-weight:800;color:var(--success);letter-spacing:.05em;text-transform:uppercase;text-align:center;">IA fait</div>
+      <div style="padding:12px 16px;font-size:13px;font-weight:800;color:var(--warn);letter-spacing:.05em;text-transform:uppercase;text-align:center;">IA prépare</div>
+      <div style="padding:12px 16px;font-size:13px;font-weight:800;color:var(--danger);letter-spacing:.05em;text-transform:uppercase;text-align:center;">Humain seul</div>
+    </div>
+
+    <!-- RÉDACTION -->
+    <div style="padding:10px 16px;background:var(--accent2-dim);font-size:12px;font-weight:800;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--border);">Rédaction</div>
+
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:11px 16px;font-size:15px;color:var(--text);">Email client (information courante)</div>
+      <div style="padding:11px 16px;text-align:center;font-size:18px;color:var(--success);">✓</div>
+      <div style="padding:11px 16px;text-align:center;"></div>
+      <div style="padding:11px 16px;text-align:center;"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:11px 16px;font-size:15px;color:var(--text);">Note de marché, flash sectoriel</div>
+      <div style="padding:11px 16px;text-align:center;"></div>
+      <div style="padding:11px 16px;text-align:center;font-size:18px;color:var(--warn);">◑</div>
+      <div style="padding:11px 16px;text-align:center;"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:11px 16px;font-size:15px;color:var(--text);">Conseil client, recommandation commerciale</div>
+      <div style="padding:11px 16px;text-align:center;"></div>
+      <div style="padding:11px 16px;text-align:center;"></div>
+      <div style="padding:11px 16px;text-align:center;font-size:18px;color:var(--danger);">✗</div>
+    </div>
+
+    <!-- ANALYSE -->
+    <div style="padding:10px 16px;background:var(--accent2-dim);font-size:12px;font-weight:800;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--border);border-top:1px solid var(--border);">Analyse</div>
+
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:11px 16px;font-size:15px;color:var(--text);">Résumé d'un document long (CP, rapport)</div>
+      <div style="padding:11px 16px;text-align:center;font-size:18px;color:var(--success);">✓</div>
+      <div style="padding:11px 16px;text-align:center;"></div>
+      <div style="padding:11px 16px;text-align:center;"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:11px 16px;font-size:15px;color:var(--text);">Identification de clauses à risque</div>
+      <div style="padding:11px 16px;text-align:center;"></div>
+      <div style="padding:11px 16px;text-align:center;font-size:18px;color:var(--warn);">◑</div>
+      <div style="padding:11px 16px;text-align:center;"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:11px 16px;font-size:15px;color:var(--text);">Décision sur un charterparty, validation juridique</div>
+      <div style="padding:11px 16px;text-align:center;"></div>
+      <div style="padding:11px 16px;text-align:center;"></div>
+      <div style="padding:11px 16px;text-align:center;font-size:18px;color:var(--danger);">✗</div>
+    </div>
+
+    <!-- VÉRIFICATION -->
+    <div style="padding:10px 16px;background:var(--accent2-dim);font-size:12px;font-weight:800;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--border);border-top:1px solid var(--border);">Vérification</div>
+
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:11px 16px;font-size:15px;color:var(--text);">Veille : taux, indices, actualité marché</div>
+      <div style="padding:11px 16px;text-align:center;font-size:18px;color:var(--success);">✓</div>
+      <div style="padding:11px 16px;text-align:center;"></div>
+      <div style="padding:11px 16px;text-align:center;"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:11px 16px;font-size:15px;color:var(--text);">Vérification d'une position réglementaire (IMO, EU ETS)</div>
+      <div style="padding:11px 16px;text-align:center;"></div>
+      <div style="padding:11px 16px;text-align:center;font-size:18px;color:var(--warn);">◑</div>
+      <div style="padding:11px 16px;text-align:center;"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:11px 16px;font-size:15px;color:var(--text);">Contrôle KYC / sanctions / Trade Compliance</div>
+      <div style="padding:11px 16px;text-align:center;"></div>
+      <div style="padding:11px 16px;text-align:center;"></div>
+      <div style="padding:11px 16px;text-align:center;font-size:18px;color:var(--danger);">✗</div>
+    </div>
+
+    <!-- DÉCISION -->
+    <div style="padding:10px 16px;background:var(--accent2-dim);font-size:12px;font-weight:800;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--border);border-top:1px solid var(--border);">Décision</div>
+
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:11px 16px;font-size:15px;color:var(--text);">Structurer les options à présenter</div>
+      <div style="padding:11px 16px;text-align:center;font-size:18px;color:var(--success);">✓</div>
+      <div style="padding:11px 16px;text-align:center;"></div>
+      <div style="padding:11px 16px;text-align:center;"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;border-bottom:1px solid var(--border);">
+      <div style="padding:11px 16px;font-size:15px;color:var(--text);">Préparer les arguments d'une négociation</div>
+      <div style="padding:11px 16px;text-align:center;"></div>
+      <div style="padding:11px 16px;text-align:center;font-size:18px;color:var(--warn);">◑</div>
+      <div style="padding:11px 16px;text-align:center;"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;">
+      <div style="padding:11px 16px;font-size:15px;color:var(--text);">Décision commerciale, engagement client, signature</div>
+      <div style="padding:11px 16px;text-align:center;"></div>
+      <div style="padding:11px 16px;text-align:center;"></div>
+      <div style="padding:11px 16px;text-align:center;font-size:18px;color:var(--danger);">✗</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:20px;">
+    <div class="card-sm" style="border-top:3px solid var(--success);">
+      <strong style="font-size:14px;color:var(--success);">✓ IA fait</strong>
+      <p style="font-size:14px;margin-top:8px;color:var(--muted);line-height:1.65;">Tâche répétitive, structurée, sans enjeu décisionnel direct. L'humain reste informé mais n'a pas à intervenir systématiquement.</p>
+    </div>
+    <div class="card-sm" style="border-top:3px solid var(--warn);">
+      <strong style="font-size:14px;color:var(--warn);">◑ IA prépare</strong>
+      <p style="font-size:14px;margin-top:8px;color:var(--muted);line-height:1.65;">L'IA produit un brouillon, une synthèse ou une liste d'options. Un expert BRS valide, complète et signe le résultat avant diffusion.</p>
+    </div>
+    <div class="card-sm" style="border-top:3px solid var(--danger);">
+      <strong style="font-size:14px;color:var(--danger);">✗ Humain seul</strong>
+      <p style="font-size:14px;margin-top:8px;color:var(--muted);line-height:1.65;">Engagement juridique, décision commerciale, jugement sur un client ou une contrepartie. L'IA n'intervient pas dans la décision.</p>
+    </div>
+  </div>
+</div>
+
+<div class="page" id="page-mentions">
+  <div class="module-hero">
+    <div class="module-tag">Formation BRS · 2026</div>
+    <h1 class="module-title">Mentions <em>légales</em></h1>
+    <p class="module-desc">Responsable de la formation et informations réglementaires.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;">
+    <div class="card-sm" style="border-top:3px solid var(--navy);">
+      <strong style="font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;">Responsable de la formation</strong>
+      <p style="font-size:16px;font-weight:800;color:var(--navy);margin-top:10px;margin-bottom:4px;">Sylvie Philippe</p>
+      <p style="font-size:14px;color:var(--muted);line-height:1.8;">
+        <a href="/cdn-cgi/l/email-protection#aeddd7c2d8c7cb80dec6c7c2c7dedecb80cdc1c3eec9c3cfc7c280cdc1c3" style="color:var(--blue);"><span class="__cf_email__" data-cfemail="384b41544e515d16485051545148485d165b5755785f55595154165b5755">[email&#160;protected]</span></a><br>
+        <a href="tel:+33614176214" style="color:var(--blue);">06 14 17 62 14</a>
+      </p>
+    </div>
+    <div class="card-sm" style="border-top:3px solid var(--orange);">
+      <strong style="font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;">Ce support</strong>
+      <p style="font-size:14px;color:var(--muted);margin-top:10px;line-height:1.65;">Support de formation interne à BRS Ship Brokers. Usage strictement interne. Ne pas diffuser à l’extérieur de l’entreprise.</p>
+      <p style="font-size:13px;color:var(--muted);margin-top:8px;font-weight:600;">Version mars 2026</p>
+    </div>
+  </div>
+  <div class="tip-box">Toutes les informations contenues dans cette formation sont données à titre indicatif et pédagogique. Elles ne constituent pas un conseil juridique ou professionnel.</div>
+</div>
+</div><!-- /content -->
 </div><!-- /main -->
 
-<script>const PAGES = [
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>const PAGES = [
   `intro`,`bloc1-llm`,`bloc1-consequences`,
   `bloc2-outils`,`bloc2-decision`,
   `bloc3-zones`,`bloc3-copilot`,`bloc3-exercice`,
@@ -3516,8 +3869,8 @@ hub.io/Utiliser-IA/" target="_blank" style="color:var(--blue);">charlysamax.gith
   `bloc4-cas`,`bloc5-regles`,
   `regles-prompt`,`patterns`,`techniques`,
   `confidentialite`,`tarifs`,
-    `scenarios`,`brs-situations`,`brs-copilot`,`brs-reflexes`,
-  `quiz`
+    `scenarios`,`brs-situations`,`brs-copilot`,`brs-reflexes`,`brs-delegation`,
+  `quiz`,`mentions`
 ];
 
 const TITLES = {
@@ -3551,7 +3904,8 @@ const TITLES = {
   "brs-situations": "Cas par métiers",
   "brs-copilot": "Copilot chez BRS",
   "brs-reflexes": "Réflexes IA BRS",
-  "quiz": "Quiz de validation"
+  "brs-delegation": "Ce qu'on délègue chez BRS",
+  "mentions": "Mentions légales", "quiz": "Quiz de validation"
 };
 
 let current = 0;
@@ -3873,7 +4227,10 @@ function showPage(id, btn) {
   updateNav();
   const title = TITLES[id] || id;
   document.getElementById(`topbar-title`).textContent = title;
-  document.querySelector(`.main`).scrollTo(0, 0);
+  try { document.querySelector(".main").scrollTop = 0; } catch(e) {}
+  try { document.querySelector(".content").scrollTop = 0; } catch(e) {}
+  try { document.documentElement.scrollTop = 0; } catch(e) {}
+  try { document.body.scrollTop = 0; } catch(e) {}
   closeSidebar();
   // Init page-specific widgets
   initPage(id);
@@ -5119,23 +5476,8 @@ function initBloc2Priority() {
 // -- BLOC2 : VERSIONS TAB -----------------------------------------------
 function initBloc2Versions() {
   const el = document.getElementById("b2-versions-content");
-  if (!el || el.children.length > 0) return;
-  el.innerHTML = "<p style=\"font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:16px;\">Une même IA existe souvent en plusieurs versions. Comprendre la logique évite de s’y perdre.</p>"
-    + "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;\">"
-    + "<div class=\"card-sm\" style=\"border-top:3px solid var(--navy);\"><strong style=\"font-size:14px;color:var(--navy);\">À chaque génération</strong><p style=\"font-size:14px;margin-top:8px;color:var(--muted);line-height:1.65;\">Chaque nouvelle génération est entraînée sur plus de données avec de meilleurs algorithmes. GPT-3, GPT-4, GPT-5 : la compréhension et la précision progressent à chaque saut. L’ancienne génération reste souvent disponible et moins chère.</p></div>"
-    + "<div class=\"card-sm\" style=\"border-top:3px solid var(--orange);\"><strong style=\"font-size:14px;color:var(--orange);\">À l’intérieur d’une génération</strong><p style=\"font-size:14px;margin-top:8px;color:var(--muted);line-height:1.65;\">On trouve des variantes : modèles complets (qualité maximale), versions légères (plus rapides et moins chères) et modèles spécialisés (code, images, données d’entreprise).</p></div>"
-    + "</div>"
-    + "<div class=\"tip-box\"><strong>Ce qui compte pour vous</strong> Pas besoin de retenir les numéros. L’important : utilisez-vous une génération récente ou ancienne, et la variante est-elle orientée qualité ou vitesse ?</div>"
-    + "<div style=\"margin-top:16px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;\">"
-    + "<div style=\"padding:9px 14px;background:var(--surface2);border-bottom:1px solid var(--border);font-size:13px;font-weight:700;color:var(--muted);\">Exemples de variantes par IA</div>"
-    + "<div style=\"display:grid;grid-template-columns:1fr 1fr 1fr;font-size:13px;\">"
-    + "<div style=\"padding:9px 12px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);font-weight:700;color:var(--navy);\">Éditeur</div>"
-    + "<div style=\"padding:9px 12px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);font-weight:700;color:var(--navy);\">Complet</div>"
-    + "<div style=\"padding:9px 12px;border-bottom:1px solid var(--border);font-weight:700;color:var(--navy);\">Économique / rapide</div>"
-    + "<div style=\"padding:9px 12px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);color:var(--muted);\">Ø OpenAI (ChatGPT)</div><div style=\"padding:9px 12px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);color:var(--muted);\">Ø GPT-4o, o1</div><div style=\"padding:9px 12px;border-bottom:1px solid var(--border);color:var(--muted);\">Ø GPT-4o mini</div>"
-    + "<div style=\"padding:9px 12px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);color:var(--muted);\">Anthropic (Claude)</div><div style=\"padding:9px 12px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);color:var(--muted);\">Ø Opus</div><div style=\"padding:9px 12px;border-bottom:1px solid var(--border);color:var(--muted);\">Sonnet / Haiku</div>"
-    + "<div style=\"padding:9px 12px;border-right:1px solid var(--border);color:var(--muted);\">Ø Google (Gemini)</div><div style=\"padding:9px 12px;border-right:1px solid var(--border);color:var(--muted);\">Ø Ultra / Pro</div><div style=\"padding:9px 12px;color:var(--muted);\">Flash</div>"
-    + "</div></div>";
+  if (!el) return;
+  el.innerHTML = "<p style='color:var(--muted);font-size:14px;'>Contenu non disponible dans cette version.</p>";
 }
 </script>
 </body>
